@@ -1,1 +1,1 @@
-<div class="Parallax GParallax1"><div class="Img"><div class="Caption"><a href="#"><div class="Text">ÉGLISE HARRISTE DE FRANCE</div></a></div></div><div class="Body2 Orange">Ajouter un texte...<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div></div>
+<div class="Parallax GParallax1"><div class="Img"><div class="Caption"><a href="#"><div class="Text">ÉGLISE HARRISTE DE FRANCE</div></a></div></div><div class="Body2 Orange"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div></div>
