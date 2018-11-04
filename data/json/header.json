@@ -1,0 +1,12 @@
+{
+	"sitemap":"yes",
+    "site":
+    {
+        "name":"EGLISE HARRISTE FRANCE"
+    },  
+    "menu":
+    [
+        {"name":"Chorale","link":"/Chorale/","follow":"yes"},
+        {"name":"Admin","link":"/Admin/"}
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "logo": {
+        "img": "\/data\/img\/defaults\/logo.jpg"
+    },
+    "background": {
+        "top": {
+            "img": "\/data\/img\/defaults\/texture_green.jpg"
+        },
+        "top_left": {
+            "img": "\/data\/img\/defaults\/top_left_right.gif"
+        },
+        "top_right": {
+            "img": "\/data\/img\/defaults\/top_left_right.gif"
+        },
+        "top_center": {
+            "img": "\/data\/img\/defaults\/top_center2.gif",
+            "width": "430px"
+        },
+        "top_back": {
+            "img": "\/data\/img\/defaults\/top_back.jpg"
+        },
+        "middle_back": {
+            "img": "\/data\/img\/defaults\/middle_back.gif"
+        },
+        "bottom_back": {
+            "img": "\/data\/img\/defaults\/bottom_back.jpg"
+        }
+    },
+    "border": {
+        "top": {
+            "img": "\/data\/img\/defaults\/border.png"
+        },
+        "middle": {
+            "img": "\/data\/img\/defaults\/border.png"
+        },
+        "bottom": {
+            "img": "\/data\/img\/defaults\/border.png"
+        }
+    },
+    "modal": {
+        "img": "\/data\/img\/defaults\/texture_green.jpg"
+    },
+    "home": {
+        "img": "\/data\/img\/defaults\/img_home.jpg"
+    },
+    "presentation": {
+        "img": "\/data\/img\/defaults\/img_presentation.jpg"
+    },
+    "ministry": {
+        "img": "\/data\/img\/defaults\/img_ministry.jpg"
+    },
+    "events": {
+        "img": "\/data\/img\/defaults\/img_events.jpg"
+    },
+    "error": {
+        "img": "\/data\/img\/defaults\/img_error.jpg"
+    }
+}
