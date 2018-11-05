@@ -35,7 +35,14 @@ var GHtmlEditor = (function() {
                 lHtmlEditorMsg.innerHTML = lMsg;
                 lHtmlEditorMsg.style.display = "block";
                 lHtmlEditorMsg.style.color = "#339933";
-                location.reload();
+                //location.reload();
+            },
+            //===============================================
+            keyPressHtmlEditor: function(e) {
+                if (e.code == 'KeyS' && (e.ctrlKey || e.metaKey)) {
+                    e.preventDefault();
+                    saveHtmlEditor();
+                }
             }
             //===============================================
         };

@@ -7,3 +7,7 @@ function saveHtmlEditor() {
 	GHtmlEditor.Instance().saveHtmlEditor();
 }
 //===============================================
+function keyPressHtmlEditor(e) {
+	GHtmlEditor.Instance().keyPressHtmlEditor(e);
+}
+//===============================================

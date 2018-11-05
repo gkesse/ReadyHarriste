@@ -911,6 +911,24 @@ var GEditor = (function() {
                                 break;
                             }
                             if(lClassName.includes("GHtml1")) {
+                                var lHtmlEditorText = GConfig.Instance().getData("HtmlEditorText");
+                                lParentNode.innerHTML = lHtmlEditorText;
+                                break;
+                            }
+                            lParentNode = lParentNode.parentNode;
+                        }
+                    }
+                    break;
+                //===============================================
+                case 'Html4':
+                    var lParentNode = lStartNode.parentNode;
+                    if(!lSelection.toString()) {
+                        while(1) {
+                            var lClassName = lParentNode.className;
+                            if(lClassName.includes("GEndEditor")) {
+                                break;
+                            }
+                            if(lClassName.includes("GHtml1")) {
                                 var lHtml = lParentNode.innerHTML;
                                 GConfig.Instance().setData("HtmlEditorText", lHtml);
                                 break;
@@ -920,7 +938,7 @@ var GEditor = (function() {
                     }
                     break;
                 //===============================================
-                case 'Html4':
+                case 'Html5':
                     var lParentNode = lStartNode.parentNode;
                     if(!lSelection.toString()) {
                         while(1) {

@@ -17,7 +17,7 @@
     <div class="Msg" id="HtmlEditorMsg"></div>
 </div>
 <!-- ============================================ -->
-<div class="Modal HtmlEditor" id="ModalHtmlEditor">
+<div class="Modal HtmlEditor" id="ModalHtmlEditor" onkeypress="keyPressHtmlEditor(event)">
     <div class="Content10">
         <div class="Button3 Close" onclick="closeHtmlEditor()"><i class="fa fa-close"></i></div>
         <div class="Title5">Editeur de code HTML</div>

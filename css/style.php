@@ -880,7 +880,7 @@ span {
 }
 
 .Img {
-    background-image: url("/data/img/defaults/presentation.jpg");
+    background-image: url("/data/img/defaults/events.jpg");
     min-height: 500px;
     position: relative;
     opacity: 0.65;

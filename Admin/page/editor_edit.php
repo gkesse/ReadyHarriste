@@ -44,7 +44,8 @@
 			<option value="Html1">Html Ouvrir</option>
 			<option value="Html2">Html Ajouter</option>
 			<option value="Html3">Html Modifier</option>
-			<option value="Html4">Html Supprimer</option>
+			<option value="Html4">Html Enregistrer</option>
+			<option value="Html5">Html Supprimer</option>
 		</select>
 	</div>
 	<!-- ============================================ -->
