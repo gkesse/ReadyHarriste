@@ -833,7 +833,7 @@ span {
 }
 
 .Icon3:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     color: white;
 }
 
@@ -877,6 +877,27 @@ span {
 .Icon10 {
     padding-right: 10px;
     color: cyan;
+}
+
+.Icon11 {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 50px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.Icon11:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+.Icon11:active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
 }
 
 .Img {
