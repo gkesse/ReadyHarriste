@@ -24,7 +24,7 @@ Bienvenue <br>sur l'interface web dédiée à la
 
 <div>
 <div class="Col2">
-<div><i class="Icon11 fa fa-microphone"></i></div>
+<div><a href="/Chorale/"><i class="Icon11 fa fa-microphone"></i></a></div>
 <div>Chorale</div>
 </div>
 </div>
