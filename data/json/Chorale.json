@@ -9,5 +9,10 @@
             "Vous trouverez sur ce site des cours et des tutoriels adaptés aux sciences de l'ingénieur."
         ],
         "meta_cano":"/Chorale/"
-    }
+    },
+    "links":
+    [
+        {"name":"Accueil","link":"/Accueil/","follow":"no"},
+        {"name":"Chorale","link":"","follow":"no"}
+    ]
 }

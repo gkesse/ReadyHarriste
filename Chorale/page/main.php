@@ -5,7 +5,7 @@ margin: auto;
 text-align: center;
 padding: 50px 10px;
 ">
-<h1>Chorale<br>Église Harriste de France<br></h1><br>Restez en contact avec les membres de la chorale de <br>l’Église Harriste de France.<br><br>Découvrez les membres de la Chorale.<br><br>
+<h1>Membres de la Chorale</h1><br>Restez en contact avec les membres de la chorale de <br>l’Église Harriste de France.<br><br>Découvrez les membres de la Chorale.<br><br>
 
 <div>
 <div class="Col2">
@@ -14,5 +14,5 @@ padding: 50px 10px;
 </div>
 </div>
 
-<br></div>
+</div>
 </div><br></div></div>

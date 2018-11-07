@@ -6,6 +6,7 @@
     GConfig::Instance()->setData("title", "Chorale");
     GConfig::Instance()->setData("menu", "Chorale");
     GConfig::Instance()->setData("view", "Chorale");
+    GConfig::Instance()->setData("link", $lData["links"]);
 
     require $_SERVER["DOCUMENT_ROOT"]."/php/header.php";
 ?>
