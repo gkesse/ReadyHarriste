@@ -7,10 +7,10 @@
             "img": "\/data\/img\/defaults\/texture_green.jpg"
         },
         "top_left": {
-            "img": "\/data\/img\/defaults\/top_left_right.gif"
+            "img": "\/data\/img\/defaults\/logo.png"
         },
         "top_right": {
-            "img": "\/data\/img\/defaults\/top_left_right.gif"
+            "img": "\/data\/img\/defaults\/top_right.gif"
         },
         "top_center": {
             "img": "\/data\/img\/defaults\/top_center2.gif",

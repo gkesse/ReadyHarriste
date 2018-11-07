@@ -40,7 +40,7 @@
     }
     
     $lExistMetaImg = GConfig::Instance()->existData("meta_img");
-    $lMetaImg = "https://raw.githubusercontent.com/gkesse/ReadyHarriste/master/data/img/defaults/logo.jpg";
+    $lMetaImg = "https://raw.githubusercontent.com/gkesse/ReadyHarriste/master/data/img/defaults/logo_banner.jpg";
     if($lExistMetaImg == true) {
         $lMetaImg = GConfig::Instance()->getData("meta_img"); 
     }
@@ -58,7 +58,7 @@
         <!-- ============================================ -->
         <title><?php echo $lTitle; ?> | <?php echo $lSiteName; ?></title>
         <meta charset="UTF-8"/>
-        <link rel="shortcut icon" type="image/png" href="/data/img/defaults/logo.jpg"/>
+        <link rel="shortcut icon" type="image/png" href="/data/img/defaults/logo.png"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <!-- ============================================ -->
         <!-- Responsive Web Design -->
