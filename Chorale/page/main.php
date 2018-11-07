@@ -15,4 +15,21 @@ padding: 50px 10px;
 </div>
 
 </div>
-</div><br></div></div>
+</div><br><div class="Content0 GHtml1"><div style="
+background-color: #290a04;
+max-width: 500px;
+margin: auto;
+text-align: center;
+padding: 50px 10px;
+">
+<h1>Répertoire de Chants<br></h1><br>Écoutez vos chants préférés <br>en tout lieu et en tout temps.<br><br>Accédez au répertoire de chants.<br><br>
+
+<div>
+<div class="Col2">
+<div><i class="Icon11 fa fa-music"></i></div>
+<div>Chants</div>
+</div>
+</div>
+
+</div>
+</div><br><br></div></div>
