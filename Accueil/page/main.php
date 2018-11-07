@@ -45,7 +45,6 @@ Bienvenue <br>sur l'interface web dédiée à la
 </div>
 </div>
 
-<br>
 </div>
 </div>
 </div><br>
