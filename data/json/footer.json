@@ -1,7 +1,7 @@
 {
     "networks":
     [
-        {"name":"Facebook","icon":"fa fa-facebook","link":"#"},
+        {"name":"Facebook","icon":"fa fa-facebook","link":"https://www.facebook.com/E-Harriste-France-2007131029333634"},
         {"name":"Skype","icon":"fa fa-skype","link":"#"},
         {"name":"GitHub","icon":"fa fa-github","link":"https://github.com/gkesse/"},
         {"name":"Linkedin","icon":"fa fa-linkedin","link":"https://www.linkedin.com/in/tia-gerard-kesse/"}
