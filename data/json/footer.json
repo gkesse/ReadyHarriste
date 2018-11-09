@@ -3,6 +3,7 @@
     [
         {"name":"Facebook","icon":"fa fa-facebook","link":"https://www.facebook.com/E-Harriste-France-2007131029333634"},
         {"name":"Youtube","icon":"fa fa-youtube","link":"https://www.youtube.com/channel/UCqhVHCTFPWLMfAvL0PkhhsA"},
+        {"name":"Twitter","icon":"fa fa-twitter","link":"https://twitter.com/egliseharriste1"},
         {"name":"GitHub","icon":"fa fa-github","link":"https://github.com/gkesse/"},
         {"name":"Linkedin","icon":"fa fa-linkedin","link":"https://www.linkedin.com/in/tia-gerard-kesse/"}
     ],
