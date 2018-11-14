@@ -110,6 +110,24 @@ var GLoader = (function() {
                 );
             },
             //===============================================
+            loadMember1: function(id, file, key) {
+                var lObj = document.getElementById(id);
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        var lData = this.responseText;
+                        lObj.innerHTML = lData;
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/loader.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+                "req=" + "MEMBER_1" +
+                "&file=" + file +
+                "&key=" + key
+                );
+            },
+            //===============================================
             loadData1: function(id, file, key) {
                 var lObj = document.getElementById(id);
                 var lXmlhttp = new XMLHttpRequest();

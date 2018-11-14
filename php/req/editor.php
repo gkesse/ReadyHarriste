@@ -95,6 +95,24 @@
 		print_r($lDataSum);
 	}
 	//===============================================
+	else if($lReq == "MEMBER_1") {
+		$lFile = $_REQUEST["file"];
+		$lKey = $_REQUEST["key"];
+		$lID = $_REQUEST["id"];
+		$lDataSum = '';
+		$lDataSum .= '<div class="Content0 Center GMember1">';
+		$lDataSum .= '<div class="Body0" id="'.$lID.'">';
+		$lDataSum .= '<div class="Row26">';
+		$lDataSum .= 'Member 1 > '.$lFile.' > '.$lKey;
+		$lDataSum .= '</div>';
+		$lDataSum .= '</div>';
+		$lDataSum .= '<script>';
+		$lDataSum .= 'loadMember1("'.$lID.'","'.$lFile.'","'.$lKey.'");';
+		$lDataSum .= '</script>';
+		$lDataSum .= '</div>';
+		print_r($lDataSum);
+	}
+	//===============================================
 	else if($lReq == "DATA_1") {
 		$lFile = $_REQUEST["file"];
 		$lKey = $_REQUEST["key"];

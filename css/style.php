@@ -305,6 +305,16 @@ span {
     cursor: pointer;
 }
 
+.Block {
+    background-color: #051039;
+    display: inline-block;
+    padding: 0 30px;
+    height: 60px;
+    font-size: 14px;
+    border-radius: 30px;
+    margin: 5px;
+}
+
 .Body {
     padding: 5px;
 }
@@ -937,6 +947,15 @@ span {
     -o-background-size: cover; 
 }
 
+.Img5 {
+    float: left;
+    margin: 0 10px 0 -30px;
+    height: 60px;
+    line-height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
 .Input {
     margin-left: 30px;
 }
@@ -1486,6 +1505,12 @@ span {
 
 .Text10:hover {
     text-decoration: underline;
+}
+
+.Text11 {
+    text-align: left;
+    padding-top: 3px;
+    width: 180px;
 }
 
 .TextArea {

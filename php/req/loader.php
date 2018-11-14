@@ -50,6 +50,34 @@
 		print_r($lDataSum);
 	}
 	//===============================================
+	else if($lReq == "MEMBER_1") {
+		$lFile = $_REQUEST["file"];
+		$lKey = $_REQUEST["key"];
+		$lFilename = "data/json/".$lFile.".json";
+		$lData = GJson::Instance()->getData($lFilename);
+        $lDataMap = $lData[$lKey];
+        $lDataSum = '';
+        foreach($lDataMap as $lItem) {
+            $lAvatar = $lItem["avatar"];
+            if($lAvatar == "") {
+                $lAvatar = "male_avatar.png";
+                if($lItem["gender"] == "Féminin") {
+                    $lAvatar = "female_avatar.png";
+                }
+            }
+            
+            $lDataSum .= '<div class="Block">';
+            $lDataSum .= '<img class="Img5" src="/Chorale/Membres/img/'.$lAvatar.'" alt="Avatar.png" width="96" height="96">';
+            $lDataSum .= '<div class="Text11">';
+            $lDataSum .= mb_strtoupper($lItem["lastname"], "UTF-8").'<br>';
+            $lDataSum .= $lItem["firstname"].'<br>';
+            $lDataSum .= '<span style="color:lime;">'.$lItem["function"].'</span>';
+            $lDataSum .= '</div>';
+            $lDataSum .= '</div>';
+        }
+		print_r($lDataSum);
+	}
+	//===============================================
 	else if($lReq == "DATA_1") {
 		$lFile = $_REQUEST["file"];
 		$lKey = $_REQUEST["key"];

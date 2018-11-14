@@ -333,7 +333,7 @@ var GEditor = (function() {
                             if(lClassName.includes("GEndEditor")) {
                                 break;
                             }
-                            if(lClassName.includes("GData1")) {
+                            if(lClassName.includes("GList2")) {
                                 lRange.selectNode(lParentNode);
                                 lSelection.addRange(lRange);
                                 document.execCommand("insertHTML", false, "");
@@ -363,6 +363,50 @@ var GEditor = (function() {
 					lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 					lXmlhttp.send(
 					"req=" + "LIST_2" +
+					"&file=" + lFilename +
+					"&key=" + lKey +
+					"&id=" + lID
+					);
+                    break;
+                //===============================================
+                case 'Member1':
+                    var lParentNode = lStartNode.parentNode;
+                    if(!lSelection.toString()) {
+                        while(1) {
+                            var lClassName = lParentNode.className;
+                            if(lClassName.includes("GEndEditor")) {
+                                break;
+                            }
+                            if(lClassName.includes("GMember1")) {
+                                lRange.selectNode(lParentNode);
+                                lSelection.addRange(lRange);
+                                document.execCommand("insertHTML", false, "");
+                                return;
+                            }
+                            lParentNode = lParentNode.parentNode;
+                        }
+                    }
+                    if(lData) return;
+                	var lArg = prompt("Fichier ? Clé ?");
+                    if(!lArg) return;
+					var lArgMap = lArg.split(";");
+                    if(lArgMap.length < 2) return;
+					var lFilename = lArgMap[0].trim();
+					var lKey = lArgMap[1].trim();
+                    if(!lFilename || !lKey) return;
+                    var lDate = Date.now();
+                    var lID = "Loader_" + lDate;
+					var lXmlhttp = new XMLHttpRequest();
+					lXmlhttp.onreadystatechange = function() {
+						if(this.readyState == 4 && this.status == 200) {
+							var lData = this.responseText;
+							document.execCommand("insertHTML", false, lData);
+						}
+					}
+					lXmlhttp.open("POST", "/php/req/editor.php", true);
+					lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					lXmlhttp.send(
+					"req=" + "MEMBER_1" +
 					"&file=" + lFilename +
 					"&key=" + lKey +
 					"&id=" + lID
@@ -429,6 +473,7 @@ var GEditor = (function() {
                             lClassName.includes("GSummary2") ||
                             lClassName.includes("GList1") ||
                             lClassName.includes("GList2") ||
+                            lClassName.includes("GMember1") ||
                             lClassName.includes("GData1") ||
                             lClassName.includes("GCode1") ||
                             lClassName.includes("GCode2") ||
@@ -464,6 +509,7 @@ var GEditor = (function() {
                             lClassName.includes("GSummary2") ||
                             lClassName.includes("GList1") ||
                             lClassName.includes("GList2") ||
+                            lClassName.includes("GMember1") ||
                             lClassName.includes("GData1") ||
                             lClassName.includes("GCode1") ||
                             lClassName.includes("GCode2") ||

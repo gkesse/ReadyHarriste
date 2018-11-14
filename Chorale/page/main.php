@@ -8,10 +8,10 @@ padding: 50px 10px;
 <h1>Membres de la Chorale</h1><br>Restez en contact avec les membres de la chorale de <br>l’Église Harriste de France.<br><br>Découvrez les membres de la Chorale.<br><br>
 
 <div>
-<div class="Col2">
+<a href="Membres/"><div class="Col2">
 <div><i class="Icon11 fa fa-users"></i></div>
 <div>Membres</div>
-</div>
+</div></a>
 </div>
 
 </div>

@@ -4,14 +4,15 @@
     {
         "meta_desc":
         [
-            "Interface web de la Chorale de l'Eglise Harriste de France.",
+            "Membres de la Chorale de l'Eglise Harriste de France.",
             "Produit par Gérard KESSE."
         ],
-        "meta_cano":"/Chorale/"
+        "meta_cano":"/Chorale/Membres/"
     },
     "links":
     [
         {"name":"Accueil","link":"/Accueil/","follow":"no"},
-        {"name":"Chorale","link":"","follow":"no"}
+        {"name":"Chorale","link":"/Chorale/","follow":"no"},
+        {"name":"Membres","link":"","follow":"no"}
     ]
 }
