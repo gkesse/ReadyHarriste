@@ -65,7 +65,6 @@
                     $lAvatar = "female_avatar.png";
                 }
             }
-            
             $lDataSum .= '<div class="Block">';
             $lDataSum .= '<img class="Img5" src="/Chorale/Membres/img/'.$lAvatar.'" alt="Avatar.png" width="96" height="96">';
             $lDataSum .= '<div class="Text11">';
