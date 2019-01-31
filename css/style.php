@@ -309,10 +309,10 @@ span {
     background-color: #051039;
     display: inline-block;
     vertical-align: top;
-    padding: 0 50px;
-    height: 100px;
+    padding: 0 40px;
+    height: 80px;
     font-size: 14px;
-    border-radius: 50px;
+    border-radius: 40px;
     margin: 5px;
 }
 
@@ -950,10 +950,10 @@ span {
 
 .Img5 {
     float: left;
-    margin: 0 10px 0 -50px;
-    height: 100px;
-    line-height: 100px;
-    width: 100px;
+    margin: 0 10px 0 -40px;
+    height: 80px;
+    line-height: 80px;
+    width: 80px;
     border-radius: 50%;
 }
 
@@ -1511,7 +1511,7 @@ span {
 .Text11 {
     text-align: left;
     padding-top: 3px;
-    width: 180px;
+    width: 200px;
 }
 
 .TextArea {

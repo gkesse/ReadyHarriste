@@ -110,7 +110,7 @@ var GLoader = (function() {
                 );
             },
             //===============================================
-            loadMember1: function(id, file, key) {
+            loadMember1: function(id, file, key, group) {
                 var lObj = document.getElementById(id);
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
@@ -124,7 +124,8 @@ var GLoader = (function() {
                 lXmlhttp.send(
                 "req=" + "MEMBER_1" +
                 "&file=" + file +
-                "&key=" + key
+                "&key=" + key +
+                "&group=" + group
                 );
             },
             //===============================================

@@ -65,5 +65,12 @@
             return $lDate;
         }
         //===============================================
+        public function exists($file) {
+            $lFile = $_SERVER["DOCUMENT_ROOT"];
+			$lFile = realpath($lFile);
+            $lFile .= "/".$file;
+            return file_exists($lFile);
+        }
+        //===============================================
     }
 ?>

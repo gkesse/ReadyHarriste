@@ -26,5 +26,11 @@
             return $lJson;
         }
         //===============================================
+        public function getData2($file) {
+            $lData = GFile::Instance()->getData($file);
+            $lJson = json_decode($lData, true);
+            return $lData;
+        }
+        //===============================================
     }
 ?>

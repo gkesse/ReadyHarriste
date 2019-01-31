@@ -98,16 +98,17 @@
 	else if($lReq == "MEMBER_1") {
 		$lFile = $_REQUEST["file"];
 		$lKey = $_REQUEST["key"];
+		$lGroup = $_REQUEST["group"];
 		$lID = $_REQUEST["id"];
 		$lDataSum = '';
 		$lDataSum .= '<div class="Content0 Center GMember1">';
 		$lDataSum .= '<div class="Body0" id="'.$lID.'">';
 		$lDataSum .= '<div class="Row26">';
-		$lDataSum .= 'Member 1 > '.$lFile.' > '.$lKey;
+		$lDataSum .= 'Member 1 > '.$lFile.' > '.$lKey.' > '.$lGroup;
 		$lDataSum .= '</div>';
 		$lDataSum .= '</div>';
 		$lDataSum .= '<script>';
-		$lDataSum .= 'loadMember1("'.$lID.'","'.$lFile.'","'.$lKey.'");';
+		$lDataSum .= 'loadMember1("'.$lID.'","'.$lFile.'","'.$lKey.'","'.$lGroup.'");';
 		$lDataSum .= '</script>';
 		$lDataSum .= '</div>';
 		print_r($lDataSum);

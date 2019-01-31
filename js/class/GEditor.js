@@ -387,12 +387,13 @@ var GEditor = (function() {
                         }
                     }
                     if(lData) return;
-                	var lArg = prompt("Fichier ? Clé ?");
+                	var lArg = prompt("Fichier ? Clé ? Groupe ?");
                     if(!lArg) return;
 					var lArgMap = lArg.split(";");
-                    if(lArgMap.length < 2) return;
+                    if(lArgMap.length < 3) return;
 					var lFilename = lArgMap[0].trim();
 					var lKey = lArgMap[1].trim();
+					var lGroup = lArgMap[2].trim();
                     if(!lFilename || !lKey) return;
                     var lDate = Date.now();
                     var lID = "Loader_" + lDate;
@@ -409,6 +410,7 @@ var GEditor = (function() {
 					"req=" + "MEMBER_1" +
 					"&file=" + lFilename +
 					"&key=" + lKey +
+					"&group=" + lGroup +
 					"&id=" + lID
 					);
                     break;

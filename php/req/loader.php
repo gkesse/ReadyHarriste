@@ -53,23 +53,37 @@
 	else if($lReq == "MEMBER_1") {
 		$lFile = $_REQUEST["file"];
 		$lKey = $_REQUEST["key"];
+		$lGroup = $_REQUEST["group"];
 		$lFilename = "data/json/".$lFile.".json";
 		$lData = GJson::Instance()->getData($lFilename);
         $lDataMap = $lData[$lKey];
         $lDataSum = '';
         foreach($lDataMap as $lItem) {
-            $lAvatar = $lItem["avatar"];
-            if($lAvatar == "") {
+            if($lItem["group"] != $lGroup) continue;
+            //$lAvatar = $lItem["avatar"];
+            
+            //if($lAvatar == "") {
                 $lAvatar = "male_avatar.png";
                 if($lItem["gender"] == "Féminin") {
                     $lAvatar = "female_avatar.png";
                 }
+            //}
+            
+            $lLastname = strtolower(GString::Instance()->noAccent($lItem["lastname"]));
+            $lUsualname = strtolower(GString::Instance()->noAccent($lItem["usualname"]));
+            $lAvatarFile = $lLastname.'_'.$lUsualname.'.png';
+            $lAvatarRoot = "/Chorale/Membres/img/";
+            $lAvatarPath = $lAvatarRoot.$lAvatarFile;
+            
+            if(GFile::Instance()->exists($lAvatarPath) == false) {
+                $lAvatarPath = $lAvatarRoot.$lAvatar;
             }
+
             $lDataSum .= '<div class="Block">';
-            $lDataSum .= '<img class="Img5" src="/Chorale/Membres/img/'.$lAvatar.'" alt="Avatar.png" width="96" height="96">';
+            $lDataSum .= '<img class="Img5" src="'.$lAvatarPath.'" alt="Avatar.png" width="80" height="80">';
             $lDataSum .= '<div class="Text11">';
-            $lDataSum .= mb_strtoupper($lItem["lastname"], "UTF-8").'<br>';
-            $lDataSum .= $lItem["firstname"].'<br>';
+            $lDataSum .= mb_strtoupper($lItem["lastname"], "UTF-8").' ';
+            $lDataSum .= $lItem["usualname"].'<br>';
             $lDataSum .= '<span style="color:lime;">'.$lItem["function"].'</span>';
             $lDataSum .= '</div>';
             $lDataSum .= '</div>';
