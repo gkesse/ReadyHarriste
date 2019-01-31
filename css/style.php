@@ -1511,7 +1511,7 @@ span {
 .Text11 {
     text-align: left;
     padding-top: 3px;
-    width: 180px;
+    width: 160px;
 }
 
 .TextArea {
