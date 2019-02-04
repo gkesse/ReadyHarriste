@@ -3,14 +3,15 @@
     {
         "meta_desc":
         [
-            "ReadyDev Administration Interface"
+            "Interface d'administration du siteweb de l’Église Harriste de France.",
+            "Produit par Gérard KESSE."
         ],
         "meta_cano":"/Admin/"
     },    
     "intro":
     [
-        "Soyez la Bienvenue sur l'interface d'administration du site ReadyDev.<br/>",
-        "ReadyAdmin vous permet d'administrer le contenu du site ReadyDev",
+        "Soyez la Bienvenue sur l'interface d'administration du siteweb.<br/>",
+        "ReadyAdmin vous permet d'administrer le contenu du siteweb",
         "sans avoir à écrire des lignes de codes.<br/>",
         "Produit par <b>Gérard KESSE</b>."
     ],
