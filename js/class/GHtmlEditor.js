@@ -39,7 +39,7 @@ var GHtmlEditor = (function() {
             },
             //===============================================
             keyPressHtmlEditor: function(e) {
-                if (e.code == 'KeyS' && (e.ctrlKey || e.metaKey)) {
+                if (e.code == 'KeyS' && (e.shiftKey || e.metaKey)) {
                     e.preventDefault();
                     saveHtmlEditor();
                 }

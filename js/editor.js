@@ -16,10 +16,10 @@ function getCommand(name, arg){
 		GEditor.Instance().editImage();
 		break;
 	case "code":
-		GEditor.Instance().editReadyStyle("Code1");
+		GEditor.Instance().editReadyStyle("Code1", false);
 		break;
 	case "readystyle":
-		GEditor.Instance().editReadyStyle(arg);
+		GEditor.Instance().editReadyStyle(arg, true);
 		break;
 	default:
 		document.execCommand(name, false, arg);

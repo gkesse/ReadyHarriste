@@ -15,39 +15,41 @@
 		<button class="Button5" type="button" title="Texte Justifié" onclick="getCommand('justifyfull')"><i class="fa fa-align-justify"></i></button>		
 		<button class="Button5" type="button" title="Ajouter un Code" onclick="getCommand('code')"><i class="fa fa-code"></i></button>		
 		<!-- ============================================ -->
-		<select class="ComboBox" onchange="getCommand('readystyle', this.value); this.selectedIndex = 0">
-			<option value="">ReadyStyle</option>
-			<option value="Title1">Titre 1</option>
-			<option value="Title2">Titre 2</option>
-			<option value="Title3">Titre 3</option>
-			<option value="Summary1">Sommaire 1</option>
-			<option value="Summary2">Sommaire 2</option>
-			<option value="List1">Liste 1</option>
-			<option value="List2">Liste 2</option>
-			<option value="Member1">Membre 1</option>
-			<option value="Data1">Donnée 1</option>
-			<option value="LineBreak1">Saut Haut</option>
-			<option value="LineBreak2">Saut Bas</option>
-			<option value="LineBreak3">Saut Supprimer</option>
-			<option value="Shift1">Décalage Ajouter</option>
-			<option value="Shift2">Décalage Supprimer</option>
-			<option value="Code1">Code 1</option>
-			<option value="Code2">Code 2</option>
-			<option value="Parallax1">Parallax 1</option>
-			<option value="Color1">Couleur 1</option>
-			<option value="Border1">Bordure 1</option>
-			<option value="Style1">Style Ajouter</option>
-			<option value="Style2">Style Supprimer</option>
-			<option value="Style3">Style Lire</option>
-			<option value="Formula1">Formule Ajouter</option>
-			<option value="Formula2">Formule Modifier</option>
-			<option value="Formula3">Formule Supprimer</option>
-			<option value="Html1">Html Ouvrir</option>
-			<option value="Html2">Html Ajouter</option>
-			<option value="Html3">Html Modifier</option>
-			<option value="Html4">Html Enregistrer</option>
-			<option value="Html5">Html Supprimer</option>
-		</select>
+		<div class="ComboBox">
+            <select onchange="getCommand('readystyle', this.value); this.selectedIndex = 0">
+                <option value="">ReadyStyle</option>
+                <option value="Title1">Titre 1</option>
+                <option value="Title2">Titre 2</option>
+                <option value="Title3">Titre 3</option>
+                <option value="Summary1">Sommaire 1</option>
+                <option value="Summary2">Sommaire 2</option>
+                <option value="List1">Liste 1</option>
+                <option value="List2">Liste 2</option>
+                <option value="Member1">Membre 1</option>
+                <option value="Data1">Donnée 1</option>
+                <option value="LineBreak1">Saut Haut</option>
+                <option value="LineBreak2">Saut Bas</option>
+                <option value="LineBreak3">Saut Supprimer</option>
+                <option value="Shift1">Décalage Ajouter</option>
+                <option value="Shift2">Décalage Supprimer</option>
+                <option value="Code1">Code 1</option>
+                <option value="Code2">Code 2</option>
+                <option value="Parallax1">Parallax 1</option>
+                <option value="Color1">Couleur 1</option>
+                <option value="Border1">Bordure 1</option>
+                <option value="Style1">Style Ajouter</option>
+                <option value="Style2">Style Supprimer</option>
+                <option value="Style3">Style Lire</option>
+                <option value="Formula1">Formule Ajouter</option>
+                <option value="Formula2">Formule Modifier</option>
+                <option value="Formula3">Formule Supprimer</option>
+                <option value="Html1">Html Ouvrir</option>
+                <option value="Html2">Html Ajouter</option>
+                <option value="Html3">Html Modifier</option>
+                <option value="Html4">Html Enregistrer</option>
+                <option value="Html5">Html Supprimer</option>
+            </select>
+        </div>
 	</div>
 	<!-- ============================================ -->
 	<div class="Row15 GEndEditor">
@@ -57,4 +59,7 @@
 	</div>
     <!-- ============================================ -->
 </div>
+<!-- ============================================ -->
+<script src="/js/class/GSelection.js"></script>
+<script src="/js/class/GComboBox.js"></script>
 <!-- ============================================ -->

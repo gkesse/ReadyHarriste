@@ -38,7 +38,7 @@
                 <div class="Body6">
                     <div class="Content9">
                         L'interface <b>ReadyHTMLEditor</b> vous permet d'éditer rapidement
-                        et éfficacement vos différentes pages web. C'est une interface développée
+                        et éfficacement les différentes pages du siteweb. C'est une interface développée
                         en <b>PHP</b> et maintenue par <b>Gérard KESSE</b>, concepteur du site <b>ReadyDev</b>,
                         la Plateforme de Développement Continu.
                     </div>

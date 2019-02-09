@@ -41,7 +41,7 @@
                 <div class="Body6">
                     <div class="Content9">
                         L'interface <b>ReadySitemap</b> vous permet de générer automatiquement
-                        le sitemap de votre site web. C'est une interface développée en <b>PHP</b>
+                        le sitemap du siteweb. C'est une interface développée en <b>PHP</b>
                         et maintenue par <b>Gérard KESSE</b>, concepteur du site <b>ReadyDev</b>,
                         la Plateforme de Développement Continu.
                     </div>
