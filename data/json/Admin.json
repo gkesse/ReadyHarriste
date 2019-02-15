@@ -18,6 +18,7 @@
     "summary":
     [
         {"name":"Gestion Sitemap","link":"#Gestion_Sitemap"},
-        {"name":"Édition Page HTML","link":"#Edition_Page_HTML"}
+        {"name":"Édition Page HTML","link":"#Edition_Page_HTML"},
+        {"name":"Éditeur de Base de Données","link":"#Editeur_Base_Donnees"}
     ]
 }

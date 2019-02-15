@@ -10,9 +10,11 @@ var GConfig = (function() {
 				var lEditorDir = localStorage.getItem("EditorDir");
 				var lEditorFile = localStorage.getItem("EditorFile");     
 				var lFormulaText = localStorage.getItem("FormulaText");     
+				var lDatabasePath = localStorage.getItem("DatabasePath");     
 				if(!lEditorDir || lEditorDir == "undefined") localStorage.setItem("EditorDir", "");
 				if(!lEditorFile || lEditorFile == "undefined") localStorage.setItem("EditorFile", "");			
 				if(!lFormulaText || lFormulaText == "undefined") localStorage.setItem("FormulaText", "");			
+				if(!lDatabasePath || lDatabasePath == "undefined") localStorage.setItem("DatabasePath", "");			
 			},
             //===============================================
             setData: function(key, value) {
