@@ -41,6 +41,13 @@
                 $lFilePath = realpath($lFilePath);
                 $lData = file_get_contents($lFilePath);
                 $lJson = json_decode($lData, true);
+                $lKeyPath = array("members");
+                
+                for($i = 0; $i < count($lKeyPath); $i++) {
+                    $lKey = $lKeyPath[$i];
+                    $lJson = $lJson[$lKey];
+                }
+                
                 $lKeyMap = array_keys($lJson);
                 for($i = 0; $i < count($lKeyMap); $i++) {
                     $lKey = $lKeyMap[$i];
