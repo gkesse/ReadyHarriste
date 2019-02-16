@@ -1216,8 +1216,8 @@ var GEditor = (function() {
 				var lDirPath = lEditorDir + "/" + lDirName;
 				var lObjParent = obj.parentNode;
 				for(var i = 0; i < lFileList.length; i++) {
-					var m_node = lFileList[i];
-					m_node.className = m_node.className.replace(" Active", "");
+					var lNode = lFileList[i];
+					lNode.className = lNode.className.replace(" Active", "");
 				}
 				if(!dir) {
 					var lRes = confirm("Êtes-vous sûr de vouloir sélectionner ce fichier ?");
