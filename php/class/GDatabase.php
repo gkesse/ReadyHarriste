@@ -2,6 +2,8 @@
     class GDatabase {
         //===============================================
         private static $m_instance = null;
+        private $m_databaseName = "";
+        private $m_keyPath = array();
         //===============================================
         private function __construct() {
 
@@ -21,8 +23,9 @@
             $lDirPath = $lRootPath."/".$lJsonPath;
 			$lDirPath = realpath($lDirPath);
 			$lDirNameArr = array();
+            $this->getDatabaseName($file);
             
-            if($file == "") {
+            if($this->m_databaseName == "") {
                 $lIcon = "database";
                 $lDirPtr = opendir($lDirPath);
                 while(1) {
@@ -37,14 +40,13 @@
             }
             else {
                 $lIcon = "file";
-                $lFilePath = $lDirPath."/".$file;
+                $lFilePath = $lDirPath."/".$this->m_databaseName;
                 $lFilePath = realpath($lFilePath);
                 $lData = file_get_contents($lFilePath);
                 $lJson = json_decode($lData, true);
-                $lKeyPath = array("members");
                 
-                for($i = 0; $i < count($lKeyPath); $i++) {
-                    $lKey = $lKeyPath[$i];
+                for($i = 0; $i < count($this->m_keyPath); $i++) {
+                    $lKey = $this->m_keyPath[$i];
                     $lJson = $lJson[$lKey];
                 }
                 
@@ -62,14 +64,24 @@
             return $file;
         }
         //===============================================
-        public function getDatabase($file) {
+        public function getDatabaseName($file) {
 			$lFileMap = explode("/", $file);
-            $lDatabaseName = "";
+            $lOneOnly = true;
+            $this->m_databaseName = "";
+            $this->m_keyPath = array();
+            
 			for($i = 0; $i < count($lFileMap); $i++) {
                 $lFile = $lFileMap[$i];
-                if($lFile != "") {$lDatabaseName = $lFile; break;}
+                if($lFile != "") {
+                    if(!$lOneOnly) {
+                        $this->m_keyPath[] = $lFile;
+                    }
+                    if($lOneOnly) {
+                        $lOneOnly = false;
+                        $this->m_databaseName = $lFile;
+                    }
+                }
             }
-            return $lDatabaseName;
         }
         //===============================================
     }

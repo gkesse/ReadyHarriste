@@ -6,8 +6,7 @@
 	if($lReq == "LIST_DATABASE") {
 		$lFile = $_REQUEST["file"];        
         
-		$lDatabaseName = GDatabase::Instance()->getDatabase($lFile);
-		$lDirNameArr = GDatabase::Instance()->listDatabase($lDatabaseName);
+		$lDirNameArr = GDatabase::Instance()->listDatabase($lFile);
 		$lDirPath = GDatabase::Instance()->getPath($lFile);
 
         $lDataFile = "";
@@ -42,7 +41,6 @@
         $lDataArr = array();
         $lDataArr["file"] = $lDataFile;
         $lDataArr["menu"] = $lDataMenu;
-        $lDataArr["count"] = $lDatabaseName;
 		$lDataJson = json_encode($lDataArr);
 		print_r($lDataJson);
 	}

@@ -10,7 +10,8 @@ var GDatabase = (function() {
                 var lTabCtn = document.getElementsByClassName("DatabaseTab");
 				var lObj = lTabCtn[1];
 				this.openDatabaseTab(lObj, "DatabaseTab1");
-				this.listDatabase();
+				var lDatabasePath = GConfig.Instance().getData("DatabasePath");
+				this.listDatabase(lDatabasePath);
             },
             //===============================================
             openDatabaseTab: function(obj, name) {
@@ -51,10 +52,10 @@ var GDatabase = (function() {
             },
             //===============================================
             openDatabaseFile: function(obj, name) {
-                var lFile = obj.innerHTML;
+                var lFile = obj.innerText;
 				var lDatabasePath = GConfig.Instance().getData("DatabasePath");
 				var lDatabaseFile = lDatabasePath + "/" + lFile;
-                this.listDatabase(lFile);
+                this.listDatabase(lDatabaseFile);
             },
             //===============================================
             openDatabaseLink: function(obj) {
