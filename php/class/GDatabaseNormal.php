@@ -52,9 +52,17 @@
                     for($i = 0; $i < count($lDataMap); $i++) {
                         $lData = $lDataMap[$i];
                         $lFullName = "";
-                        $lFullName .= $lData["lastname"];
-                        $lFullName .= " ".$lData["usualname"];
-                        $lFullName .= " | ".$lData["group"];
+                        $lFullName .= $lData["lastname"]." ";
+                        $lFullName .= $lData["usualname"]." | ";
+                        $lFullName .= $lData["group"];
+                        $lDirNameArr[] = array($lFullName, $lIcon, "FILE");
+                    }
+                }
+                else if($lDatabaseName == "Vues") {                    
+                    foreach($lDatabaseMap as $key => $value) {
+                        $lFullName = "";
+                        $lFullName .= $key." | ";
+                        $lFullName .= $value;
                         $lDirNameArr[] = array($lFullName, $lIcon, "FILE");
                     }
                 }
@@ -63,27 +71,13 @@
 			return $lDirNameArr;
         }
         //===============================================
-        public function getPath($file) {
-            return $file;
-        }
-        //===============================================
         public function getDatabaseName($file) {
 			$lFileMap = explode("/", $file);
-            $lOneOnly = true;
             $this->m_databaseName = "";
-            $this->m_keyPath = array();
             
 			for($i = 0; $i < count($lFileMap); $i++) {
                 $lFile = $lFileMap[$i];
-                if($lFile != "") {
-                    if(!$lOneOnly) {
-                        $this->m_keyPath[] = $lFile;
-                    }
-                    if($lOneOnly) {
-                        $lOneOnly = false;
-                        $this->m_databaseName = $lFile;
-                    }
-                }
+                if($lFile != "") {$this->m_databaseName = $lFile;break;}
             }
         }
         //===============================================
