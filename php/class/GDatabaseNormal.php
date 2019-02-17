@@ -27,7 +27,7 @@
                 for($i = 0; $i < count($lJsonData); $i++) {
                     $lData = $lJsonData[$i];
                     $lName = $lData["name"];
-                    $lDirNameArr[] = array($lName, $lIcon);
+                    $lDirNameArr[] = array($lName, $lIcon, "DIR");
                 }
             }
             else {
@@ -55,7 +55,7 @@
                         $lFullName .= $lData["lastname"];
                         $lFullName .= " ".$lData["usualname"];
                         $lFullName .= " | ".$lData["group"];
-                        $lDirNameArr[] = array($lFullName, $lIcon);
+                        $lDirNameArr[] = array($lFullName, $lIcon, "FILE");
                     }
                 }
             }

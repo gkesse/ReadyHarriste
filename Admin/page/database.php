@@ -40,11 +40,11 @@
                 </h2>
                 <div class="Body9 Left">
                     <div class="Row17"><i class="Icon8 fa fa-file-text-o"> :</i></div>
-                    <div class="Row18"><div class="Field4" id="DatabasePath"></div></div>
+                    <div class="Row18"><div class="Field4" id="DatabaseFilePath"></div></div>
                 </div>
-                <div class="Body10 Left" id="DatabaseMenu"></div>
+                <div class="Body10 Left" id="DatabaseFileMenu"></div>
                 <div class="Body11">
-                    <div id="DatabaseFile"></div>
+                    <div id="DatabaseFileMap"></div>
                 </div>
             </div>
 		</div>

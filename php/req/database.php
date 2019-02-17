@@ -4,20 +4,21 @@
 	$lReq = $_REQUEST["req"];
 	//===============================================
 	if($lReq == "LIST_DATABASE") {
+		$lPath = $_REQUEST["path"];        
 		$lFile = $_REQUEST["file"];        
         
-		$lDirNameArr = GDatabase::Instance()->openDatabase($lFile);
-		$lDirPath = GDatabase::Instance()->getPath($lFile);
+		$lDirNameArr = GDatabase::Instance()->openDatabase($lPath);
 
         $lDataFile = "";
 		$lDataFile .= "<div class='Body12'>";
 		for($i = 0; $i < count($lDirNameArr); $i++) {
             $lDirName = $lDirNameArr[$i];
-			//$lDataFile .= "<div class='Row19 DatabaseFileList'>";
-			$lDataFile .= "<div class='Row20 DatabaseFileList'>";
+			$lFilePath = $lPath."/".$lDirName[0];
+			if($lFilePath == $lFile) {$lDataFile .= "<div class='Row19 DatabaseFileList'>";}
+			else {$lDataFile .= "<div class='Row20 DatabaseFileList'>";}
 			$lDataFile .= "<i class='fa fa-".$lDirName[1]."'></i> ";
 			$lDataFile .= "<div class='Text9'";
-			$lDataFile .= "onclick='openDatabaseFile(this, \"DATABASE\");'>";
+			$lDataFile .= "onclick='openDatabaseFile(this, \"".$lDirName[2]."\");'>";
 			$lDataFile .= $lDirName[0];
 			$lDataFile .= "</div>";
 			$lDataFile .= "</div>";
@@ -27,8 +28,8 @@
         $lDataMenu = '';
 		$lDataMenu .= '<div class="Col3 DatabaseFileLink" onclick="openDatabaseLink(this);">';
 		$lDataMenu .= '<i class="Icon2 fa fa-folder"></i></div> ';
-		if($lDirPath != "") {
-			$lDirPathArr = explode("/", $lDirPath);
+		if($lPath != "") {
+			$lDirPathArr = explode("/", $lPath);
 			for($i = 0; $i < count($lDirPathArr); $i++) {
 				$lDirPathItem = $lDirPathArr[$i];
 				if($lDirPathItem == "") continue;
@@ -39,8 +40,9 @@
 		}
 
         $lDataArr = array();
-        $lDataArr["file"] = $lDataFile;
-        $lDataArr["menu"] = $lDataMenu;
+        $lDataArr["file_map"] = $lDataFile;
+        $lDataArr["file_menu"] = $lDataMenu;
+        $lDataArr["file_path"] = $lFile;
 		$lDataJson = json_encode($lDataArr);
 		print_r($lDataJson);
 	}
