@@ -6,7 +6,7 @@
 	if($lReq == "LIST_DATABASE") {
 		$lFile = $_REQUEST["file"];        
         
-		$lDirNameArr = GDatabase::Instance()->listDatabase($lFile);
+		$lDirNameArr = GDatabase::Instance()->openDatabase($lFile);
 		$lDirPath = GDatabase::Instance()->getPath($lFile);
 
         $lDataFile = "";
