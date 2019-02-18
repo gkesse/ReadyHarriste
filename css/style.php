@@ -464,6 +464,7 @@ span {
 .BoxSelect {
     position: absolute;
     background-color: #051039;
+    border: 1px solid #5f6681;
     top: 100%;
     left: 0;
     right: 0;
