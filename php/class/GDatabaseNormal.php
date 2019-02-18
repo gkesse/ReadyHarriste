@@ -124,6 +124,10 @@
                 $lFileRead .= "<span class='Field5'>".$lData["function"]."</span>";
                 $lFileRead .= "</div>";
                 $lFileRead .= "<div class='Row9'>";
+                $lFileRead .= "<span class='Label4'>Matricule:</span> ";
+                $lFileRead .= "<span class='Field5'>".$lData["registration"]."</span>";
+                $lFileRead .= "</div>";
+                $lFileRead .= "<div class='Row9'>";
                 $lFileRead .= "<span class='Label4'>Sexe:</span> ";
                 $lFileRead .= "<span class='Field5'>".$lData["gender"]."</span>";
                 $lFileRead .= "</div>";
