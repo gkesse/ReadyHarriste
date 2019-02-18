@@ -14,7 +14,7 @@
             "zip_code":"94800",
             "city":"Villejuif",
             "country":"France",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -32,7 +32,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -50,7 +50,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -68,7 +68,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -86,7 +86,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -104,7 +104,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -122,7 +122,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -140,7 +140,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -158,7 +158,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -176,7 +176,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -194,7 +194,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -212,7 +212,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -230,7 +230,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -248,7 +248,7 @@
             "registration_number":"",
             "country":"France",
             "city":"Villejuif",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":""
         },
@@ -266,7 +266,7 @@
             "city":"Villejuif",
             "country":"France",
             "registration_number":"",
-            "group":"bureau",
+            "group":"Bureau",
             "active":"Oui",
             "avatar":"gerard_kesse.png"
         },
@@ -274,7 +274,7 @@
             "lastname":"GAHIA",
             "firstname":"Gnagbo Williams",
             "usualname":"Williams",
-            "function":"Maitre de choeur",
+            "function":"Maître de choeur",
             "gender":"Masculin",
             "email":"leroidavid94@yahoo.fr",
             "phone":"07.69.32.92.32",
@@ -284,7 +284,7 @@
             "registration_number":"",
             "city":"Villejuif",
             "country":"France",
-            "group":"maitre",
+            "group":"Maître",
             "active":"Oui",
             "avatar":""
         },
@@ -292,7 +292,7 @@
             "lastname":"TAYE",
             "firstname":"Philippe Sabine",
             "usualname":"Sabine",
-            "function":"Maitre de choeur",
+            "function":"Maître de choeur",
             "gender":"Féminin",
             "email":"leroidavid94@yahoo.fr",
             "phone":"07.69.32.92.32",
@@ -302,7 +302,7 @@
             "registration_number":"",
             "city":"Villejuif",
             "country":"France",
-            "group":"maitre",
+            "group":"Maître",
             "active":"Oui",
             "avatar":""
         },
@@ -310,7 +310,7 @@
             "lastname":"Maître",
             "firstname":"Gnagbo Williams",
             "usualname":"Lobogno",
-            "function":"Maitre de choeur",
+            "function":"Maître de choeur",
             "gender":"Masculin",
             "email":"leroidavid94@yahoo.fr",
             "phone":"07.69.32.92.32",
@@ -320,7 +320,7 @@
             "registration_number":"",
             "city":"Villejuif",
             "country":"France",
-            "group":"maitre",
+            "group":"Maître",
             "active":"Oui",
             "avatar":""
         },
@@ -328,7 +328,7 @@
             "lastname":"GAHIA",
             "firstname":"Gnagbo Williams",
             "usualname":"Williams",
-            "function":"Maitre de choeur",
+            "function":"Maître de choeur",
             "gender":"Masculin",
             "email":"leroidavid94@yahoo.fr",
             "phone":"07.69.32.92.32",
@@ -338,7 +338,7 @@
             "registration_number":"",
             "city":"Villejuif",
             "country":"France",
-            "group":"maitre",
+            "group":"Maître",
             "active":"Oui",
             "avatar":""
         },
@@ -356,7 +356,7 @@
             "registration_number":"",
             "city":"Villejuif",
             "country":"France",
-            "group":"membre",
+            "group":"Mmembre",
             "active":"Oui",
             "avatar":""
         }

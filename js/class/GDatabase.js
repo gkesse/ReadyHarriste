@@ -75,6 +75,9 @@ var GDatabase = (function() {
 					GConfig.Instance().setData("DatabaseFile", lDatabaseFile);
                     lFilePath.innerHTML = lDatabaseFile;
                     this.readFile();
+                    var lTabCtn = document.getElementsByClassName("DatabaseTab");
+                    var lObj = lTabCtn[2];
+                    this.openDatabaseTab(lObj, "DatabaseTab2");
                     return;
                 }
                 this.listDatabase(lDatabaseFile);
