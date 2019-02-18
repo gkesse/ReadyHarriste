@@ -13,8 +13,9 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -29,9 +30,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -46,9 +48,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -63,9 +66,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -80,9 +84,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -97,9 +102,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -114,9 +120,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -131,9 +138,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -148,9 +156,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -165,9 +174,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -182,9 +192,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -199,9 +210,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -216,9 +228,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -233,9 +246,10 @@
             "address2":"",
             "zip_code":"94800",
             "registration_number":"",
+            "country":"France",
             "city":"Villejuif",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -250,9 +264,10 @@
             "address2":"",
             "zip_code":"94800",
             "city":"Villejuif",
+            "country":"France",
             "registration_number":"",
             "group":"bureau",
-            "active":"true",
+            "active":"Oui",
             "avatar":"gerard_kesse.png"
         },
         {
@@ -268,8 +283,9 @@
             "zip_code":"94800",
             "registration_number":"",
             "city":"Villejuif",
+            "country":"France",
             "group":"maitre",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -285,8 +301,9 @@
             "zip_code":"94800",
             "registration_number":"",
             "city":"Villejuif",
+            "country":"France",
             "group":"maitre",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -302,8 +319,9 @@
             "zip_code":"94800",
             "registration_number":"",
             "city":"Villejuif",
+            "country":"France",
             "group":"maitre",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -319,8 +337,9 @@
             "zip_code":"94800",
             "registration_number":"",
             "city":"Villejuif",
+            "country":"France",
             "group":"maitre",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         },
         {
@@ -336,8 +355,9 @@
             "zip_code":"94800",
             "registration_number":"",
             "city":"Villejuif",
+            "country":"France",
             "group":"membre",
-            "active":"true",
+            "active":"Oui",
             "avatar":""
         }
     ]

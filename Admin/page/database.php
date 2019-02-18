@@ -17,6 +17,10 @@
                     <button class="Button2 DatabaseTab" title="Sélectionner une base de données" 
                     onclick="openDatabaseTab(this, 'DatabaseTab1');">Base de Données</button>
                 </div>
+                <div class="Col">
+                    <button class="Button2 DatabaseTab" title="Afficher une donnée" 
+                    onclick="openDatabaseTab(this, 'DatabaseTab2');">Afficher</button>
+                </div>
             </div>
             <!-- ============================================ -->
             <div class="Row Left DatabaseTabCtn" id="DatabaseTab0">
@@ -45,6 +49,17 @@
                 <div class="Body10 Left" id="DatabaseFileMenu"></div>
                 <div class="Body11">
                     <div id="DatabaseFileMap"></div>
+                </div>
+            </div>
+            <!-- ============================================ -->
+            <div class="Row Left DatabaseTabCtn" id="DatabaseTab2">
+                <h2 class="Title4">
+                    Affichage
+                </h2>
+                <div class="Body14">
+                    <div class="Content9">
+                        <div id="DatabaseFileRead"></div>
+                    </div>
                 </div>
             </div>
 		</div>

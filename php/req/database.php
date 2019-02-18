@@ -47,4 +47,15 @@
 		print_r($lDataJson);
 	}
 	//===============================================
+	else if($lReq == "READ_FILE") {
+		$lFile = $_REQUEST["file"];
+        
+		$lFileRead = GDatabase::Instance()->readFile($lFile);
+        
+        $lDataArr = array();
+        $lDataArr["data"] = $lFileRead;
+		$lDataJson = json_encode($lDataArr);
+		print_r($lDataJson);
+    }
+	//===============================================
 ?>

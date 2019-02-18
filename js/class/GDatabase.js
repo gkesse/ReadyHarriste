@@ -12,6 +12,7 @@ var GDatabase = (function() {
 				this.openDatabaseTab(lObj, "DatabaseTab1");
 				var lDatabasePath = GConfig.Instance().getData("DatabasePath");
 				this.listDatabase(lDatabasePath);
+                this.readFile();
             },
             //===============================================
             openDatabaseTab: function(obj, name) {
@@ -73,6 +74,7 @@ var GDatabase = (function() {
 					lDatabaseFile = lDatabaseFile.replace(/\\/gi, "/");
 					GConfig.Instance().setData("DatabaseFile", lDatabaseFile);
                     lFilePath.innerHTML = lDatabaseFile;
+                    this.readFile();
                     return;
                 }
                 this.listDatabase(lDatabaseFile);
@@ -88,6 +90,26 @@ var GDatabase = (function() {
 					if(lFileLink.isEqualNode(obj)) break;
 				}
                 this.listDatabase(lFilePath);
+            },
+            //===============================================
+            readFile: function() {
+                var lFileRead = document.getElementById("DatabaseFileRead");
+				var lFile = GConfig.Instance().getData("DatabaseFile");
+				if(lFile == "") return;
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						var lDataArr = JSON.parse(lData);
+                        lFileRead.innerHTML = lDataArr["data"];
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "READ_FILE" +
+				"&file=" + lFile
+				);
             }
             //===============================================
         };
