@@ -449,6 +449,10 @@ span {
     padding: 5px;
 }
 
+.Body19 {
+    position: relative;
+}
+
 .BodyPage {
     position: relative;
     max-width: 1000px;
@@ -1044,6 +1048,16 @@ span {
     height: 80px;
     line-height: 80px;
     width: 80px;
+    border-radius: 50%;
+}
+
+.Img6 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
     border-radius: 50%;
 }
 

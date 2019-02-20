@@ -107,6 +107,21 @@
                     if($lFullName == $this->m_fileName) break;
                 }
                 
+                $lAvatar = "male_avatar.png";
+                if($lData["gender"] == "Féminin") {
+                    $lAvatar = "female_avatar.png";
+                }
+            
+                $lLastname = strtolower(GString::Instance()->noAccent($lData["lastname"]));
+                $lUsualname = strtolower(GString::Instance()->noAccent($lData["usualname"]));
+                $lAvatarFile = $lLastname.'_'.$lUsualname.'.png';
+                $lAvatarRoot = "/Chorale/Membres/img/";
+                $lAvatarPath = $lAvatarRoot.$lAvatarFile;
+                
+                if(GFile::Instance()->exists($lAvatarPath) == false) {
+                    $lAvatarPath = $lAvatarRoot.$lAvatar;
+                }
+
                 $lFileRead .= "<div class='Row9'>"; 
                 $lFileRead .= "<span class='Label4'>Nom:</span> ";
                 $lFileRead .= "<span class='Field5'>".$lData["lastname"]."</span>";
@@ -167,10 +182,7 @@
                 $lFileRead .= "<span class='Label4'>Actif:</span> ";
                 $lFileRead .= "<span class='Field5'>".$lData["active"]."</span>";
                 $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Avatar:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["avatar"]."</span>";
-                $lFileRead .= "</div>";                
+                $lFileRead .= "<img class='Img6' src='".$lAvatarPath."' alt='Avatar.png' width='80' height='80'>";
             }
 
 			return $lFileRead;
