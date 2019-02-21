@@ -13,6 +13,7 @@ var GDatabase = (function() {
 				var lDatabasePath = GConfig.Instance().getData("DatabasePath");
 				this.listDatabase(lDatabasePath);
                 this.readFile();
+                this.updateFile();
             },
             //===============================================
             openDatabaseTab: function(obj, name) {
@@ -75,6 +76,7 @@ var GDatabase = (function() {
 					GConfig.Instance().setData("DatabaseFile", lDatabaseFile);
                     lFilePath.innerHTML = lDatabaseFile;
                     this.readFile();
+                    this.updateFile();
                     var lTabCtn = document.getElementsByClassName("DatabaseTab");
                     var lObj = lTabCtn[2];
                     this.openDatabaseTab(lObj, "DatabaseTab2");
@@ -111,6 +113,27 @@ var GDatabase = (function() {
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 				"req=" + "READ_FILE" +
+				"&file=" + lFile
+				);
+            },
+            //===============================================
+            updateFile: function() {
+                var lFileUpdate = document.getElementById("DatabaseFileUpdate");
+				var lFile = GConfig.Instance().getData("DatabaseFile");
+				if(lFile == "") return;
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						var lDataArr = JSON.parse(lData);
+                        lFileUpdate.innerHTML = lDataArr["data"];
+                        GComboBox.Instance().fillBox("DatabaseComboBox", true);
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "UPDATE_FILE" +
 				"&file=" + lFile
 				);
             }

@@ -14,6 +14,8 @@
         }
         //===============================================
         abstract public function openDatabase($file);
+        abstract public function readFile($file);
+        abstract public function updateFile($file);
         //===============================================
     }
 ?>        

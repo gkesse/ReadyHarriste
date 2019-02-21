@@ -453,6 +453,20 @@ span {
     position: relative;
 }
 
+.Body20 {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-height: 400px;
+    overflow: auto;
+    scrollbar-color: #5f6681 #051039;
+    scrollbar-width: auto;
+}
+
+.Body21 {
+    position: relative;
+    padding: 0px 0px 80px 0px;
+}
+
 .BodyPage {
     position: relative;
     max-width: 1000px;
@@ -874,6 +888,15 @@ span {
 .Field7 {
     background-color: rgba(0,0,0,0.0);
     border: 1px solid rgba(0,0,0,0.2);
+}
+
+.Field8 {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 300px;
+    height: 30px;
 }
 
 .Form {

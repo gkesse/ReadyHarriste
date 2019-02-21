@@ -46,27 +46,8 @@
                 }
                 
                 $lDatabaseMap = GJson::Instance()->getData($lDatabaseFile);
-
-                if($lDatabaseName == "Chorale") {
-                    $lDataMap = $lDatabaseMap["members"];
-                    
-                    for($i = 0; $i < count($lDataMap); $i++) {
-                        $lData = $lDataMap[$i];
-                        $lFullName = "";
-                        $lFullName .= $lData["lastname"]." ";
-                        $lFullName .= $lData["usualname"]." | ";
-                        $lFullName .= $lData["group"];
-                        $lDirNameArr[] = array($lFullName, $lIcon, "FILE");
-                    }
-                }
-                else if($lDatabaseName == "Vues") {                    
-                    foreach($lDatabaseMap as $key => $value) {
-                        $lFullName = "";
-                        $lFullName .= $key." | ";
-                        $lFullName .= $value;
-                        $lDirNameArr[] = array($lFullName, $lIcon, "FILE");
-                    }
-                }
+                GConfig::Instance()->setData("DATABASE", $lDatabaseName);
+                $lDirNameArr = GDatabaseView::Instance()->openDatabase($lDatabaseMap);
             }
             
 			return $lDirNameArr;
@@ -92,100 +73,34 @@
             }
                 
             $lDatabaseMap = GJson::Instance()->getData($lDatabaseFile);
-            $lFileRead = "";
-
-            if($lDatabaseName == "Chorale") {
-                $lDataMap = $lDatabaseMap["members"];
-                $lData = array();
-                
-                for($i = 0; $i < count($lDataMap); $i++) {
-                    $lData = $lDataMap[$i];
-                    $lFullName = "";
-                    $lFullName .= $lData["lastname"]." ";
-                    $lFullName .= $lData["usualname"]." | ";
-                    $lFullName .= $lData["group"];
-                    if($lFullName == $this->m_fileName) break;
-                }
-                
-                $lAvatar = "male_avatar.png";
-                if($lData["gender"] == "Féminin") {
-                    $lAvatar = "female_avatar.png";
-                }
+            GConfig::Instance()->setData("DATABASE", $lDatabaseName);
+            $lFileData = GDatabaseView::Instance()->readFile($lDatabaseMap, $this->m_fileName);
+			return $lFileData;
+        }
+        //===============================================
+        public function updateFile($file) {
+            $lJsonMap = GJson::Instance()->getData("data/json/database.json");
+            $lJsonData = $lJsonMap["database"];
+			$lDirNameArr = array();
+            $this->getDatabaseName($file);
             
-                $lLastname = strtolower(GString::Instance()->noAccent($lData["lastname"]));
-                $lUsualname = strtolower(GString::Instance()->noAccent($lData["usualname"]));
-                $lAvatarFile = $lLastname.'_'.$lUsualname.'.png';
-                $lAvatarRoot = "/Chorale/Membres/img/";
-                $lAvatarPath = $lAvatarRoot.$lAvatarFile;
-                
-                if(GFile::Instance()->exists($lAvatarPath) == false) {
-                    $lAvatarPath = $lAvatarRoot.$lAvatar;
+            if($this->m_databaseName == "") return;
+            $lDatabaseFile = "";
+            $lDatabaseName = "";
+            
+            for($i = 0; $i < count($lJsonData); $i++) {
+                $lData = $lJsonData[$i];
+                $lDatabaseName = $lData["name"];
+                if($lDatabaseName == $this->m_databaseName) {
+                    $lDatabaseFile = $lData["file"];
+                    break;
                 }
-
-                $lFileRead .= "<div class='Row9'>"; 
-                $lFileRead .= "<span class='Label4'>Nom:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["lastname"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Prénom(s):</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["firstname"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Nom Usuel:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["usualname"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Fonction:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["function"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Matricule:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["registration"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Sexe:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["gender"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Email:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["email"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Téléphone:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["phone"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Adresse:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["address1"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Complément:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["address2"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Code Postal:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["zip_code"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Ville:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["city"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Pays:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["country"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Groupe:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["group"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<div class='Row9'>";
-                $lFileRead .= "<span class='Label4'>Actif:</span> ";
-                $lFileRead .= "<span class='Field5'>".$lData["active"]."</span>";
-                $lFileRead .= "</div>";
-                $lFileRead .= "<img class='Img6' src='".$lAvatarPath."' alt='Avatar.png' width='80' height='80'>";
             }
-
-			return $lFileRead;
+                
+            $lDatabaseMap = GJson::Instance()->getData($lDatabaseFile);
+            GConfig::Instance()->setData("DATABASE", $lDatabaseName);
+            $lFileData = GDatabaseView::Instance()->updateFile($lDatabaseMap, $this->m_fileName);
+			return $lFileData;
         }
         //===============================================
         public function getDatabaseName($file) {

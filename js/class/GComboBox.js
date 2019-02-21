@@ -8,14 +8,13 @@ var GComboBox = (function() {
         return {
             //===============================================
             init: function() {
-                this.fillBox();
+                this.fillBox("ComboBox");
 			},
             //===============================================
-            fillBox: function() {
-                var lComboBoxMap = document.getElementsByClassName("ComboBox");
-                var lLength = lComboBoxMap.length;
+            fillBox: function(id, showSelect=false, bgSelect=false) {
+                var lComboBoxMap = document.getElementsByClassName(id);
                 
-                for(var i = 0; i < lLength; i++) {
+                for(var i = 0; i < lComboBoxMap.length; i++) {
                     var lComboBox = lComboBoxMap[i];
                     var lSelect = lComboBox.getElementsByTagName("select")[0];
                     var lHtml = lSelect.options[lSelect.selectedIndex].innerHTML;
@@ -26,9 +25,8 @@ var GComboBox = (function() {
                     lComboBox.appendChild(lBoxView);
                     var lBoxSelect = document.createElement("DIV");
                     lBoxSelect.setAttribute("class", "BoxSelect BoxHide");
-                    var lLength2 = lSelect.length;
                     
-                    for(var j = 0; j < lLength2; j++) {
+                    for(var j = 0; j < lSelect.length; j++) {
                         var lHtml2 = lSelect.options[j].innerHTML;
                         var lBoxOption = document.createElement("DIV");
                         lBoxOption.innerHTML = lHtml2;
@@ -36,9 +34,8 @@ var GComboBox = (function() {
                         lBoxOption.addEventListener("click", function(e){
                             var lBoxSelect = this.parentNode.parentNode.getElementsByTagName("select")[0];
                             var lBoxView = this.parentNode.previousSibling;
-                            var lLength = lBoxSelect.length;
                             
-                            for(var i = 0; i < lLength; i++) {
+                            for(var i = 0; i < lBoxSelect.length; i++) {
                                 var lHtml = lBoxSelect.options[i].innerHTML;
                                 var lHtml2 = this.innerHTML;
                                 if(lHtml == lHtml2) {
@@ -47,16 +44,15 @@ var GComboBox = (function() {
                                     lEvent.initEvent("change", false, true);
                                     lBoxSelect.dispatchEvent(lEvent);
 
-                                    //lBoxView.innerHTML = this.innerHTML;
+                                    if(showSelect == true) lBoxView.innerHTML = this.innerHTML;
                                     var lBoxSelectAsMap = this.parentNode.getElementsByClassName("BoxSelectAs");
-                                    var lLength2 = lBoxSelectAsMap.length;
                                     
-                                    for(var j = 0; j < lLength2; j++) {
+                                    for(var j = 0; j < lBoxSelectAsMap.length; j++) {
                                         var lBoxSelectAs = lBoxSelectAsMap[j];
                                         lBoxSelectAs.removeAttribute("class");
                                     }
                                     
-                                    //this.setAttribute("class", "BoxSelectAs");
+                                    if(bgSelect == true) this.setAttribute("class", "BoxSelectAs");
                                     break;
                                 }
                             }
@@ -66,19 +62,20 @@ var GComboBox = (function() {
                         
                         lBoxSelect.appendChild(lBoxOption);
                     }
+                    
+                    lComboBox.appendChild(lBoxSelect);
+                    
+                    lBoxView.addEventListener("click", function(e){
+                        e.stopPropagation();
+                        GComboBox.Instance().closeBox(this);
+                        this.nextSibling.classList.toggle("BoxHide");
+                        this.classList.toggle("BoxActive");
+                    });
+                    
+                    lBoxView.addEventListener("mouseover", function(e){
+                        GSelection.Instance().save();        
+                    });
                 }
-                lComboBox.appendChild(lBoxSelect);
-                
-                lBoxView.addEventListener("click", function(e){
-                    e.stopPropagation();
-                    GComboBox.Instance().closeBox(this);
-                    this.nextSibling.classList.toggle("BoxHide");
-                    this.classList.toggle("BoxActive");
-                });
-                
-                lBoxView.addEventListener("mouseover", function(e){
-                    GSelection.Instance().save();        
-                });
                 
                 document.addEventListener("click", this.closeBox);
             },
@@ -86,10 +83,9 @@ var GComboBox = (function() {
             closeBox: function(obj) {
                 var lBoxViewMap = document.getElementsByClassName("BoxView");
                 var lBoxSelectMap = document.getElementsByClassName("BoxSelect");
-                var lLength = lBoxViewMap.length;
                 var lIndexMap = [];
                 
-                for(var i = 0; i < lLength; i++) {
+                for(var i = 0; i < lBoxViewMap.length; i++) {
                     var lBoxView = lBoxViewMap[i];
                     if(obj == lBoxView) {
                         lIndexMap.push(i);
@@ -98,10 +94,8 @@ var GComboBox = (function() {
                         lBoxView.classList.remove("BoxActive");
                     }
                 }
-                
-                var lLength2 = lBoxSelectMap.length;
-                
-                for(var i = 0; i < lLength2; i++) {
+                                
+                for(var i = 0; i < lBoxSelectMap.length; i++) {
                     var lBoxSelect = lBoxSelectMap[i];
                     var lIndexOf = lIndexMap.indexOf(i);
                     if(lIndexOf) {

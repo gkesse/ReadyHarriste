@@ -50,10 +50,21 @@
 	else if($lReq == "READ_FILE") {
 		$lFile = $_REQUEST["file"];
         
-		$lFileRead = GDatabase::Instance()->readFile($lFile);
+		$lData = GDatabase::Instance()->readFile($lFile);
         
         $lDataArr = array();
-        $lDataArr["data"] = $lFileRead;
+        $lDataArr["data"] = $lData;
+		$lDataJson = json_encode($lDataArr);
+		print_r($lDataJson);
+    }
+	//===============================================
+	else if($lReq == "UPDATE_FILE") {
+		$lFile = $_REQUEST["file"];
+        
+		$lData = GDatabase::Instance()->updateFile($lFile);
+        
+        $lDataArr = array();
+        $lDataArr["data"] = $lData;
 		$lDataJson = json_encode($lDataArr);
 		print_r($lDataJson);
     }

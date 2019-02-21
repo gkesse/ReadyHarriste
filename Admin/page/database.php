@@ -21,6 +21,10 @@
                     <button class="Button2 DatabaseTab" title="Afficher une donnée" 
                     onclick="openDatabaseTab(this, 'DatabaseTab2');">Afficher</button>
                 </div>
+                <div class="Col">
+                    <button class="Button2 DatabaseTab" title="Modifier une donnée" 
+                    onclick="openDatabaseTab(this, 'DatabaseTab3');">Modifier</button>
+                </div>
             </div>
             <!-- ============================================ -->
             <div class="Row Left DatabaseTabCtn" id="DatabaseTab0">
@@ -59,6 +63,17 @@
                 <div class="Body14">
                     <div class="Content9">
                         <div class="Body19" id="DatabaseFileRead"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================ -->
+            <div class="Row Left DatabaseTabCtn" id="DatabaseTab3">
+                <h2 class="Title4">
+                    Modification
+                </h2>
+                <div class="Body14">
+                    <div class="Content9">
+                        <div class="Body21" id="DatabaseFileUpdate"></div>
                     </div>
                 </div>
             </div>

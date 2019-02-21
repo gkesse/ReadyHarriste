@@ -25,7 +25,7 @@ var GConfig = (function() {
             //===============================================
             getData: function(key) {
                 return localStorage.getItem(key);
-            },
+            }
             //===============================================
         };
     }
