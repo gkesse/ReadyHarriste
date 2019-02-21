@@ -59,6 +59,7 @@
         $lDataMap = $lData[$lKey];
         $lDataSum = '';
         foreach($lDataMap as $lItem) {
+            if($lItem["active"] == "Non") continue; 
             if($lItem["group"] != $lGroup) continue; 
             
             $lAvatar = "male_avatar.png";
