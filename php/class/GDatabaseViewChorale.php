@@ -160,23 +160,23 @@
             $lFileUpdate = "";
             $lFileUpdate .= "<div class='Row9'>"; 
             $lFileUpdate .= "<label class='Label4' for='lastname'>Nom:</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='lastname' id='lastname' value='".$lData["lastname"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='lastname' id='lastname' value=\"".$lData["lastname"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='firstname'>Prénom(s):</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='firstname' id='firstname' value='".$lData["firstname"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='firstname' id='firstname' value=\"".$lData["firstname"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='usualname'>Nom Usuel:</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='usualname' id='usualname' value='".$lData["usualname"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='usualname' id='usualname' value=\"".$lData["usualname"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='function'>Fonction:</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='function' id='function' value='".$lData["function"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='function' id='function' value=\"".$lData["function"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='registration'>Matricule:</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='registration' id='registration' value='".$lData["registration"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='registration' id='registration' value=\"".$lData["registration"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='gender'>Sexe:</label>";
@@ -184,39 +184,39 @@
             $lFileUpdate .= "<select name='gender' id='gender'>";
             for($i = 0; $i < count($lGenderMap); $i++) {
                 $lValue = $lGenderMap[$i];
-                if($lValue == $lData["gender"]) $lFileUpdate .= "<option value='".$lValue."' selected>".$lValue."</option>";
-                else $lFileUpdate .= "<option value='".$lValue."'>".$lValue."</option>";
+                if($lValue == $lData["gender"]) $lFileUpdate .= "<option value=\"".$lValue."\" selected>".$lValue."</option>";
+                else $lFileUpdate .= "<option value=\"".$lValue."\">".$lValue."</option>";
             }
             $lFileUpdate .= "</select>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='email'>Email:</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='email' id='email' value='".$lData["email"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='email' id='email' value=\"".$lData["email"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='phone'>Téléphone:</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='phone' id='phone' value='".$lData["phone"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='phone' id='phone' value=\"".$lData["phone"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='address1'>Adresse:</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='address1' id='address1' value='".$lData["address1"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='address1' id='address1' value=\"".$lData["address1"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='address2'>Complément:</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='address2' id='address2' value='".$lData["address2"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='address2' id='address2' value=\"".$lData["address2"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='zip_code'>Code Postal:</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='zip_code' id='zip_code' value='".$lData["zip_code"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='zip_code' id='zip_code' value=\"".$lData["zip_code"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='city'>Ville:</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='city' id='city' value='".$lData["city"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='city' id='city' value=\"".$lData["city"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='country'>Pays:</label>";
-            $lFileUpdate .= "<div class='Field8'><input type='text' name='country' id='country' value='".$lData["country"]."'/></div>";
+            $lFileUpdate .= "<div class='Field8'><input type='text' name='country' id='country' value=\"".$lData["country"]."\"/></div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<div class='Row9'>";
             $lFileUpdate .= "<label class='Label4' for='group'>Groupe:</label>";
@@ -224,8 +224,8 @@
             $lFileUpdate .= "<select name='group' id='group'>";
             for($i = 0; $i < count($lGroupMap); $i++) {
                 $lValue = $lGroupMap[$i];
-                if($lValue == $lData["group"]) $lFileUpdate .= "<option value='".$lValue."' selected>".$lValue."</option>";
-                else $lFileUpdate .= "<option value='".$lValue."'>".$lValue."</option>";
+                if($lValue == $lData["group"]) $lFileUpdate .= "<option value=\"".$lValue."\" selected>".$lValue."</option>";
+                else $lFileUpdate .= "<option value=\"".$lValue."\">".$lValue."</option>";
             }
             $lFileUpdate .= "</select>";
             $lFileUpdate .= "</div>";
@@ -236,8 +236,8 @@
             $lFileUpdate .= "<select name='active' id='active'>";
             for($i = 0; $i < count($lActiveMap); $i++) {
                 $lValue = $lActiveMap[$i];
-                if($lValue == $lData["active"]) $lFileUpdate .= "<option value='".$lValue."' selected>".$lValue."</option>";
-                else $lFileUpdate .= "<option value='".$lValue."'>".$lValue."</option>";
+                if($lValue == $lData["active"]) $lFileUpdate .= "<option value=\"".$lValue."\" selected>".$lValue."</option>";
+                else $lFileUpdate .= "<option value=\"".$lValue."\">".$lValue."</option>";
             }
             $lFileUpdate .= "</select>";
             $lFileUpdate .= "</div>";

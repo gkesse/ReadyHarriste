@@ -10,7 +10,7 @@ padding: 50px 10px;
 <div>
 <a href="Membres/"><div class="Col2">
 <div><i class="Icon11 fa fa-users"></i></div>
-<div>Membres</div>
+<div>Membres<br></div>
 </div></a>
 </div>
 
