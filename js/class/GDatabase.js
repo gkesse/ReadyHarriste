@@ -98,32 +98,45 @@ var GDatabase = (function() {
             },
             //===============================================
             updateDatabase: function(obj) {
-				var lLastname = document.getElementsByName("lastname")[0].value;
-				var lFirstname = document.getElementsByName("firstname")[0].value;
-				var lUsualname = document.getElementsByName("usualname")[0].value;
-				var lFunction = document.getElementsByName("function")[0].value;
-				var lRegistration = document.getElementsByName("registration")[0].value;
-				var lGender = document.getElementsByName("gender")[0].value;
-				var lEmail = document.getElementsByName("email")[0].value;
-				var lPhone = document.getElementsByName("phone")[0].value;
-				var lAddress1 = document.getElementsByName("address1")[0].value;
-				var lAddress2 = document.getElementsByName("address2")[0].value;
-				var lZipCode = document.getElementsByName("zip_code")[0].value;
-				var lCity = document.getElementsByName("city")[0].value;
-				var lCountry = document.getElementsByName("country")[0].value;
-				var lGroup = document.getElementsByName("group")[0].value;
-				var lActive = document.getElementsByName("active")[0].value;
+                var lRes = confirm("Êtes vous sûr de vouloir enregistrer les modifications ?");
+                if(!lRes) return;
 
-                alert(lActive);
-				/*var lFileLinkMap = document.getElementsByClassName("DatabaseFileLink");
-				var lFilePath = "";
-				for(var i = 0; i < lFileLinkMap.length; i++) {
-					var lFileLink = lFileLinkMap[i];
-					var lFileName = lFileLink.innerText;
-                    if(lFileName != "") lFilePath += "/" + lFileName;
-					if(lFileLink.isEqualNode(obj)) break;
-				}
-                this.listDatabase(lFilePath);*/
+				var lFile = GConfig.Instance().getData("DatabaseFile");
+				if(lFile == "") return;
+                
+                var lDataMap = {};
+				lDataMap["lastname"] = document.getElementsByName("lastname")[0].value;
+				lDataMap["firstname"] = document.getElementsByName("firstname")[0].value;
+				lDataMap["usualname"] = document.getElementsByName("usualname")[0].value;
+				lDataMap["function"] = document.getElementsByName("function")[0].value;
+				lDataMap["registration"] = document.getElementsByName("registration")[0].value;
+				lDataMap["gender"] = document.getElementsByName("gender")[0].value;
+				lDataMap["email"] = document.getElementsByName("email")[0].value;
+				lDataMap["phone"] = document.getElementsByName("phone")[0].value;
+				lDataMap["address1"] = document.getElementsByName("address1")[0].value;
+				lDataMap["address2"] = document.getElementsByName("address2")[0].value;
+				lDataMap["zip_code"] = document.getElementsByName("zip_code")[0].value;
+				lDataMap["city"] = document.getElementsByName("city")[0].value;
+				lDataMap["country"] = document.getElementsByName("country")[0].value;
+				lDataMap["group"] = document.getElementsByName("group")[0].value;
+				lDataMap["active"] = document.getElementsByName("active")[0].value;
+                
+                var lDataJson = JSON.stringify(lDataMap);
+                
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						var lDataArr = JSON.parse(lData);
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "UPDATE_DATABASE" +
+				"&file=" + lFile +
+				"&data=" + lDataJson
+				);
             },
             //===============================================
             readFile: function() {

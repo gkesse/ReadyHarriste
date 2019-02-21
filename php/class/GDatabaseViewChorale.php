@@ -253,5 +253,25 @@
             return $lFileUpdate;
         }
         //===============================================
+        public function updateDatabase($filePath, $fileName, $data) {
+            $lDatabaseMap = GJson::Instance()->getData($filePath);
+            $lDataNew = json_decode($data, true);
+            $lDataMap = $lDatabaseMap["members"];
+            
+            for($i = 0; $i < count($lDataMap); $i++) {
+                $lData = $lDataMap[$i];
+                $lFullName = "";
+                $lFullName .= $lData["lastname"]." ";
+                $lFullName .= $lData["usualname"]." | ";
+                $lFullName .= $lData["group"];
+                if($lFullName == $fileName) {
+                    $lDatabaseMap["members"][$i] = $lDataNew;
+                    break;
+                }
+            }
+            
+            GJson::Instance()->saveData($filePath, $lDatabaseMap);
+        }
+        //===============================================
     }
 ?>        

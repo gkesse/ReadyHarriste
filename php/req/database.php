@@ -69,4 +69,16 @@
 		print_r($lDataJson);
     }
 	//===============================================
+	else if($lReq == "UPDATE_DATABASE") {
+		$lFile = $_REQUEST["file"];
+		$lData = $_REQUEST["data"];
+        
+		GDatabase::Instance()->updateDatabase($lFile, $lData);
+        
+        $lDataArr = array();
+        $lDataArr["data"] = "Les modifications ont été enregistrées avec succès.";
+		$lDataJson = json_encode($lDataArr);
+		print_r($lDataJson);
+    }
+	//===============================================
 ?>

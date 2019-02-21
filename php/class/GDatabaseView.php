@@ -17,6 +17,7 @@
         abstract public function openDatabase($dataMap);
         abstract public function readFile($dataMap, $fileName);
         abstract public function updateFile($dataMap, $fileName);
+        abstract public function updateDatabase($filePath, $fileName, $data);
         //===============================================
     }
 ?>        

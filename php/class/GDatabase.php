@@ -16,6 +16,7 @@
         abstract public function openDatabase($file);
         abstract public function readFile($file);
         abstract public function updateFile($file);
+        abstract public function updateDatabase($file, $data);
         //===============================================
     }
 ?>        

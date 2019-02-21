@@ -103,6 +103,29 @@
 			return $lFileData;
         }
         //===============================================
+        public function updateDatabase($file, $data) {
+            $lJsonMap = GJson::Instance()->getData("data/json/database.json");
+            $lJsonData = $lJsonMap["database"];
+			$lDirNameArr = array();
+            $this->getDatabaseName($file);
+            
+            if($this->m_databaseName == "") return;
+            $lDatabaseFile = "";
+            $lDatabaseName = "";
+            
+            for($i = 0; $i < count($lJsonData); $i++) {
+                $lData = $lJsonData[$i];
+                $lDatabaseName = $lData["name"];
+                if($lDatabaseName == $this->m_databaseName) {
+                    $lDatabaseFile = $lData["file"];
+                    break;
+                }
+            }
+                
+            GConfig::Instance()->setData("DATABASE", $lDatabaseName);
+            GDatabaseView::Instance()->updateDatabase($lDatabaseFile, $this->m_fileName, $data);
+        }
+        //===============================================
         public function getDatabaseName($file) {
 			$lFileMap = explode("/", $file);
             $this->m_databaseName = "";
