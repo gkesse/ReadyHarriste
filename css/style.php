@@ -464,7 +464,7 @@ span {
 
 .Body21 {
     position: relative;
-    padding: 0px 0px 80px 0px;
+    padding: 0px 0px 40px 0px;
 }
 
 .BodyPage {
@@ -1553,6 +1553,12 @@ span {
     scrollbar-color: #5f6681 #051039;
     scrollbar-width: auto;
     padding: 5px 10px;
+}
+
+.Row32 {
+    padding: 5px 0px;
+    max-width: 450px;
+    text-align: right;
 }
 
 .Shift1 {

@@ -59,15 +59,12 @@
         $lDataMap = $lData[$lKey];
         $lDataSum = '';
         foreach($lDataMap as $lItem) {
-            if($lItem["group"] != $lGroup) continue;
-            //$lAvatar = $lItem["avatar"];
+            if($lItem["group"] != $lGroup) continue; 
             
-            //if($lAvatar == "") {
-                $lAvatar = "male_avatar.png";
-                if($lItem["gender"] == "Féminin") {
-                    $lAvatar = "female_avatar.png";
-                }
-            //}
+            $lAvatar = "male_avatar.png";
+            if($lItem["gender"] == "Féminin") {
+                $lAvatar = "female_avatar.png";
+            }
             
             $lLastname = strtolower(GString::Instance()->noAccent($lItem["lastname"]));
             $lUsualname = strtolower(GString::Instance()->noAccent($lItem["usualname"]));

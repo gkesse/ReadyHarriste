@@ -16,8 +16,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Non"
         },
         {
             "lastname":"LOBE",
@@ -35,8 +34,7 @@
             "country":"France",
             "registration_number":"",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"GNAGBO",
@@ -53,8 +51,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"DAGO",
@@ -71,8 +68,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"OUAGA",
@@ -89,8 +85,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"DJA",
@@ -107,8 +102,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"AKON",
@@ -125,8 +119,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"ADOU",
@@ -143,8 +136,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"ATCHEPO",
@@ -161,8 +153,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"DJAKO",
@@ -179,8 +170,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"MAMBO",
@@ -197,8 +187,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"DJAH",
@@ -215,8 +204,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"OKO",
@@ -233,8 +221,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"KASSI",
@@ -251,8 +238,7 @@
             "country":"France",
             "city":"Villejuif",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"KESSE",
@@ -269,8 +255,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Bureau",
-            "active":"Oui",
-            "avatar":"gerard_kesse.png"
+            "active":"Oui"
         },
         {
             "lastname":"LOUIS",
@@ -287,8 +272,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Maître",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"KOUASSI",
@@ -305,8 +289,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Maître",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"TAYE",
@@ -323,8 +306,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Maître",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"AGUEDE",
@@ -341,8 +323,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Maître",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"GAHIA",
@@ -359,8 +340,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Maître",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         },
         {
             "lastname":"DAGO",
@@ -377,8 +357,7 @@
             "city":"Villejuif",
             "country":"France",
             "group":"Membre",
-            "active":"Oui",
-            "avatar":""
+            "active":"Oui"
         }
     ]
 }

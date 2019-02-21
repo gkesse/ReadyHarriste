@@ -18,54 +18,54 @@
             date_default_timezone_set("Etc/UTC");
             require_once $_SERVER["DOCUMENT_ROOT"]."/lib/phpmailer/PHPMailerAutoload.php";
             
-            $m_file = $_SERVER["DOCUMENT_ROOT"]."/data/email/contacts/email.php";
-            $m_content = GFile::Instance()->getInclude($m_file, $data);
+            $lFile = $_SERVER["DOCUMENT_ROOT"]."/data/email/contacts/email.php";
+            $lContent = GFile::Instance()->getInclude($lFile, $data);
             
-            $mail = new PHPMailer;
-            $mail->isSMTP();
-            $mail->SMTPDebug = 0;
-            $mail->Debugoutput = "html";
-            $mail->Host = "smtp.gmail.com";
-            $mail->Port = 587;
-            $mail->SMTPSecure = "tls";
-            $mail->SMTPAuth = true;
-            $mail->CharSet = "UTF-8";
-            $mail->Username = "readydevz@gmail.com";
-            $mail->Password = "gma25@RDv";
-            $mail->setFrom("readydevz@gmail.com", "ReadyDev");
-            $mail->addReplyTo($data["emailValue"], $data["nameValue"]);
-            $mail->addAddress("readydevz@gmail.com", "ReadyDev");
-            $mail->Subject = $data["subjectValue"]." (".$data["nameValue"].")";
-            $mail->msgHTML($m_content);
-            $mail->AltBody = "This is a plain-text message body";
-            $mail->send();
+            $lMail = new PHPMailer;
+            $lMail->isSMTP();
+            $lMail->SMTPDebug = 0;
+            $lMail->Debugoutput = "html";
+            $lMail->Host = "smtp.gmail.com";
+            $lMail->Port = 587;
+            $lMail->SMTPSecure = "tls";
+            $lMail->SMTPAuth = true;
+            $lMail->CharSet = "UTF-8";
+            $lMail->Username = "readydevz@gmail.com";
+            $lMail->Password = "gma25@RDv";
+            $lMail->setFrom("readydevz@gmail.com", "ReadyDev");
+            $lMail->addReplyTo($data["emailValue"], $data["nameValue"]);
+            $lMail->addAddress("readydevz@gmail.com", "ReadyDev");
+            $lMail->Subject = $data["subjectValue"]." (".$data["nameValue"].")";
+            $lMail->msgHTML($lContent);
+            $lMail->AltBody = "This is a plain-text message body";
+            $lMail->send();
         }
         //===============================================
         public function sendMail($data) {
             date_default_timezone_set("Etc/UTC");
             require_once $_SERVER["DOCUMENT_ROOT"]."/lib/phpmailer/PHPMailerAutoload.php";
             
-            $m_file = $_SERVER["DOCUMENT_ROOT"]."/data/email/contacts/email.php";
-            $m_content = GFile::Instance()->getInclude($m_file, $data);
+            $lFile = $_SERVER["DOCUMENT_ROOT"]."/data/email/contacts/email.php";
+            $lContent = GFile::Instance()->getInclude($lFile, $data);
             
-            $mail = new PHPMailer;
-            $mail->isSMTP();
-            $mail->SMTPDebug = 0;
-            $mail->Debugoutput = "html";
-            $mail->Host = "smtp.gmail.com";
-            $mail->Port = 587;
-            $mail->SMTPSecure = "tls";
-            $mail->SMTPAuth = true;
-            $mail->CharSet = "UTF-8";
-            $mail->Username = "readydevz@gmail.com";
-            $mail->Password = "gma25@RDv";
-            $mail->setFrom("readydevz@gmail.com", "ReadyDev");
-            $mail->addAddress($data["emailValue"], $data["nameValue"]);
-            $mail->addReplyTo("readydevz@gmail.com", "ReadyDev");
-            $mail->Subject = $data["subjectValue"]." (".$data["nameValue"].")";
-            $mail->msgHTML($m_content);
-            $mail->AltBody = "This is a plain-text message body";
-            $mail->send();
+            $lMail = new PHPMailer;
+            $lMail->isSMTP();
+            $lMail->SMTPDebug = 0;
+            $lMail->Debugoutput = "html";
+            $lMail->Host = "smtp.gmail.com";
+            $lMail->Port = 587;
+            $lMail->SMTPSecure = "tls";
+            $lMail->SMTPAuth = true;
+            $lMail->CharSet = "UTF-8";
+            $lMail->Username = "readydevz@gmail.com";
+            $lMail->Password = "gma25@RDv";
+            $lMail->setFrom("readydevz@gmail.com", "ReadyDev");
+            $lMail->addAddress($data["emailValue"], $data["nameValue"]);
+            $lMail->addReplyTo("readydevz@gmail.com", "ReadyDev");
+            $lMail->Subject = $data["subjectValue"]." (".$data["nameValue"].")";
+            $lMail->msgHTML($lContent);
+            $lMail->AltBody = "This is a plain-text message body";
+            $lMail->send();
         }
         //===============================================
     }

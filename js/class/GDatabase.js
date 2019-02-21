@@ -97,6 +97,35 @@ var GDatabase = (function() {
                 this.listDatabase(lFilePath);
             },
             //===============================================
+            updateDatabase: function(obj) {
+				var lLastname = document.getElementsByName("lastname")[0].value;
+				var lFirstname = document.getElementsByName("firstname")[0].value;
+				var lUsualname = document.getElementsByName("usualname")[0].value;
+				var lFunction = document.getElementsByName("function")[0].value;
+				var lRegistration = document.getElementsByName("registration")[0].value;
+				var lGender = document.getElementsByName("gender")[0].value;
+				var lEmail = document.getElementsByName("email")[0].value;
+				var lPhone = document.getElementsByName("phone")[0].value;
+				var lAddress1 = document.getElementsByName("address1")[0].value;
+				var lAddress2 = document.getElementsByName("address2")[0].value;
+				var lZipCode = document.getElementsByName("zip_code")[0].value;
+				var lCity = document.getElementsByName("city")[0].value;
+				var lCountry = document.getElementsByName("country")[0].value;
+				var lGroup = document.getElementsByName("group")[0].value;
+				var lActive = document.getElementsByName("active")[0].value;
+
+                alert(lActive);
+				/*var lFileLinkMap = document.getElementsByClassName("DatabaseFileLink");
+				var lFilePath = "";
+				for(var i = 0; i < lFileLinkMap.length; i++) {
+					var lFileLink = lFileLinkMap[i];
+					var lFileName = lFileLink.innerText;
+                    if(lFileName != "") lFilePath += "/" + lFileName;
+					if(lFileLink.isEqualNode(obj)) break;
+				}
+                this.listDatabase(lFilePath);*/
+            },
+            //===============================================
             readFile: function() {
                 var lFileRead = document.getElementById("DatabaseFileRead");
 				var lFile = GConfig.Instance().getData("DatabaseFile");

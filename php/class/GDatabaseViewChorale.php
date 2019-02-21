@@ -143,6 +143,10 @@
                 $lAvatar = "female_avatar.png";
             }
         
+            $lGenderMap = array("Masculin", "Féminin");
+            $lGroupMap = array("Bureau", "Maître", "Membre");
+            $lActiveMap = array("Oui", "Non");
+        
             $lLastname = strtolower(GString::Instance()->noAccent($lData["lastname"]));
             $lUsualname = strtolower(GString::Instance()->noAccent($lData["usualname"]));
             $lAvatarFile = $lLastname.'_'.$lUsualname.'.png';
@@ -178,8 +182,11 @@
             $lFileUpdate .= "<label class='Label4' for='gender'>Sexe:</label>";
             $lFileUpdate .= "<div class='Field8 ComboBox DatabaseComboBox'>";
             $lFileUpdate .= "<select name='gender' id='gender'>";
-            $lFileUpdate .= "<option value='Masculin'>Masculin</option>";
-            $lFileUpdate .= "<option value='Féminin'>Féminin</option>";
+            for($i = 0; $i < count($lGenderMap); $i++) {
+                $lValue = $lGenderMap[$i];
+                if($lValue == $lData["gender"]) $lFileUpdate .= "<option value='".$lValue."' selected>".$lValue."</option>";
+                else $lFileUpdate .= "<option value='".$lValue."'>".$lValue."</option>";
+            }
             $lFileUpdate .= "</select>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "</div>";
@@ -215,9 +222,11 @@
             $lFileUpdate .= "<label class='Label4' for='group'>Groupe:</label>";
             $lFileUpdate .= "<div class='Field8 ComboBox DatabaseComboBox'>";
             $lFileUpdate .= "<select name='group' id='group'>";
-            $lFileUpdate .= "<option value='Bureau'>Bureau</option>";
-            $lFileUpdate .= "<option value='Maître'>Maître</option>";
-            $lFileUpdate .= "<option value='Membre'>Membre</option>";
+            for($i = 0; $i < count($lGroupMap); $i++) {
+                $lValue = $lGroupMap[$i];
+                if($lValue == $lData["group"]) $lFileUpdate .= "<option value='".$lValue."' selected>".$lValue."</option>";
+                else $lFileUpdate .= "<option value='".$lValue."'>".$lValue."</option>";
+            }
             $lFileUpdate .= "</select>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "</div>";
@@ -225,13 +234,21 @@
             $lFileUpdate .= "<label class='Label4' for='active'>Actif:</label>";
             $lFileUpdate .= "<div class='Field8 ComboBox DatabaseComboBox'>";
             $lFileUpdate .= "<select name='active' id='active'>";
-            $lFileUpdate .= "<option value='Oui'>Oui</option>";
-            $lFileUpdate .= "<option value='Non'>Non</option>";
+            for($i = 0; $i < count($lActiveMap); $i++) {
+                $lValue = $lActiveMap[$i];
+                if($lValue == $lData["active"]) $lFileUpdate .= "<option value='".$lValue."' selected>".$lValue."</option>";
+                else $lFileUpdate .= "<option value='".$lValue."'>".$lValue."</option>";
+            }
             $lFileUpdate .= "</select>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "</div>";
             $lFileUpdate .= "<img class='Img6' src='".$lAvatarPath."' alt='Avatar.png' width='80' height='80'>";
-            $lFileUpdate .= "<script src='/js/class/GComboBox.js'></script>";
+            $lFileUpdate .= "<div class='Row32'>";
+            $lFileUpdate .= "<button class='Button' type='submit' name='save'";
+            $lFileUpdate .= "value='Enregistrer' onclick='updateDatabase(this);'>";
+            $lFileUpdate .= "<i class='fa fa-save'></i> Enregistrer";
+            $lFileUpdate .= "</button>";
+            $lFileUpdate .= "</div>";
 
             return $lFileUpdate;
         }

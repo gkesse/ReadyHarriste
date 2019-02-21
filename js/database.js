@@ -11,3 +11,7 @@ function openDatabaseLink(obj) {
 	GDatabase.Instance().openDatabaseLink(obj);
 }
 //===============================================
+function updateDatabase(obj) {
+	GDatabase.Instance().updateDatabase(obj);
+}
+//===============================================
