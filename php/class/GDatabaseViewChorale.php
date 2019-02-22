@@ -23,8 +23,7 @@
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
-                $lFullName .= $lData["usualname"]." | ";
-                $lFullName .= $lData["group"];
+                $lFullName .= $lData["usualname"];
                 $lDirNameArr[] = array($lFullName, $lIcon, "FILE");
             }
             
@@ -41,8 +40,7 @@
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
-                $lFullName .= $lData["usualname"]." | ";
-                $lFullName .= $lData["group"];
+                $lFullName .= $lData["usualname"];
                 $lFullName = mb_strtolower($lFullName);
 
                 if($lFullName == $fileName) break;
@@ -139,8 +137,7 @@
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
-                $lFullName .= $lData["usualname"]." | ";
-                $lFullName .= $lData["group"];
+                $lFullName .= $lData["usualname"];
                 $lFullName = mb_strtolower($lFullName);
 
                 if($lFullName == $fileName) break;
@@ -271,8 +268,7 @@
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
-                $lFullName .= $lData["usualname"]." | ";
-                $lFullName .= $lData["group"];
+                $lFullName .= $lData["usualname"];
                 $lFullName = mb_strtolower($lFullName);
 
             if($lFullName == $fileName) break;
@@ -397,9 +393,7 @@
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
-                $lFullName .= $lData["usualname"]." | ";
-                $lFullName .= $lData["group"];
-                $lFullName = $lFullName($fileName);
+                $lFullName .= $lData["usualname"];
                 $lFullName = mb_strtolower($lFullName);
                 
                 if($lFullName == $fileName) {
