@@ -35,12 +35,16 @@
             $lDataMap = $dataMap["members"];
             $lData = array();
             
+            $fileName = mb_strtolower($fileName);
+
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
                 $lFullName .= $lData["usualname"]." | ";
                 $lFullName .= $lData["group"];
+                $lFullName = mb_strtolower($lFullName);
+
                 if($lFullName == $fileName) break;
             }
             
@@ -129,12 +133,16 @@
             $lDataMap = $dataMap["members"];
             $lData = array();
             
+            $fileName = mb_strtolower($fileName);
+
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
                 $lFullName .= $lData["usualname"]." | ";
                 $lFullName .= $lData["group"];
+                $lFullName = mb_strtolower($lFullName);
+
                 if($lFullName == $fileName) break;
             }
             
@@ -257,13 +265,17 @@
             $lDataMap = $dataMap["members"];
             $lData = array();
             
+            $fileName = mb_strtolower($fileName);
+
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
                 $lFullName .= $lData["usualname"]." | ";
                 $lFullName .= $lData["group"];
-                if($lFullName == $fileName) break;
+                $lFullName = mb_strtolower($lFullName);
+
+            if($lFullName == $fileName) break;
             }
             
             $lAvatar = "male_avatar.png";
@@ -379,12 +391,17 @@
             $lDataNew = json_decode($data, true);
             $lDataMap = $lDatabaseMap["members"];
             
+            $fileName = mb_strtolower($fileName);
+                        
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
                 $lFullName .= $lData["usualname"]." | ";
                 $lFullName .= $lData["group"];
+                $lFullName = $lFullName($fileName);
+                $lFullName = mb_strtolower($lFullName);
+                
                 if($lFullName == $fileName) {
                     $lDatabaseMap["members"][$i] = $lDataNew;
                     break;
@@ -418,14 +435,14 @@
                 $lFileName = "";
                 $lFileName .= $lDataNew["lastname"]." ";
                 $lFileName .= $lDataNew["usualname"];
-                $lFileName = mb_strtoupper($lFileName, "UTF-8");
+                $lFileName = mb_strtolower($lFileName, "UTF-8");
                 
                 for($i = 0; $i < count($lDataMap); $i++) {
                     $lData = $lDataMap[$i];
                     $lFullName = "";
                     $lFullName .= $lData["lastname"]." ";
                     $lFullName .= $lData["usualname"];
-                    $lFullName = mb_strtoupper($lFullName, "UTF-8");
+                    $lFullName = mb_strtolower($lFullName, "UTF-8");
                     
                     if($lFullName == $lFileName) {
                         $lMessage = "";
