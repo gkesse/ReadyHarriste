@@ -69,6 +69,17 @@
 		print_r($lDataJson);
     }
 	//===============================================
+	else if($lReq == "CREATE_FILE") {
+		$lFile = $_REQUEST["file"];
+        
+		$lData = GDatabase::Instance()->createFile($lFile);
+        
+        $lDataArr = array();
+        $lDataArr["data"] = $lData;
+		$lDataJson = json_encode($lDataArr);
+		print_r($lDataJson);
+    }
+	//===============================================
 	else if($lReq == "UPDATE_DATABASE") {
 		$lFile = $_REQUEST["file"];
 		$lData = $_REQUEST["data"];
@@ -77,6 +88,18 @@
         
         $lDataArr = array();
         $lDataArr["data"] = "Les modifications ont été enregistrées avec succès.";
+		$lDataJson = json_encode($lDataArr);
+		print_r($lDataJson);
+    }
+	//===============================================
+	else if($lReq == "CREATE_DATABASE") {
+		$lFile = $_REQUEST["file"];
+		$lData = $_REQUEST["data"];
+        
+		$lMessage = GDatabase::Instance()->createDatabase($lFile, $lData);
+        
+        $lDataArr = array();
+        $lDataArr["data"] = $lMessage;
 		$lDataJson = json_encode($lDataArr);
 		print_r($lDataJson);
     }

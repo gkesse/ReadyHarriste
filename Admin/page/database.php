@@ -25,6 +25,10 @@
                     <button class="Button2 DatabaseTab" title="Modifier une donnée" 
                     onclick="openDatabaseTab(this, 'DatabaseTab3');">Modifier</button>
                 </div>
+                <div class="Col">
+                    <button class="Button2 DatabaseTab" title="Ajouter une donnée" 
+                    onclick="openDatabaseTab(this, 'DatabaseTab4');">Ajouter</button>
+                </div>
             </div>
             <!-- ============================================ -->
             <div class="Row Left DatabaseTabCtn" id="DatabaseTab0">
@@ -58,7 +62,7 @@
             <!-- ============================================ -->
             <div class="Row Left DatabaseTabCtn" id="DatabaseTab2">
                 <h2 class="Title4">
-                    Affichage
+                    Afficher une donnée
                 </h2>
                 <div class="Body14">
                     <div class="Content9">
@@ -69,11 +73,22 @@
             <!-- ============================================ -->
             <div class="Row Left DatabaseTabCtn" id="DatabaseTab3">
                 <h2 class="Title4">
-                    Modification
+                    Modifier une donnée
                 </h2>
                 <div class="Body14">
                     <div class="Content9">
                         <div class="Body21" id="DatabaseFileUpdate"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================ -->
+            <div class="Row Left DatabaseTabCtn" id="DatabaseTab4">
+                <h2 class="Title4">
+                    Ajouter une donnée
+                </h2>
+                <div class="Body14">
+                    <div class="Content9">
+                        <div class="Body21" id="DatabaseFileCreate"></div>
                     </div>
                 </div>
             </div>

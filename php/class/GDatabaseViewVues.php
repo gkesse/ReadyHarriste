@@ -36,8 +36,16 @@
             return "";
         }
         //===============================================
+        public function createFile($dataMap, $fileName) {
+            return "";
+        }
+        //===============================================
         public function updateDatabase($filePath, $fileName, $data) {
             
+        }
+        //===============================================
+        public function createDatabase($filePath, $data) {
+            return "";
         }
         //===============================================
     }

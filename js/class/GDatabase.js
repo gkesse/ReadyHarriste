@@ -14,6 +14,7 @@ var GDatabase = (function() {
 				this.listDatabase(lDatabasePath);
                 this.readFile();
                 this.updateFile();
+                this.createFile();
             },
             //===============================================
             openDatabaseTab: function(obj, name) {
@@ -77,6 +78,7 @@ var GDatabase = (function() {
                     lFilePath.innerHTML = lDatabaseFile;
                     this.readFile();
                     this.updateFile();
+                    this.createFile();
                     var lTabCtn = document.getElementsByClassName("DatabaseTab");
                     var lObj = lTabCtn[2];
                     this.openDatabaseTab(lObj, "DatabaseTab2");
@@ -122,18 +124,62 @@ var GDatabase = (function() {
 				lDataMap["active"] = document.getElementsByName("active")[0].value;
                 
                 var lDataJson = JSON.stringify(lDataMap);
-                
+                                
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
 						var lDataArr = JSON.parse(lData);
+                        alert(lDataArr["data"]);
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/database.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 				"req=" + "UPDATE_DATABASE" +
+				"&file=" + lFile +
+				"&data=" + lDataJson
+				);
+            },
+            //===============================================
+            createDatabase: function(obj) {
+                var lRes = confirm("Êtes vous sûr de vouloir ajouter cette nouvelle donnée ?");
+                if(!lRes) return;
+
+				var lFile = GConfig.Instance().getData("DatabaseFile");
+				if(lFile == "") return;
+                
+                var lDataMap = {};
+				lDataMap["lastname"] = document.getElementsByName("lastnameAdd")[0].value;
+				lDataMap["firstname"] = document.getElementsByName("firstnameAdd")[0].value;
+				lDataMap["usualname"] = document.getElementsByName("usualnameAdd")[0].value;
+				lDataMap["function"] = document.getElementsByName("functionAdd")[0].value;
+				lDataMap["registration"] = document.getElementsByName("registrationAdd")[0].value;
+				lDataMap["gender"] = document.getElementsByName("genderAdd")[0].value;
+				lDataMap["email"] = document.getElementsByName("emailAdd")[0].value;
+				lDataMap["phone"] = document.getElementsByName("phoneAdd")[0].value;
+				lDataMap["address1"] = document.getElementsByName("address1Add")[0].value;
+				lDataMap["address2"] = document.getElementsByName("address2Add")[0].value;
+				lDataMap["zip_code"] = document.getElementsByName("zip_codeAdd")[0].value;
+				lDataMap["city"] = document.getElementsByName("cityAdd")[0].value;
+				lDataMap["country"] = document.getElementsByName("countryAdd")[0].value;
+				lDataMap["group"] = document.getElementsByName("groupAdd")[0].value;
+				lDataMap["active"] = document.getElementsByName("activeAdd")[0].value;
+                
+                var lDataJson = JSON.stringify(lDataMap);
+                                
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						var lDataArr = JSON.parse(lData);
+                        alert(lDataArr["data"]);
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "CREATE_DATABASE" +
 				"&file=" + lFile +
 				"&data=" + lDataJson
 				);
@@ -169,13 +215,34 @@ var GDatabase = (function() {
 						var lData = this.responseText;
 						var lDataArr = JSON.parse(lData);
                         lFileUpdate.innerHTML = lDataArr["data"];
-                        GComboBox.Instance().fillBox("DatabaseComboBox", true);
+                        GComboBox.Instance().fillBox("DatabaseComboBoxUpdate", true);
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/database.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 				"req=" + "UPDATE_FILE" +
+				"&file=" + lFile
+				);
+            },
+            //===============================================
+            createFile: function() {
+                var lFileCreate = document.getElementById("DatabaseFileCreate");
+				var lFile = GConfig.Instance().getData("DatabaseFile");
+				if(lFile == "") return;
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						var lDataArr = JSON.parse(lData);
+                        lFileCreate.innerHTML = lDataArr["data"];
+                        GComboBox.Instance().fillBox("DatabaseComboBoxCreate", true);
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "CREATE_FILE" +
 				"&file=" + lFile
 				);
             }
