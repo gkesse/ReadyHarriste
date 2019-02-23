@@ -260,18 +260,36 @@
         //===============================================
         public function createFile($dataMap, $fileName) {
             $lDataMap = $dataMap["members"];
-            $lData = array();
+            $lData = array(
+            "lastname" => "",
+            "firstname" => "",
+            "usualname" => "",
+            "function" => "",
+            "registration" => "",
+            "gender" => "Masculin",
+            "email" => "",
+            "phone" => "",
+            "address1" => "",
+            "address2" => "",
+            "zip_code" => "",
+            "city" => "",
+            "country" => "",
+            "group" => "Membre",
+            "active" => "Oui"
+            );
             
-            $fileName = mb_strtolower($fileName);
+            if($fileName != "") {
+                $fileName = mb_strtolower($fileName);
 
-            for($i = 0; $i < count($lDataMap); $i++) {
-                $lData = $lDataMap[$i];
-                $lFullName = "";
-                $lFullName .= $lData["lastname"]." ";
-                $lFullName .= $lData["usualname"];
-                $lFullName = mb_strtolower($lFullName);
+                for($i = 0; $i < count($lDataMap); $i++) {
+                    $lData = $lDataMap[$i];
+                    $lFullName = "";
+                    $lFullName .= $lData["lastname"]." ";
+                    $lFullName .= $lData["usualname"];
+                    $lFullName = mb_strtolower($lFullName);
 
-            if($lFullName == $fileName) break;
+                    if($lFullName == $fileName) break;
+                }
             }
             
             $lAvatar = "male_avatar.png";
@@ -396,7 +414,7 @@
                 $lFullName = mb_strtolower($lFullName);
                 
                 if($lFullName == $fileName) {
-                    array_splice($lDatabaseMap["members"], 1, 1);
+                    array_splice($lDatabaseMap["members"], $i, 1);
                     break;
                 }
             }
@@ -426,9 +444,12 @@
                 }
             }
             
+            $lFullPath = "/Chorale/";
+            $lFullPath .= $lDataNew["lastname"]." ";
+            $lFullPath .= $lDataNew["usualname"];
+
             GJson::Instance()->saveData($filePath, $lDatabaseMap);
-            $lMessage = "Les modifications ont été enregistrées avec succès.";
-            return $lMessage;
+            return $lFullPath;
         }
         //===============================================
         public function createDatabase($filePath, $data) {

@@ -70,9 +70,10 @@
     }
 	//===============================================
 	else if($lReq == "CREATE_FILE") {
+		$lPath = $_REQUEST["path"];
 		$lFile = $_REQUEST["file"];
         
-		$lData = GDatabase::Instance()->createFile($lFile);
+		$lData = GDatabase::Instance()->createFile($lPath, $lFile);
         
         $lDataArr = array();
         $lDataArr["data"] = $lData;

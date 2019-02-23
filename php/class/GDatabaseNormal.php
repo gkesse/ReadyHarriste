@@ -54,6 +54,7 @@
         }
         //===============================================
         public function readFile($file) {
+            if($file == "") return "";
             $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
 			$lDirNameArr = array();
@@ -79,6 +80,7 @@
         }
         //===============================================
         public function updateFile($file) {
+            if($file == "") return "";
             $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
 			$lDirNameArr = array();
@@ -103,11 +105,11 @@
 			return $lFileData;
         }
         //===============================================
-        public function createFile($file) {
+        public function createFile($path, $file) {
             $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
 			$lDirNameArr = array();
-            $this->getDatabaseName($file);
+            $this->getDatabaseName($path);
             
             if($this->m_databaseName == "") return;
             $lDatabaseFile = "";
@@ -121,7 +123,9 @@
                     break;
                 }
             }
-                
+              
+            $this->getDatabaseName($file);
+            
             $lDatabaseMap = GJson::Instance()->getData($lDatabaseFile);
             GConfig::Instance()->setData("DATABASE", $lDatabaseName);
             $lFileData = GDatabaseView::Instance()->createFile($lDatabaseMap, $this->m_fileName);

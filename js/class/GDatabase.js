@@ -104,7 +104,7 @@ var GDatabase = (function() {
                 if(!lRes) return;
 
 				var lFile = GConfig.Instance().getData("DatabaseFile");
-				if(lFile == "") return;
+				if(lFile == "") {alert("Aucun fichier n'a été sélectionné !!!"); return;}
                 
                 var lDataMap = {};
 				lDataMap["lastname"] = document.getElementsByName("lastname")[0].value;
@@ -130,7 +130,8 @@ var GDatabase = (function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
 						var lDataArr = JSON.parse(lData);
-                        alert(lDataArr["data"]);
+                        GConfig.Instance().setData("DatabaseFile", lDataArr["data"]);
+                        GDatabase.Instance().init();
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/database.php", true);
@@ -146,8 +147,8 @@ var GDatabase = (function() {
                 var lRes = confirm("Êtes vous sûr de vouloir ajouter cette nouvelle donnée ?");
                 if(!lRes) return;
 
-				var lFile = GConfig.Instance().getData("DatabaseFile");
-				if(lFile == "") return;
+				var lPath = GConfig.Instance().getData("DatabasePath");
+				if(lPath == "") {alert("Aucune base de données n'a été sélectionnée !!!"); return;}
                 
                 var lDataMap = {};
 				lDataMap["lastname"] = document.getElementsByName("lastnameAdd")[0].value;
@@ -173,6 +174,7 @@ var GDatabase = (function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
 						var lDataArr = JSON.parse(lData);
+                        GDatabase.Instance().init();
                         alert(lDataArr["data"]);
                     }
                 }
@@ -180,7 +182,7 @@ var GDatabase = (function() {
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 				"req=" + "CREATE_DATABASE" +
-				"&file=" + lFile +
+				"&file=" + lPath +
 				"&data=" + lDataJson
 				);
             },
@@ -188,7 +190,6 @@ var GDatabase = (function() {
             readFile: function() {
                 var lFileRead = document.getElementById("DatabaseFileRead");
 				var lFile = GConfig.Instance().getData("DatabaseFile");
-				if(lFile == "") return;
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
@@ -208,7 +209,6 @@ var GDatabase = (function() {
             updateFile: function() {
                 var lFileUpdate = document.getElementById("DatabaseFileUpdate");
 				var lFile = GConfig.Instance().getData("DatabaseFile");
-				if(lFile == "") return;
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
@@ -229,7 +229,9 @@ var GDatabase = (function() {
             createFile: function() {
                 var lFileCreate = document.getElementById("DatabaseFileCreate");
 				var lFile = GConfig.Instance().getData("DatabaseFile");
-				if(lFile == "") return;
+				var lPath = GConfig.Instance().getData("DatabasePath");
+				if(lPath == "") {alert("Aucune base de données n'a été sélectionnée !!!"); return;}
+                
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
@@ -243,13 +245,14 @@ var GDatabase = (function() {
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 				"req=" + "CREATE_FILE" +
+				"&path=" + lPath +
 				"&file=" + lFile
 				);
             },
             //===============================================
             deleteFile: function() {
 				var lFile = GConfig.Instance().getData("DatabaseFile");
-				if(lFile == "") return;
+				if(lFile == "") {alert("Aucun fichier n'a été sélectionné !!!"); return;}
 
                 var lTabCtn = document.getElementsByClassName("DatabaseTab");
                 var lObj = lTabCtn[1];
@@ -263,8 +266,9 @@ var GDatabase = (function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
 						var lDataArr = JSON.parse(lData);
-                        lFileCreate.innerHTML = lDataArr["data"];
-                        GComboBox.Instance().fillBox("DatabaseComboBoxCreate", true);
+                        GConfig.Instance().setData("DatabaseFile", "");
+                        GDatabase.Instance().init();
+                        alert(lDataArr["data"]);
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/database.php", true);
