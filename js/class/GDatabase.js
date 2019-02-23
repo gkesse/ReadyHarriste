@@ -268,7 +268,6 @@ var GDatabase = (function() {
 						var lDataArr = JSON.parse(lData);
                         GConfig.Instance().setData("DatabaseFile", "");
                         GDatabase.Instance().init();
-                        alert(lDataArr["data"]);
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/database.php", true);
