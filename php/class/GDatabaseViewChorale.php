@@ -382,6 +382,30 @@
             return $lFileData;
         }
         //===============================================
+        public function deleteFile($filePath, $fileName) {
+            $lDatabaseMap = GJson::Instance()->getData($filePath);
+            $lDataMap = $lDatabaseMap["members"];
+            
+            $fileName = mb_strtolower($fileName);
+                        
+            for($i = 0; $i < count($lDataMap); $i++) {
+                $lData = $lDataMap[$i];
+                $lFullName = "";
+                $lFullName .= $lData["lastname"]." ";
+                $lFullName .= $lData["usualname"];
+                $lFullName = mb_strtolower($lFullName);
+                
+                if($lFullName == $fileName) {
+                    array_splice($lDatabaseMap["members"], 1, 1);
+                    break;
+                }
+            }
+            
+            GJson::Instance()->saveData($filePath, $lDatabaseMap);
+            $lMessage = "La donnée a été supprimée avec succès.";
+            return $lMessage;
+        }
+        //===============================================
         public function updateDatabase($filePath, $fileName, $data) {
             $lDatabaseMap = GJson::Instance()->getData($filePath);
             $lDataNew = json_decode($data, true);
@@ -403,6 +427,8 @@
             }
             
             GJson::Instance()->saveData($filePath, $lDatabaseMap);
+            $lMessage = "Les modifications ont été enregistrées avec succès.";
+            return $lMessage;
         }
         //===============================================
         public function createDatabase($filePath, $data) {

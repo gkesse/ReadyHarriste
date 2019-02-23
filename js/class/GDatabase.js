@@ -245,6 +245,34 @@ var GDatabase = (function() {
 				"req=" + "CREATE_FILE" +
 				"&file=" + lFile
 				);
+            },
+            //===============================================
+            deleteFile: function() {
+				var lFile = GConfig.Instance().getData("DatabaseFile");
+				if(lFile == "") return;
+
+                var lTabCtn = document.getElementsByClassName("DatabaseTab");
+                var lObj = lTabCtn[1];
+                this.openDatabaseTab(lObj, "DatabaseTab1");
+                    
+                var lRes = confirm("Êtes vous sûr de vouloir supprimer cette donnée ?");
+                if(!lRes) return;
+
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						var lDataArr = JSON.parse(lData);
+                        lFileCreate.innerHTML = lDataArr["data"];
+                        GComboBox.Instance().fillBox("DatabaseComboBoxCreate", true);
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "DELETE_FILE" +
+				"&file=" + lFile
+				);
             }
             //===============================================
         };

@@ -17,6 +17,7 @@
         abstract public function readFile($file);
         abstract public function updateFile($file);
         abstract public function createFile($file);
+        abstract public function deleteFile($file);
         abstract public function updateDatabase($file, $data);
         abstract public function createDatabase($file, $data);
         //===============================================

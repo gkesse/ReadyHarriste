@@ -80,14 +80,25 @@
 		print_r($lDataJson);
     }
 	//===============================================
+	else if($lReq == "DELETE_FILE") {
+		$lFile = $_REQUEST["file"];
+        
+		$lData = GDatabase::Instance()->deleteFile($lFile);
+        
+        $lDataArr = array();
+        $lDataArr["data"] = $lData;
+		$lDataJson = json_encode($lDataArr);
+		print_r($lDataJson);
+    }
+	//===============================================
 	else if($lReq == "UPDATE_DATABASE") {
 		$lFile = $_REQUEST["file"];
 		$lData = $_REQUEST["data"];
         
-		GDatabase::Instance()->updateDatabase($lFile, $lData);
+		$lMessage = GDatabase::Instance()->updateDatabase($lFile, $lData);
         
         $lDataArr = array();
-        $lDataArr["data"] = "Les modifications ont été enregistrées avec succès.";
+        $lDataArr["data"] = $lMessage;
 		$lDataJson = json_encode($lDataArr);
 		print_r($lDataJson);
     }

@@ -19,15 +19,19 @@
                 </div>
                 <div class="Col">
                     <button class="Button2 DatabaseTab" title="Afficher une donnée" 
-                    onclick="openDatabaseTab(this, 'DatabaseTab2');">Afficher</button>
+                    onclick="openDatabaseTab(this, 'DatabaseTab2'); readDatabaseFile();">Afficher</button>
                 </div>
                 <div class="Col">
                     <button class="Button2 DatabaseTab" title="Modifier une donnée" 
-                    onclick="openDatabaseTab(this, 'DatabaseTab3');">Modifier</button>
+                    onclick="openDatabaseTab(this, 'DatabaseTab3'); updateDatabaseFile();">Modifier</button>
                 </div>
                 <div class="Col">
                     <button class="Button2 DatabaseTab" title="Ajouter une donnée" 
-                    onclick="openDatabaseTab(this, 'DatabaseTab4');">Ajouter</button>
+                    onclick="openDatabaseTab(this, 'DatabaseTab4'); createDatabaseFile();">Ajouter</button>
+                </div>
+                <div class="Col">
+                    <button class="Button2" title="Supprimer une donnée" 
+                    onclick="deleteDatabaseFile();"><i class="fa fa-trash"></i></button>
                 </div>
             </div>
             <!-- ============================================ -->

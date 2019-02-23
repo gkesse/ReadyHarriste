@@ -40,8 +40,12 @@
             return "";
         }
         //===============================================
+        public function deleteFile($filePath, $fileName) {
+            return "";
+        }
+        //===============================================
         public function updateDatabase($filePath, $fileName, $data) {
-            
+            return "";
         }
         //===============================================
         public function createDatabase($filePath, $data) {

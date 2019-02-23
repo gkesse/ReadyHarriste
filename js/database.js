@@ -19,3 +19,19 @@ function createDatabase(obj) {
 	GDatabase.Instance().createDatabase(obj);
 }
 //===============================================
+function readDatabaseFile() {
+	GDatabase.Instance().readFile();
+}
+//===============================================
+function updateDatabaseFile() {
+	GDatabase.Instance().updateFile();
+}
+//===============================================
+function createDatabaseFile() {
+	//GDatabase.Instance().createFile();
+}
+//===============================================
+function deleteDatabaseFile() {
+	GDatabase.Instance().deleteFile();
+}
+//===============================================
