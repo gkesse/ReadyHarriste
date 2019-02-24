@@ -1,9 +1,9 @@
 <!-- ============================================ -->
 <div class="MainBlock">
 	<div class="Content">
-		<h1 class="Title2" id="Edition_Page_HTML">
+		<h1 class="Title2" id="Editeur_Page_HTML">
 			<a class="Link3" href="#">
-				Édition Page HTML
+				Éditeur de Page HTML
 			</a>
 		</h1>
 		<!-- ============================================ -->

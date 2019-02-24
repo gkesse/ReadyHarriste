@@ -4,9 +4,9 @@
 <!-- ============================================ -->
 <div class="MainBlock">
 	<div class="Content">
-		<h1 class="Title2" id="Gestion_Sitemap">
+		<h1 class="Title2" id="Editeur_Sitemap">
 			<a class="Link3" href="#">
-				Gestion Sitemap
+				Éditeur de Sitemap
 			</a>
 		</h1>
 		<!-- ============================================ -->
@@ -40,8 +40,10 @@
                 </h2>
                 <div class="Body6">
                     <div class="Content9">
-                        L'interface <b>ReadySitemap</b> vous permet de générer automatiquement
-                        le sitemap du siteweb. C'est une interface développée en <b>PHP</b>
+                        <b>ReadySitemap</b> est un éditeur de sitemap.
+                        Il vous permet d'énumérer et d'afficher vos URLs à indexer, 
+                        Et ensuite de générer le sitemap correspondant au siteweb.
+                        C'est une interface développée en <b>PHP</b>
                         et maintenue par <b>Gérard KESSE</b>, concepteur du site <b>ReadyDev</b>,
                         la Plateforme de Développement Continu.
                     </div>

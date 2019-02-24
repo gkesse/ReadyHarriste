@@ -28,7 +28,7 @@ function updateDatabaseFile() {
 }
 //===============================================
 function createDatabaseFile() {
-	//GDatabase.Instance().createFile();
+	GDatabase.Instance().createFile();
 }
 //===============================================
 function deleteDatabaseFile() {

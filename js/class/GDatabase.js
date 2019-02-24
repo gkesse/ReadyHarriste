@@ -230,7 +230,6 @@ var GDatabase = (function() {
                 var lFileCreate = document.getElementById("DatabaseFileCreate");
 				var lFile = GConfig.Instance().getData("DatabaseFile");
 				var lPath = GConfig.Instance().getData("DatabasePath");
-				if(lPath == "") {alert("Aucune base de données n'a été sélectionnée !!!"); return;}
                 
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {

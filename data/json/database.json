@@ -9,6 +9,6 @@
     "database":
     [
         {"name":"Chorale","file":"data/json/Chorale_Membres_DB.json"},
-        {"name":"Vues","file":"data/json/views.json"}
+        {"name":"News","file":"data/json/News_DB.json"}
     ]
 }

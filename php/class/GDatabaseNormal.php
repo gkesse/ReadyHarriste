@@ -106,6 +106,7 @@
         }
         //===============================================
         public function createFile($path, $file) {
+            if($path == "") return "";
             $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
 			$lDirNameArr = array();

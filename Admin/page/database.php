@@ -3,7 +3,7 @@
 	<div class="Content">
 		<h1 class="Title2" id="Editeur_Base_Donnees">
 			<a class="Link3" href="#">
-				Editeur de Base de Données
+				Éditeur de Base de Données
 			</a>
 		</h1>
 		<!-- ============================================ -->
