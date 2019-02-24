@@ -10,7 +10,7 @@
         public static function Instance() {
             $lKey = GConfig::Instance()->getData("DATABASE");
             if($lKey == "Chorale") return GDatabaseViewChorale::Instance();
-            if($lKey == "Vues") return GDatabaseViewVues::Instance();
+            if($lKey == "News") return GDatabaseViewNews::Instance();
             return GDatabaseViewChorale::Instance();
         }
         //===============================================

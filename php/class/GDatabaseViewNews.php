@@ -1,5 +1,5 @@
 <?php   
-    class GDatabaseViewVues extends GDatabaseView {
+    class GDatabaseViewNews extends GDatabaseView {
         //===============================================
         private static $m_instance = null;
         //===============================================
@@ -9,7 +9,7 @@
         //===============================================
         public static function Instance() {
             if(is_null(self::$m_instance)) {
-                self::$m_instance = new GDatabaseViewVues();  
+                self::$m_instance = new GDatabaseViewNews();  
             }
             return self::$m_instance;
         }

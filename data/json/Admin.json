@@ -3,16 +3,16 @@
     {
         "meta_desc":
         [
-            "Interface d'administration du siteweb de l’Église Harriste de France.",
+            "ReadyAdmin est l'interface d'administration du siteweb.",
+            "Il vous permet d'ajouter et de modifier le contenu du siteweb.",
             "Produit par Gérard KESSE."
         ],
         "meta_cano":"/Admin/"
     },    
     "intro":
     [
-        "Soyez la Bienvenue sur l'interface d'administration du siteweb.<br/>",
-        "ReadyAdmin vous permet d'administrer le contenu du siteweb",
-        "sans avoir à écrire des lignes de codes.<br/>",
+        "<b>ReadyAdmin</b> est l'interface d'administration du siteweb.<br/>",
+        "Il vous permet d'ajouter et de modifier le contenu du siteweb.<br/>",
         "Produit par <b>Gérard KESSE</b>."
     ],
     "summary":
@@ -20,5 +20,10 @@
         {"name":"Éditeur de Sitemap","link":"#Editeur_Sitemap"},
         {"name":"Éditeur de Page HTML","link":"#Editeur_Page_HTML"},
         {"name":"Éditeur de Base de Données","link":"#Editeur_Base_Donnees"}
+    ],
+    "database":
+    [
+        {"name":"Chorale","file":"data/json/Chorale_Membres_DB.json"},
+        {"name":"News","file":"data/json/News_DB.json"}
     ]
 }

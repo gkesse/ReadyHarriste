@@ -1,6 +1,3 @@
-<?php 
-    $lData = GJson::Instance()->getData("/data/json/sitemap.json");
-?>
 <!-- ============================================ -->
 <div class="MainBlock">
 	<div class="Content">
@@ -41,8 +38,8 @@
                 <div class="Body6">
                     <div class="Content9">
                         <b>ReadySitemap</b> est un éditeur de sitemap.
-                        Il vous permet d'énumérer et d'afficher vos URLs à indexer, 
-                        Et ensuite de générer le sitemap correspondant au siteweb.
+                        Il vous permet d'énumérer et de lister les URLs du siteweb à indexer, 
+                        Et ensuite de générer et de visualiser le sitemap correspondant au siteweb.
                         C'est une interface développée en <b>PHP</b>
                         et maintenue par <b>Gérard KESSE</b>, concepteur du site <b>ReadyDev</b>,
                         la Plateforme de Développement Continu.

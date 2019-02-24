@@ -33,7 +33,7 @@
             <!-- ============================================ -->
             <div class="Row4 Left EditorTabCtn" id="EditorTab0">
                 <h2 class="Title4">
-                    ReadyHTMLEditor
+                    ReadyHTML
                 </h2>
                 <div class="Body6">
                     <div class="Content9">
