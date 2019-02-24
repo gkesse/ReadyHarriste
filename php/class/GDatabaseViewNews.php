@@ -15,13 +15,18 @@
         }
         //===============================================
         public function openDatabase($dataMap) {
+            $lDataMap = $dataMap["news"];
             $lDirNameArr = array();
-            $lIcon = "file";
+            $lIcon = "newspaper-o";
             
-            foreach($dataMap as $key => $value) {
+            for($i = 0; $i < count($lDataMap); $i++) {
+                $lData = $lDataMap[$i];
                 $lFullName = "";
-                $lFullName .= $key." | ";
-                $lFullName .= $value;
+                $lFullName .= $lData["category"]." | ";
+                $lFullName .= $lData["title"]." | ";
+                $lFullName .= $lData["date"]." à ";
+                $lFullName .= $lData["time"]." | ";
+                $lFullName .= $lData["place"];
                 $lDirNameArr[] = array($lFullName, $lIcon, "FILE");
             }
             

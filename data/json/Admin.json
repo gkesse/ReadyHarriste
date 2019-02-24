@@ -23,7 +23,7 @@
     ],
     "database":
     [
-        {"name":"Chorale","file":"data/json/Chorale_Membres_DB.json"},
-        {"name":"News","file":"data/json/News_DB.json"}
+        {"name":"Chorale","file":"data/json/DB_Chorale_Membres.json"},
+        {"name":"News","file":"data/json/DB_News.json"}
     ]
 }
