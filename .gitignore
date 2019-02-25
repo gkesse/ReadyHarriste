@@ -2,13 +2,11 @@
 # SiteWeb
 #================================================
 
-/**/.metadata/
-/**/.settings/
-/**/.recommenders/
 /**/views.json
 /**/messages.json
+/**/users.json
 /data/sitemaps/*xml
-/**/~$*
 /robots.txt
+/**/~$*
 
 #================================================
