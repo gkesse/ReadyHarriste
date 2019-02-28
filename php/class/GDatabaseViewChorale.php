@@ -34,14 +34,14 @@
             $lDataMap = $dataMap["members"];
             $lData = array();
             
-            $fileName = mb_strtolower($fileName);
+            $fileName = mb_strtolower($fileName, "UTF-8");
 
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
                 $lFullName .= $lData["usualname"];
-                $lFullName = mb_strtolower($lFullName);
+                $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                 if($lFullName == $fileName) break;
             }
@@ -131,14 +131,14 @@
             $lDataMap = $dataMap["members"];
             $lData = array();
             
-            $fileName = mb_strtolower($fileName);
+            $fileName = mb_strtolower($fileName, "UTF-8");
 
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
                 $lFullName .= $lData["usualname"];
-                $lFullName = mb_strtolower($lFullName);
+                $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                 if($lFullName == $fileName) break;
             }
@@ -279,14 +279,14 @@
             );
             
             if($fileName != "") {
-                $fileName = mb_strtolower($fileName);
+                $fileName = mb_strtolower($fileName, "UTF-8");
 
                 for($i = 0; $i < count($lDataMap); $i++) {
                     $lData = $lDataMap[$i];
                     $lFullName = "";
                     $lFullName .= $lData["lastname"]." ";
                     $lFullName .= $lData["usualname"];
-                    $lFullName = mb_strtolower($lFullName);
+                    $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                     if($lFullName == $fileName) break;
                 }
@@ -408,14 +408,14 @@
             $lDatabaseMap = GJson::Instance()->getData($filePath);
             $lDataMap = $lDatabaseMap["members"];
             
-            $fileName = mb_strtolower($fileName);
+            $fileName = mb_strtolower($fileName, "UTF-8");
                         
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
                 $lFullName .= $lData["usualname"];
-                $lFullName = mb_strtolower($lFullName);
+                $lFullName = mb_strtolower($lFullName, "UTF-8");
                 
                 if($lFullName == $fileName) {
                     array_splice($lDatabaseMap["members"], $i, 1);
@@ -433,14 +433,14 @@
             $lDataNew = json_decode($data, true);
             $lDataMap = $lDatabaseMap["members"];
             
-            $fileName = mb_strtolower($fileName);
+            $fileName = mb_strtolower($fileName, "UTF-8");
                         
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
                 $lFullName .= $lData["usualname"];
-                $lFullName = mb_strtolower($lFullName);
+                $lFullName = mb_strtolower($lFullName, "UTF-8");
                 
                 if($lFullName == $fileName) {
                     $lDatabaseMap["members"][$i] = $lDataNew;

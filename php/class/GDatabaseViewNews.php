@@ -38,7 +38,7 @@
             $lDataMap = $dataMap["news"];
             $lData = array();
             
-            $fileName = mb_strtolower($fileName);
+            $fileName = mb_strtolower($fileName, "UTF-8");
 
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
@@ -48,7 +48,7 @@
                 $lFullName .= $lData["date"]." à ";
                 $lFullName .= $lData["time"]." | ";
                 $lFullName .= $lData["place"];
-                $lFullName = mb_strtolower($lFullName);
+                $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                 if($lFullName == $fileName) break;
             }
@@ -99,7 +99,7 @@
             $lDataMap = $dataMap["news"];
             $lData = array();
             
-            $fileName = mb_strtolower($fileName);
+            $fileName = mb_strtolower($fileName, "UTF-8");
 
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
@@ -109,7 +109,7 @@
                 $lFullName .= $lData["date"]." à ";
                 $lFullName .= $lData["time"]." | ";
                 $lFullName .= $lData["place"];
-                $lFullName = mb_strtolower($lFullName);
+                $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                 if($lFullName == $fileName) break;
             }
@@ -177,7 +177,7 @@
             );
             
             if($fileName != "") {
-                $fileName = mb_strtolower($fileName);
+                $fileName = mb_strtolower($fileName, "UTF-8");
 
                 for($i = 0; $i < count($lDataMap); $i++) {
                     $lData = $lDataMap[$i];
@@ -187,7 +187,7 @@
                     $lFullName .= $lData["date"]." à ";
                     $lFullName .= $lData["time"]." | ";
                     $lFullName .= $lData["place"];
-                    $lFullName = mb_strtolower($lFullName);
+                    $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                     if($lFullName == $fileName) break;
                 }
@@ -245,7 +245,7 @@
             $lDataMap = $dataMap["news"];
             $lData = array();
             
-            $fileName = mb_strtolower($fileName);
+            $fileName = mb_strtolower($fileName, "UTF-8");
 
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
@@ -255,7 +255,7 @@
                 $lFullName .= $lData["date"]." à ";
                 $lFullName .= $lData["time"]." | ";
                 $lFullName .= $lData["place"];
-                $lFullName = mb_strtolower($lFullName);
+                $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                 if($lFullName == $fileName) break;
             }
@@ -312,7 +312,7 @@
             $lDataNew = json_decode($data, true);
             $lDataMap = $lDatabaseMap["news"];
             
-            $fileName = mb_strtolower($fileName);
+            $fileName = mb_strtolower($fileName, "UTF-8");
                         
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
@@ -323,7 +323,7 @@
                 $lFullName .= $lData["time"]." | ";
                 $lFullName .= $lData["place"];
                 $lFullName = str_replace("/", "-", $lFullName);
-                $lFullName = mb_strtolower($lFullName);
+                $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                 if($lFullName == $fileName) {
                     $lDatabaseMap["news"][$i] = $lDataNew;
@@ -346,7 +346,53 @@
         }
         //===============================================
         public function createDatabase($filePath, $data) {
-            return "";
+            $lDatabaseMap = GJson::Instance()->getData($filePath);
+            $lDataNew = json_decode($data, true);
+            $lDataMap = $lDatabaseMap["news"];
+            
+            $lMessage = "La donnée a été ajoutée avec succès.";
+            $lAdd = true;
+            
+            if($lDataNew["author"] == "") {
+                $lMessage = "Le champ (Auteur) est obligatoire.";
+                $lAdd = false;
+            }
+            else if($lDataNew["title"] == "") {
+                $lMessage = "Le champ (Titre) est obligatoire.";
+                $lAdd = false;
+            }
+            else if($lDataNew["place"] == "") {
+                $lMessage = "Le champ (Lieu) est obligatoire.";
+                $lAdd = false;
+            }
+            else {
+                $lFileName = "";
+                $lFileName .= $lDataNew["lastname"]." ";
+                $lFileName .= $lDataNew["usualname"];
+                $lFileName = mb_strtolower($lFileName, "UTF-8");
+                
+                for($i = 0; $i < count($lDataMap); $i++) {
+                    $lData = $lDataMap[$i];
+                    $lFullName = "";
+                    $lFullName .= $lData["lastname"]." ";
+                    $lFullName .= $lData["usualname"];
+                    $lFullName = mb_strtolower($lFullName, "UTF-8");
+                    
+                    if($lFullName == $lFileName) {
+                        $lMessage = "";
+                        $lMessage .= "Impossible d'ajouter la nouvelle donnée.\n";
+                        $lMessage .= "Les champs (Nom) et (Nom Usuel) existent déjà.";
+                        $lAdd = false;
+                        break;
+                    }
+                }
+            }
+            
+            if($lAdd) {
+                $lDatabaseMap["members"][] = $lDataNew;
+                GJson::Instance()->saveData($filePath, $lDatabaseMap);
+            }
+            return $lMessage;            
         }
         //===============================================
     }
