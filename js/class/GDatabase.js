@@ -160,6 +160,7 @@ var GDatabase = (function() {
 				lDataMap["place"] = document.getElementsByName("placeNews")[0].value;
 				lDataMap["address"] = document.getElementsByName("addressNews")[0].value;
 				lDataMap["icon"] = document.getElementsByName("iconNews")[0].value;
+				lDataMap["message"] = document.getElementsByName("messageNews")[0].value;
                 
                 var lDataJson = JSON.stringify(lDataMap);
 

@@ -172,7 +172,8 @@
             "time" => "",
             "place" => "Masculin",
             "address" => "",
-            "icon" => "users"
+            "icon" => "users",
+            "message" => ""
             );
             
             if($fileName != "") {
