@@ -23,6 +23,10 @@ function createDatabase(obj) {
 	GDatabase.Instance().createDatabase(obj);
 }
 //===============================================
+function createDatabaseNews(obj) {
+	GDatabase.Instance().createDatabaseNews(obj);
+}
+//===============================================
 function readDatabaseFile() {
 	GDatabase.Instance().readFile();
 }

@@ -195,36 +195,36 @@
 
             $lFileData = "";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='author'>Auteur:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='author' id='author' value=\"".$lData["author"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='authorNews'>Auteur:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='authorNews' id='authorNews' value=\"".$lData["author"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='category'>Catégorie:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='category' id='category' value=\"".$lData["category"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='categoryNews'>Catégorie:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='categoryNews' id='categoryNews' value=\"".$lData["category"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='title'>Titre:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='title' id='title' value=\"".$lData["title"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='titleNews'>Titre:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='titleNews' id='titleNews' value=\"".$lData["title"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='date'>Date:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='date' id='date' value=\"".$lData["date"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='dateNews'>Date:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='dateNews' id='dateNews' value=\"".$lData["date"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='time'>Heure:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='time' id='time' value=\"".$lData["time"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='timeNews'>Heure:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='timeNews' id='timeNews' value=\"".$lData["time"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='place'>Lieu:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='place' id='place' value=\"".$lData["place"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='placeNews'>Lieu:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='placeNews' id='placeNews' value=\"".$lData["place"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='address'>Adresse:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='address' id='address' value=\"".$lData["address"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='addressNews'>Adresse:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='addressNews' id='addressNews' value=\"".$lData["address"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='icon'>Icône:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='icon' id='icon' value=\"".$lData["icon"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='iconNews'>Icône:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='iconNews' id='iconNews' value=\"".$lData["icon"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
             $lFileData .= "<label class='Label4' for='messageNews'>Message:</label>";
@@ -232,7 +232,7 @@
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row32'>";
             $lFileData .= "<button class='Button' type='submit' name='save'";
-            $lFileData .= "value='Créer' onclick='createDatabase(this);'>";
+            $lFileData .= "value='Créer' onclick='createDatabaseNews(this);'>";
             $lFileData .= "<i class='fa fa-cog'></i> Créer";
             $lFileData .= "</button>";
             $lFileData .= "</div>";
@@ -357,8 +357,20 @@
                 $lMessage = "Le champ (Auteur) est obligatoire.";
                 $lAdd = false;
             }
+            else if($lDataNew["category"] == "") {
+                $lMessage = "Le champ (Catégorie) est obligatoire.";
+                $lAdd = false;
+            }
             else if($lDataNew["title"] == "") {
                 $lMessage = "Le champ (Titre) est obligatoire.";
+                $lAdd = false;
+            }
+            else if($lDataNew["date"] == "") {
+                $lMessage = "Le champ (Date) est obligatoire.";
+                $lAdd = false;
+            }
+            else if($lDataNew["time"] == "") {
+                $lMessage = "Le champ (Heure) est obligatoire.";
                 $lAdd = false;
             }
             else if($lDataNew["place"] == "") {
@@ -367,21 +379,29 @@
             }
             else {
                 $lFileName = "";
-                $lFileName .= $lDataNew["lastname"]." ";
-                $lFileName .= $lDataNew["usualname"];
+                $lFileName .= $lDataNew["category"]." | ";
+                $lFileName .= $lDataNew["title"]." | ";
+                $lFileName .= $lDataNew["date"]." à ";
+                $lFileName .= $lDataNew["time"]." | ";
+                $lFileName .= $lDataNew["place"];
+                $lFileName = str_replace("/", "-", $lFileName);
                 $lFileName = mb_strtolower($lFileName, "UTF-8");
                 
                 for($i = 0; $i < count($lDataMap); $i++) {
                     $lData = $lDataMap[$i];
                     $lFullName = "";
-                    $lFullName .= $lData["lastname"]." ";
-                    $lFullName .= $lData["usualname"];
+                    $lFullName .= $lData["category"]." | ";
+                    $lFullName .= $lData["title"]." | ";
+                    $lFullName .= $lData["date"]." à ";
+                    $lFullName .= $lData["time"]." | ";
+                    $lFullName .= $lData["place"];
+                    $lFullName = str_replace("/", "-", $lFullName);
                     $lFullName = mb_strtolower($lFullName, "UTF-8");
                     
                     if($lFullName == $lFileName) {
                         $lMessage = "";
                         $lMessage .= "Impossible d'ajouter la nouvelle donnée.\n";
-                        $lMessage .= "Les champs (Nom) et (Nom Usuel) existent déjà.";
+                        $lMessage .= "Les champs (Titre) et (Date) existent déjà.";
                         $lAdd = false;
                         break;
                     }
@@ -389,7 +409,7 @@
             }
             
             if($lAdd) {
-                $lDatabaseMap["members"][] = $lDataNew;
+                $lDatabaseMap["news"][] = $lDataNew;
                 GJson::Instance()->saveData($filePath, $lDatabaseMap);
             }
             return $lMessage;            

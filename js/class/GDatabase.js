@@ -226,6 +226,44 @@ var GDatabase = (function() {
 				);
             },
             //===============================================
+            createDatabaseNews: function(obj) {
+                var lRes = confirm("Êtes vous sûr de vouloir ajouter cette nouvelle donnée ?");
+                if(!lRes) return;
+
+				var lPath = GConfig.Instance().getData("DatabasePath");
+				if(lPath == "") {alert("Aucune base de données n'a été sélectionnée !!!"); return;}
+                
+                var lDataMap = {};
+				lDataMap["author"] = document.getElementsByName("authorNews")[0].value;
+				lDataMap["category"] = document.getElementsByName("categoryNews")[0].value;
+				lDataMap["title"] = document.getElementsByName("titleNews")[0].value;
+				lDataMap["date"] = document.getElementsByName("dateNews")[0].value;
+				lDataMap["time"] = document.getElementsByName("timeNews")[0].value;
+				lDataMap["place"] = document.getElementsByName("placeNews")[0].value;
+				lDataMap["address"] = document.getElementsByName("addressNews")[0].value;
+				lDataMap["icon"] = document.getElementsByName("iconNews")[0].value;
+				lDataMap["message"] = document.getElementsByName("messageNews")[0].value;
+                
+                var lDataJson = JSON.stringify(lDataMap);
+                                
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						var lDataMap = JSON.parse(lData);
+                        GDatabase.Instance().init();
+                        alert(lDataMap["data"]);
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "CREATE_DATABASE" +
+				"&file=" + lPath +
+				"&data=" + lDataJson
+				);
+            },
+            //===============================================
             readFile: function() {
                 var lFileRead = document.getElementById("DatabaseFileRead");
 				var lFile = GConfig.Instance().getData("DatabaseFile");
