@@ -88,7 +88,7 @@
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
             $lFileData .= "<span class='Label4'>Message:</span> ";
-            $lFileData .= "<div class='Field9'><textarea class='message' rows='11' cols='100' readonly>".$lData["message"]."</textarea></div>";
+            $lFileData .= "<div class='Field10'><textarea class='message' rows='11' cols='100' readonly>".$lData["message"]."</textarea></div>";
             $lFileData .= "</div>";
             $lFileData .= "<i class='Img7 fa fa-".$lData["icon"]."'></i>";
             
