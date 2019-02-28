@@ -7,6 +7,7 @@
     "menu":
     [
         {"name":"Chorale","link":"/Chorale/","follow":"yes"},
-        {"name":"Admin","link":"/Admin/"}
+        {"name":"News","link":"/News/","follow":"yes"},
+        {"name":"Admin","link":"/Admin/","follow":"no"}
     ]
 }

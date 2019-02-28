@@ -1,0 +1,18 @@
+{
+    "sitemap":"no",
+    "meta_data":
+    {
+        "meta_desc":
+        [
+            "Restez informé en temps réel des dernières nouvelles",
+            "de l'Eglise Harriste de France.",
+            "Produit par Gérard KESSE."
+        ],
+        "meta_cano":"/News/"
+    },
+    "links":
+    [
+        {"name":"Accueil","link":"/Accueil/","follow":"no"},
+        {"name":"News","link":"","follow":"no"}
+    ]
+}

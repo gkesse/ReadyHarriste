@@ -30,6 +30,10 @@
                     onclick="openDatabaseTab(this, 'DatabaseTab4'); createDatabaseFile();">Ajouter</button>
                 </div>
                 <div class="Col">
+                    <button class="Button2 DatabaseTab" title="Apercevoir une donnée" 
+                    onclick="openDatabaseTab(this, 'DatabaseTab5'); createDatabaseFile();">Aperçu</button>
+                </div>
+                <div class="Col">
                     <button class="Button2" title="Supprimer une donnée" 
                     onclick="deleteDatabaseFile();"><i class="fa fa-trash"></i></button>
                 </div>
@@ -93,6 +97,17 @@
                 <div class="Body14">
                     <div class="Content9">
                         <div class="Body21" id="DatabaseFileCreate"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================ -->
+            <div class="Row Left DatabaseTabCtn" id="DatabaseTab5">
+                <h2 class="Title4">
+                    Apercevoir une donnée
+                </h2>
+                <div class="Body14">
+                    <div class="Content9">
+                        <div class="Body21" id="DatabaseFilePreview"></div>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 {
-    "sitemap":"no",
+    "sitemap":"yes",
     "meta_data":
     {
         "meta_desc":
@@ -14,5 +14,9 @@
     [
         {"name":"Accueil","link":"/Accueil/","follow":"no"},
         {"name":"Chorale","link":"","follow":"no"}
+    ],
+    "navs":
+    [
+        {"name":"nav","link":"/Chorale/Membres/","follow":"yes"}
     ]
 }

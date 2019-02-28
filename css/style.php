@@ -899,6 +899,11 @@ span {
     height: 30px;
 }
 
+.Field9 {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
 .Form {
     background-color: rgba(255, 255, 255, 0.2);
     display: inline-block;
@@ -1082,6 +1087,19 @@ span {
     height: 80px;
     line-height: 80px;
     border-radius: 50%;
+}
+
+.Img7 {
+    background-color: rgba(255,255,255,0.2);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
 }
 
 .Input {

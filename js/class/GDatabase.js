@@ -15,6 +15,7 @@ var GDatabase = (function() {
                 this.readFile();
                 this.updateFile();
                 this.createFile();
+                this.previewFile();
             },
             //===============================================
             openDatabaseTab: function(obj, name) {
@@ -42,10 +43,10 @@ var GDatabase = (function() {
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
-						var lDataArr = JSON.parse(lData);
-						lFileMap.innerHTML = lDataArr["file_map"];
-						lFileMenu.innerHTML = lDataArr["file_menu"];
-						lFilePath.innerHTML = lDataArr["file_path"];
+						var lDataMap = JSON.parse(lData);
+						lFileMap.innerHTML = lDataMap["file_map"];
+						lFileMenu.innerHTML = lDataMap["file_menu"];
+						lFilePath.innerHTML = lDataMap["file_path"];
                         GConfig.Instance().setData("DatabasePath", path);
                     }
                 }
@@ -129,8 +130,45 @@ var GDatabase = (function() {
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
-						var lDataArr = JSON.parse(lData);
-                        GConfig.Instance().setData("DatabaseFile", lDataArr["data"]);
+						var lDataMap = JSON.parse(lData);
+                        GConfig.Instance().setData("DatabaseFile", lDataMap["data"]);
+                        GDatabase.Instance().init();
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "UPDATE_DATABASE" +
+				"&file=" + lFile +
+				"&data=" + lDataJson
+				);
+            },
+            //===============================================
+            updateDatabaseNews: function(obj) {
+                var lRes = confirm("Êtes vous sûr de vouloir enregistrer les modifications ?");
+                if(!lRes) return;
+
+				var lFile = GConfig.Instance().getData("DatabaseFile");
+				if(lFile == "") {alert("Aucun fichier n'a été sélectionné !!!"); return;}
+                
+                var lDataMap = {};
+				lDataMap["author"] = document.getElementsByName("authorNews")[0].value;
+				lDataMap["category"] = document.getElementsByName("categoryNews")[0].value;
+				lDataMap["title"] = document.getElementsByName("titleNews")[0].value;
+				lDataMap["date"] = document.getElementsByName("dateNews")[0].value;
+				lDataMap["time"] = document.getElementsByName("timeNews")[0].value;
+				lDataMap["place"] = document.getElementsByName("placeNews")[0].value;
+				lDataMap["address"] = document.getElementsByName("addressNews")[0].value;
+				lDataMap["icon"] = document.getElementsByName("iconNews")[0].value;
+                
+                var lDataJson = JSON.stringify(lDataMap);
+
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						var lDataMap = JSON.parse(lData);
+                        GConfig.Instance().setData("DatabaseFile", lDataMap["data"]);
                         GDatabase.Instance().init();
                     }
                 }
@@ -173,9 +211,9 @@ var GDatabase = (function() {
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
-						var lDataArr = JSON.parse(lData);
+						var lDataMap = JSON.parse(lData);
                         GDatabase.Instance().init();
-                        alert(lDataArr["data"]);
+                        alert(lDataMap["data"]);
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/database.php", true);
@@ -194,8 +232,8 @@ var GDatabase = (function() {
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
-						var lDataArr = JSON.parse(lData);
-                        lFileRead.innerHTML = lDataArr["data"];
+						var lDataMap = JSON.parse(lData);
+                        lFileRead.innerHTML = lDataMap["data"];
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/database.php", true);
@@ -213,8 +251,8 @@ var GDatabase = (function() {
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
-						var lDataArr = JSON.parse(lData);
-                        lFileUpdate.innerHTML = lDataArr["data"];
+						var lDataMap = JSON.parse(lData);
+                        lFileUpdate.innerHTML = lDataMap["data"];
                         GComboBox.Instance().fillBox("DatabaseComboBoxUpdate", true);
                     }
                 }
@@ -235,8 +273,8 @@ var GDatabase = (function() {
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
-						var lDataArr = JSON.parse(lData);
-                        lFileCreate.innerHTML = lDataArr["data"];
+						var lDataMap = JSON.parse(lData);
+                        lFileCreate.innerHTML = lDataMap["data"];
                         GComboBox.Instance().fillBox("DatabaseComboBoxCreate", true);
                     }
                 }
@@ -245,6 +283,26 @@ var GDatabase = (function() {
                 lXmlhttp.send(
 				"req=" + "CREATE_FILE" +
 				"&path=" + lPath +
+				"&file=" + lFile
+				);
+            },
+            //===============================================
+            previewFile: function() {
+                var lFilePreview = document.getElementById("DatabaseFilePreview");
+				var lFile = GConfig.Instance().getData("DatabaseFile");
+                
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						var lDataMap = JSON.parse(lData);
+                        lFilePreview.innerHTML = lDataMap["data"];
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "PREVIEW_FILE" +
 				"&file=" + lFile
 				);
             },
@@ -264,7 +322,7 @@ var GDatabase = (function() {
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
-						var lDataArr = JSON.parse(lData);
+						var lDataMap = JSON.parse(lData);
                         GConfig.Instance().setData("DatabaseFile", "");
                         GDatabase.Instance().init();
                     }

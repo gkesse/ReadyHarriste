@@ -16,7 +16,7 @@
         //===============================================
         public function openDatabase($dataMap) {
             $lDataMap = $dataMap["members"];
-            $lDirNameArr = array();
+            $lDirNameMap = array();
             $lIcon = "file";
             
             for($i = 0; $i < count($lDataMap); $i++) {
@@ -24,10 +24,10 @@
                 $lFullName = "";
                 $lFullName .= $lData["lastname"]." ";
                 $lFullName .= $lData["usualname"];
-                $lDirNameArr[] = array($lFullName, $lIcon, "FILE");
+                $lDirNameMap[] = array($lFullName, $lIcon, "FILE");
             }
             
-            return $lDirNameArr;
+            return $lDirNameMap;
         }
         //===============================================
         public function readFile($dataMap, $fileName) {
@@ -398,6 +398,10 @@
             $lFileData .= "</div>";
 
             return $lFileData;
+        }
+        //===============================================
+        public function previewFile($dataMap, $fileName) {            
+            return '';
         }
         //===============================================
         public function deleteFile($filePath, $fileName) {
