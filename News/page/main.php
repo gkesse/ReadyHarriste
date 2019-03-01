@@ -107,4 +107,19 @@ margin: 0px 0px 10px 0px;
 <div>Bonjour chers fidèles, Les maîtres de Chœur</div>
 
 </div>
-</div><br><br></div></div>
+</div><br><br><div class="Content0 GHtml1"><div style="
+background-color: #051039;
+max-width: 500px;
+margin: auto;
+text-align: left;
+padding: 20px 10px;
+overflow: hidden;
+font-size: 18px;
+">
+
+Bonjour
+
+
+
+</div>
+</div><br><br><br><br></div></div>

@@ -19,6 +19,10 @@ function updateDatabaseNews(obj) {
 	GDatabase.Instance().updateDatabaseNews(obj);
 }
 //===============================================
+function copyMessageNewsUpdate(obj) {
+	GDatabase.Instance().copyMessageNewsUpdate(obj);
+}
+//===============================================
 function createDatabase(obj) {
 	GDatabase.Instance().createDatabase(obj);
 }

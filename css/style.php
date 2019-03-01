@@ -1041,6 +1041,31 @@ span {
     color: white;
 }
 
+.Icon12 {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    top: 5px;
+    left: 155px;
+    color: white;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.Icon12:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+.Icon12:active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
 .Img {
     background-image: url("/data/img/defaults/events.jpg");
     min-height: 500px;
@@ -1588,6 +1613,12 @@ span {
     max-width: 450px;
     text-align: right;
 }
+
+.Row33 {
+    padding: 5px 0px;
+    position: relative;
+}
+
 
 .Shift1 {
     padding-left: 10px;

@@ -150,15 +150,15 @@ var GDatabase = (function() {
 				if(lFile == "") {alert("Aucun fichier n'a été sélectionné !!!"); return;}
                 
                 var lDataMap = {};
-				lDataMap["author"] = document.getElementsByName("authorNews")[0].value;
-				lDataMap["category"] = document.getElementsByName("categoryNews")[0].value;
-				lDataMap["title"] = document.getElementsByName("titleNews")[0].value;
-				lDataMap["date"] = document.getElementsByName("dateNews")[0].value;
-				lDataMap["time"] = document.getElementsByName("timeNews")[0].value;
-				lDataMap["place"] = document.getElementsByName("placeNews")[0].value;
-				lDataMap["address"] = document.getElementsByName("addressNews")[0].value;
-				lDataMap["icon"] = document.getElementsByName("iconNews")[0].value;
-				lDataMap["message"] = document.getElementsByName("messageNews")[0].value;
+				lDataMap["author"] = document.getElementsByName("authorNewsUpdate")[0].value;
+				lDataMap["category"] = document.getElementsByName("categoryNewsUpdate")[0].value;
+				lDataMap["title"] = document.getElementsByName("titleNewsUpdate")[0].value;
+				lDataMap["date"] = document.getElementsByName("dateNewsUpdate")[0].value;
+				lDataMap["time"] = document.getElementsByName("timeNewsUpdate")[0].value;
+				lDataMap["place"] = document.getElementsByName("placeNewsUpdate")[0].value;
+				lDataMap["address"] = document.getElementsByName("addressNewsUpdate")[0].value;
+				lDataMap["icon"] = document.getElementsByName("iconNewsUpdate")[0].value;
+				lDataMap["message"] = document.getElementById("messageNewsUpdate").innerHTML;
                 
                 var lDataJson = JSON.stringify(lDataMap);
 
@@ -345,7 +345,7 @@ var GDatabase = (function() {
             },
             //===============================================
             visualizeFile: function() {
-                var lFilePreview = document.getElementById("DatabaseFileVisualize");
+                var lFileVisualize = document.getElementById("DatabaseFileVisualize");
 				var lFile = GConfig.Instance().getData("DatabaseFile");
                 
                 var lXmlhttp = new XMLHttpRequest();
@@ -353,7 +353,7 @@ var GDatabase = (function() {
                     if(this.readyState == 4 && this.status == 200) {
 						var lData = this.responseText;
 						var lDataMap = JSON.parse(lData);
-                        lFilePreview.innerHTML = lDataMap["data"];
+                        lFileVisualize.innerHTML = lDataMap["data"];
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/database.php", true);
@@ -389,6 +389,24 @@ var GDatabase = (function() {
                 lXmlhttp.send(
 				"req=" + "DELETE_FILE" +
 				"&file=" + lFile
+				);
+            },
+            //===============================================
+            copyMessageNewsUpdate: function(obj) {                
+                var lFileMessage = document.getElementById("messageNewsUpdate");
+
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						var lDataMap = JSON.parse(lData);
+                        lFileMessage.innerHTML = lDataMap["data"];
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "COPY_MESSAGE"
 				);
             }
             //===============================================

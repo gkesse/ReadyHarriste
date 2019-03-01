@@ -110,4 +110,14 @@
 		print_r($lDataJson);
     }
 	//===============================================
+	else if($lReq == "COPY_MESSAGE") {
+        $lFile = "News/page/message.php";
+		$lMessage = GFile::Instance()->getData($lFile);
+        
+        $lDataArr = array();
+        $lDataArr["data"] = $lMessage;
+		$lDataJson = json_encode($lDataArr);
+		print_r($lDataJson);
+    }
+	//===============================================
 ?>
