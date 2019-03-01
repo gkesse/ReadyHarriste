@@ -173,7 +173,7 @@
             "title" => "",
             "date" => "",
             "time" => "",
-            "place" => "Masculin",
+            "place" => "",
             "address" => "",
             "icon" => "users",
             "message" => ""
@@ -385,14 +385,38 @@
         }
         //===============================================
         public function deleteFile($filePath, $fileName) {
-            return "";
+            $lDatabaseMap = GJson::Instance()->getData($filePath);
+            $lDataMap = $lDatabaseMap["news"];
+            
+            $fileName = mb_strtolower($fileName, "UTF-8");
+                        
+            for($i = 0; $i < count($lDataMap); $i++) {
+                $lData = $lDataMap[$i];
+                $lFullName = "";
+                $lFullName .= $lData["category"]." | ";
+                $lFullName .= $lData["title"]." | ";
+                $lFullName .= $lData["date"]." à ";
+                $lFullName .= $lData["time"]." | ";
+                $lFullName .= $lData["place"];
+                $lFullName = str_replace("/", "-", $lFullName);
+                $lFullName = mb_strtolower($lFullName, "UTF-8");
+                
+                if($lFullName == $fileName) {
+                    array_splice($lDatabaseMap["news"], $i, 1);
+                    break;
+                }
+            }
+            
+            GJson::Instance()->saveData($filePath, $lDatabaseMap);
+            $lMessage = "La donnée a été supprimée avec succès.";
+            return $lMessage;
         }
         //===============================================
         public function updateDatabase($filePath, $fileName, $data) {
             $lDatabaseMap = GJson::Instance()->getData($filePath);
             $lDataNew = json_decode($data, true);
             $lDataMap = $lDatabaseMap["news"];
-            
+
             $fileName = mb_strtolower($fileName, "UTF-8");
                         
             for($i = 0; $i < count($lDataMap); $i++) {
@@ -413,12 +437,11 @@
             }
 
             $lFullPath = "";
-            $lFullPath .= $lData["category"]." | ";
-            $lFullPath .= $lData["title"]." | ";
-            $lFullPath .= $lData["date"]." à ";
-            $lFullPath .= $lData["time"]." | ";
-            $lFullPath .= $lData["place"];
-            
+            $lFullPath .= $lDataNew["category"]." | ";
+            $lFullPath .= $lDataNew["title"]." | ";
+            $lFullPath .= $lDataNew["date"]." à ";
+            $lFullPath .= $lDataNew["time"]." | ";
+            $lFullPath .= $lDataNew["place"];
             $lFullPath = str_replace("/", "-", $lFullPath);
             $lFullPath = "/News/".$lFullPath;
 

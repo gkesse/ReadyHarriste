@@ -39,6 +39,7 @@ var GDatabase = (function() {
                 var lFileMenu = document.getElementById("DatabaseFileMenu");
                 var lFileMap = document.getElementById("DatabaseFileMap");
 				var lFile = GConfig.Instance().getData("DatabaseFile");
+                
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
@@ -65,6 +66,7 @@ var GDatabase = (function() {
                 var lFile = obj.innerText;
                 var lDatabasePath = GConfig.Instance().getData("DatabasePath");
 				var lDatabaseFile = lDatabasePath + "/" + lFile;
+
                 if(type == "FILE") {
 					var lRes = confirm("Êtes-vous sûr de vouloir sélectionner ce fichier ?");
 					if(!lRes) return;
@@ -77,7 +79,10 @@ var GDatabase = (function() {
 					lDatabaseFile = lDatabaseFile.replace(/\\/gi, "/");
 					GConfig.Instance().setData("DatabaseFile", lDatabaseFile);
                     lFilePath.innerHTML = lDatabaseFile;
-                    GDatabase.Instance().init();
+                    this.readFile();
+                    this.updateFile();
+                    this.createFile();
+                    this.previewFile();
                     var lTabCtn = document.getElementsByClassName("DatabaseTab");
                     var lObj = lTabCtn[2];
                     this.openDatabaseTab(lObj, "DatabaseTab2");
@@ -158,8 +163,10 @@ var GDatabase = (function() {
 				lDataMap["place"] = document.getElementsByName("placeNewsUpdate")[0].value;
 				lDataMap["address"] = document.getElementsByName("addressNewsUpdate")[0].value;
 				lDataMap["icon"] = document.getElementsByName("iconNewsUpdate")[0].value;
-				lDataMap["message"] = document.getElementById("messageNewsUpdate").innerHTML;
-                
+                var lMessage = document.getElementById("messageNewsUpdate").innerHTML;
+                lMessage = this.encodeHtml(lMessage, "json");
+				lDataMap["message"] = lMessage;
+                                
                 var lDataJson = JSON.stringify(lDataMap);
 
                 var lXmlhttp = new XMLHttpRequest();
@@ -212,7 +219,6 @@ var GDatabase = (function() {
 						var lData = this.responseText;
 						var lDataMap = JSON.parse(lData);
                         GDatabase.Instance().init();
-                        alert(lDataMap["data"]);
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/database.php", true);
@@ -250,7 +256,6 @@ var GDatabase = (function() {
 						var lData = this.responseText;
 						var lDataMap = JSON.parse(lData);
                         GDatabase.Instance().init();
-                        alert(lDataMap["data"]);
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/database.php", true);
@@ -408,6 +413,33 @@ var GDatabase = (function() {
                 lXmlhttp.send(
 				"req=" + "COPY_MESSAGE"
 				);
+            },
+            //===============================================
+            encodeHtml: function(data, lang) {
+                var lEntityMap = {
+                    '&nbsp;': ' |json',
+                    '<': '&lt;|html',
+                    '>': '&gt;|html',
+                    '\n': '<br>|html',
+                    '&lt;': '<|txt',
+                    '&gt;': '>|txt',
+                    '&amp;': '&|tex;txt',
+                    '<br>': '\n|txt'
+                };
+                for(key in lEntityMap) {
+                    var lVal = lEntityMap[key];
+                    var lSplit = lVal.split("|");
+                    var lVal2 = lSplit[0];
+                    if(lSplit.length > 1) {
+                        var lVal3 = lSplit[1];
+                        var lSplit2 = lVal3.split(";");
+                        var lIncludes = lSplit2.includes(lang);
+                        if(!lIncludes) continue;
+                    }
+                    var lReg = new RegExp(key, 'g');
+                    data = data.replace(lReg, lVal2);
+                }
+                return data;
             }
             //===============================================
         };
