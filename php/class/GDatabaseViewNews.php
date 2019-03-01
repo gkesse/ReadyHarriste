@@ -48,6 +48,7 @@
                 $lFullName .= $lData["date"]." à ";
                 $lFullName .= $lData["time"]." | ";
                 $lFullName .= $lData["place"];
+                $lFullName = str_replace("/", "-", $lFullName);
                 $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                 if($lFullName == $fileName) break;
@@ -109,6 +110,7 @@
                 $lFullName .= $lData["date"]." à ";
                 $lFullName .= $lData["time"]." | ";
                 $lFullName .= $lData["place"];
+                $lFullName = str_replace("/", "-", $lFullName);
                 $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                 if($lFullName == $fileName) break;
@@ -187,6 +189,7 @@
                     $lFullName .= $lData["date"]." à ";
                     $lFullName .= $lData["time"]." | ";
                     $lFullName .= $lData["place"];
+                    $lFullName = str_replace("/", "-", $lFullName);
                     $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                     if($lFullName == $fileName) break;
@@ -196,39 +199,39 @@
             $lFileData = "";
             $lFileData .= "<div class='Row9'>"; 
             $lFileData .= "<label class='Label4' for='authorNews'>Auteur:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='authorNews' id='authorNews' value=\"".$lData["author"]."\"/></div>";
+            $lFileData .= "<div class='Field8'><input type='text' name='authorNewsCreate' id='authorNewsCreate' value=\"".$lData["author"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='categoryNews'>Catégorie:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='categoryNews' id='categoryNews' value=\"".$lData["category"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='categoryNewsCreate'>Catégorie:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='categoryNewsCreate' id='categoryNewsCreate' value=\"".$lData["category"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='titleNews'>Titre:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='titleNews' id='titleNews' value=\"".$lData["title"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='titleNewsCreate'>Titre:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='titleNewsCreate' id='titleNewsCreate' value=\"".$lData["title"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='dateNews'>Date:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='dateNews' id='dateNews' value=\"".$lData["date"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='dateNewsCreate'>Date:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='dateNewsCreate' id='dateNewsCreate' value=\"".$lData["date"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='timeNews'>Heure:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='timeNews' id='timeNews' value=\"".$lData["time"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='timeNewsCreate'>Heure:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='timeNewsCreate' id='timeNewsCreate' value=\"".$lData["time"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='placeNews'>Lieu:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='placeNews' id='placeNews' value=\"".$lData["place"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='placeNewsCreate'>Lieu:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='placeNewsCreate' id='placeNewsCreate' value=\"".$lData["place"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='addressNews'>Adresse:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='addressNews' id='addressNews' value=\"".$lData["address"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='addressNewsCreate'>Adresse:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='addressNewsCreate' id='addressNewsCreate' value=\"".$lData["address"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='iconNews'>Icône:</label>";
-            $lFileData .= "<div class='Field8'><input type='text' name='iconNews' id='iconNews' value=\"".$lData["icon"]."\"/></div>";
+            $lFileData .= "<label class='Label4' for='iconNewsCreate'>Icône:</label>";
+            $lFileData .= "<div class='Field8'><input type='text' name='iconNewsCreate' id='iconNewsCreate' value=\"".$lData["icon"]."\"/></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
-            $lFileData .= "<label class='Label4' for='messageNews'>Message:</label>";
-            $lFileData .= "<div class='Field9'><textarea rows='11' cols='100' name='messageNews' id='messageNews' oninput='messageChangeNews();'>".$lData["message"]."</textarea></div>";
+            $lFileData .= "<label class='Label4' for='messageNewsCreate'>Message:</label>";
+            $lFileData .= "<div class='Field9'><textarea rows='11' cols='100' name='messageNewsCreate' id='messageNewsCreate' oninput='messageChangeNews();'>".$lData["message"]."</textarea></div>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row32'>";
             $lFileData .= "<button class='Button' type='submit' name='save'";
@@ -255,6 +258,7 @@
                 $lFullName .= $lData["date"]." à ";
                 $lFullName .= $lData["time"]." | ";
                 $lFullName .= $lData["place"];
+                $lFullName = str_replace("/", "-", $lFullName);
                 $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                 if($lFullName == $fileName) break;
@@ -294,8 +298,84 @@
             <div style="
             color: #555555;
             "><?php echo $lData["date"]; ?> à <?php echo $lData["time"]; ?></div>
-            <div><?php echo $lData["place"]; ?></div>
+            <div style="
+            color: #555555;
+            "><?php echo $lData["place"]; ?></div>
             </a>
+            <?php
+            $lFileData = ob_get_contents();
+            ob_end_clean();
+    
+            return $lFileData;
+        }
+        //===============================================
+        public function visualizeFile($dataMap, $fileName) {
+            $lDataMap = $dataMap["news"];
+            $lData = array();
+            
+            $fileName = mb_strtolower($fileName, "UTF-8");
+
+            for($i = 0; $i < count($lDataMap); $i++) {
+                $lData = $lDataMap[$i];
+                $lFullName = "";
+                $lFullName .= $lData["category"]." | ";
+                $lFullName .= $lData["title"]." | ";
+                $lFullName .= $lData["date"]." à ";
+                $lFullName .= $lData["time"]." | ";
+                $lFullName .= $lData["place"];
+                $lFullName = str_replace("/", "-", $lFullName);
+                $lFullName = mb_strtolower($lFullName, "UTF-8");
+
+                if($lFullName == $fileName) break;
+            }
+
+            ob_start();?>
+            <div style="
+            background-color: #051039;
+            border: 1px solid gray;
+            max-width: 500px;
+            margin: auto;
+            text-align: left;
+            padding: 10px;
+            overflow: hidden;
+            font-size: 18px;
+            ">
+
+            <div style="
+            float: left;
+            padding-right: 10px;
+            "><i class="fa fa-<?php echo $lData["icon"]; ?>" style="
+            background-color: rgba(255,255,255,0.2);
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 40px;
+            "></i></div>
+
+            <div style="
+            color: cyan;
+            font-weight: bold;
+            font-size: 20px;
+            "><?php echo $lData["title"]; ?></div>
+
+            <div style="
+            color: #555555;
+            "><?php echo $lData["date"]; ?> à <?php echo $lData["time"]; ?></div>
+
+            <div style="
+            color: #555555;
+            "><?php echo $lData["place"]; ?></div>
+
+            <div style="
+            color: #555555;
+            margin: 0px 0px 10px 0px;
+            "><?php echo $lData["address"]; ?></div>
+
+            <div><?php echo $lData["message"]; ?></div>
+
+            </div>
             <?php
             $lFileData = ob_get_contents();
             ob_end_clean();

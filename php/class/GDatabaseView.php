@@ -19,6 +19,7 @@
         abstract public function updateFile($dataMap, $fileName);
         abstract public function createFile($dataMap, $fileName);
         abstract public function previewFile($dataMap, $fileName);
+        abstract public function visualizeFile($dataMap, $fileName);
         abstract public function deleteFile($filePath, $fileName);
         abstract public function updateDatabase($filePath, $fileName, $data);
         abstract public function createDatabase($filePath, $data);

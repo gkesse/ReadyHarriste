@@ -54,6 +54,7 @@
         abstract public function updateFile($file);
         abstract public function createFile($path, $file);
         abstract public function previewFile($file);
+        abstract public function visualizeFile($file);
         abstract public function deleteFile($file);
         abstract public function updateDatabase($file, $data);
         abstract public function createDatabase($file, $data);

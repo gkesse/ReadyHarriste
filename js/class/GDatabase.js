@@ -77,9 +77,7 @@ var GDatabase = (function() {
 					lDatabaseFile = lDatabaseFile.replace(/\\/gi, "/");
 					GConfig.Instance().setData("DatabaseFile", lDatabaseFile);
                     lFilePath.innerHTML = lDatabaseFile;
-                    this.readFile();
-                    this.updateFile();
-                    this.createFile();
+                    GDatabase.Instance().init();
                     var lTabCtn = document.getElementsByClassName("DatabaseTab");
                     var lObj = lTabCtn[2];
                     this.openDatabaseTab(lObj, "DatabaseTab2");
@@ -234,18 +232,18 @@ var GDatabase = (function() {
 				if(lPath == "") {alert("Aucune base de données n'a été sélectionnée !!!"); return;}
                 
                 var lDataMap = {};
-				lDataMap["author"] = document.getElementsByName("authorNews")[0].value;
-				lDataMap["category"] = document.getElementsByName("categoryNews")[0].value;
-				lDataMap["title"] = document.getElementsByName("titleNews")[0].value;
-				lDataMap["date"] = document.getElementsByName("dateNews")[0].value;
-				lDataMap["time"] = document.getElementsByName("timeNews")[0].value;
-				lDataMap["place"] = document.getElementsByName("placeNews")[0].value;
-				lDataMap["address"] = document.getElementsByName("addressNews")[0].value;
-				lDataMap["icon"] = document.getElementsByName("iconNews")[0].value;
-				lDataMap["message"] = document.getElementsByName("messageNews")[0].value;
+				lDataMap["author"] = document.getElementsByName("authorNewsCreate")[0].value;
+				lDataMap["category"] = document.getElementsByName("categoryNewsCreate")[0].value;
+				lDataMap["title"] = document.getElementsByName("titleNewsCreate")[0].value;
+				lDataMap["date"] = document.getElementsByName("dateNewsCreate")[0].value;
+				lDataMap["time"] = document.getElementsByName("timeNewsCreate")[0].value;
+				lDataMap["place"] = document.getElementsByName("placeNewsCreate")[0].value;
+				lDataMap["address"] = document.getElementsByName("addressNewsCreate")[0].value;
+				lDataMap["icon"] = document.getElementsByName("iconNewsCreate")[0].value;
+				lDataMap["message"] = document.getElementsByName("messageNewsCreate")[0].value;
                 
                 var lDataJson = JSON.stringify(lDataMap);
-                                
+
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
@@ -342,6 +340,26 @@ var GDatabase = (function() {
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 				"req=" + "PREVIEW_FILE" +
+				"&file=" + lFile
+				);
+            },
+            //===============================================
+            visualizeFile: function() {
+                var lFilePreview = document.getElementById("DatabaseFileVisualize");
+				var lFile = GConfig.Instance().getData("DatabaseFile");
+                
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						var lDataMap = JSON.parse(lData);
+                        lFilePreview.innerHTML = lDataMap["data"];
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "VISUALIZE_FILE" +
 				"&file=" + lFile
 				);
             },

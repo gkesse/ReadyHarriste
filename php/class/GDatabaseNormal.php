@@ -155,6 +155,31 @@
 			return $lFileData;
         }
         //===============================================
+        public function visualizeFile($file) {
+            if($file == "") return "";
+            $lJsonMap = GJson::Instance()->getData("data/json/Admin.json");
+            $lJsonData = $lJsonMap["database"];
+            $this->getDatabaseName($file);
+            
+            if($this->m_databaseName == "") return;
+            $lDatabaseFile = "";
+            $lDatabaseName = "";
+            
+            for($i = 0; $i < count($lJsonData); $i++) {
+                $lData = $lJsonData[$i];
+                $lDatabaseName = $lData["name"];
+                if($lDatabaseName == $this->m_databaseName) {
+                    $lDatabaseFile = $lData["file"];
+                    break;
+                }
+            }
+                
+            $lDatabaseMap = GJson::Instance()->getData($lDatabaseFile);
+            GConfig::Instance()->setData("DATABASE", $lDatabaseName);
+            $lFileData = GDatabaseView::Instance()->visualizeFile($lDatabaseMap, $this->m_fileName);
+			return $lFileData;
+        }
+        //===============================================
         public function deleteFile($file) {
             $lJsonMap = GJson::Instance()->getData("data/json/Admin.json");
             $lJsonData = $lJsonMap["database"];

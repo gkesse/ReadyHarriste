@@ -31,7 +31,11 @@
                 </div>
                 <div class="Col">
                     <button class="Button2 DatabaseTab" title="Apercevoir une donnée" 
-                    onclick="openDatabaseTab(this, 'DatabaseTab5'); createDatabaseFile();">Aperçu</button>
+                    onclick="openDatabaseTab(this, 'DatabaseTab5'); previewDatabaseFile();">Aperçu</button>
+                </div>
+                <div class="Col">
+                    <button class="Button2 DatabaseTab" title="Visualiser une fiche" 
+                    onclick="openDatabaseTab(this, 'DatabaseTab6'); visualizeDatabaseFile();">Fiche</button>
                 </div>
                 <div class="Col">
                     <button class="Button2" title="Supprimer une donnée" 
@@ -108,6 +112,17 @@
                 <div class="Body14">
                     <div class="Content9">
                         <div class="Body21" id="DatabaseFilePreview"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================ -->
+            <div class="Row Left DatabaseTabCtn" id="DatabaseTab6">
+                <h2 class="Title4">
+                    Visualiser une fiche
+                </h2>
+                <div class="Body14">
+                    <div class="Content9">
+                        <div class="Body21" id="DatabaseFileVisualize"></div>
                     </div>
                 </div>
             </div>

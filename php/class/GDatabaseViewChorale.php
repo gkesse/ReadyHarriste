@@ -401,7 +401,11 @@
         }
         //===============================================
         public function previewFile($dataMap, $fileName) {            
-            return '';
+            return "";
+        }
+        //===============================================
+        public function visualizeFile($dataMap, $fileName) {            
+            return "";
         }
         //===============================================
         public function deleteFile($filePath, $fileName) {

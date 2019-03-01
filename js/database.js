@@ -39,6 +39,14 @@ function createDatabaseFile() {
 	GDatabase.Instance().createFile();
 }
 //===============================================
+function previewDatabaseFile() {
+	GDatabase.Instance().previewFile();
+}
+//===============================================
+function visualizeDatabaseFile() {
+	GDatabase.Instance().visualizeFile();
+}
+//===============================================
 function deleteDatabaseFile() {
 	GDatabase.Instance().deleteFile();
 }

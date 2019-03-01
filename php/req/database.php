@@ -64,6 +64,17 @@
 		print_r($lDataJson);
     }
 	//===============================================
+	else if($lReq == "VISUALIZE_FILE") {
+		$lFile = $_REQUEST["file"];
+        
+		$lData = GDatabase::Instance()->visualizeFile($lFile);
+        
+        $lDataArr = array();
+        $lDataArr["data"] = $lData;
+		$lDataJson = json_encode($lDataArr);
+		print_r($lDataJson);
+    }
+	//===============================================
 	else if($lReq == "DELETE_FILE") {
 		$lFile = $_REQUEST["file"];
         

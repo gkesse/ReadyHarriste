@@ -62,4 +62,49 @@ font-size: 20px;
 
 <div>22/03/2019 à 20h30</div>
 <div>Chez la sœur Angeline</div>
-</a></div><br><br><br></div></div>
+</a></div><br><div class="Content0 GHtml1"><div style="
+background-color: #051039;
+max-width: 500px;
+margin: auto;
+text-align: left;
+padding: 10px;
+overflow: hidden;
+font-size: 18px;
+">
+
+<div style="
+float: left;
+padding-right: 10px;
+"><i class="fa fa-users" style="
+background-color: rgba(255,255,255,0.2);
+width: 80px;
+height: 80px;
+line-height: 80px;
+border-radius: 50%;
+text-align: center;
+font-size: 40px;
+"></i></div>
+
+<div style="
+color: cyan;
+font-weight: bold;
+font-size: 20px;
+">Réunion de la chorale</div>
+
+<div style="
+color: #555555;
+">22/03/2019 à 20h30</div>
+
+<div style="
+color: #555555;
+">Chez la sœur Angeline</div>
+
+<div style="
+color: #555555;
+margin: 0px 0px 10px 0px;
+">4 Allée du Vercors, 94800 Villejuif</div>
+
+<div>Bonjour chers fidèles, Les maîtres de Chœur</div>
+
+</div>
+</div><br><br></div></div>
