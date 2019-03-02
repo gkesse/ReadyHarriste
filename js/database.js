@@ -19,10 +19,6 @@ function updateDatabaseNews(obj) {
 	GDatabase.Instance().updateDatabaseNews(obj);
 }
 //===============================================
-function copyMessageNewsUpdate(obj) {
-	GDatabase.Instance().copyMessageNewsUpdate(obj);
-}
-//===============================================
 function createDatabase(obj) {
 	GDatabase.Instance().createDatabase(obj);
 }
@@ -53,5 +49,21 @@ function visualizeDatabaseFile() {
 //===============================================
 function deleteDatabaseFile() {
 	GDatabase.Instance().deleteFile();
+}
+//===============================================
+function copyMessageNewsUpdate(obj) {
+	GDatabase.Instance().copyMessageNewsUpdate(obj);
+}
+//===============================================
+function pasteMessageNewsUpdate(obj) {
+	GDatabase.Instance().pasteMessageNewsUpdate(obj);
+}
+//===============================================
+function copyMessageNewsCreate(obj) {
+	GDatabase.Instance().copyMessageNewsCreate(obj);
+}
+//===============================================
+function pasteMessageNewsCreate(obj) {
+	GDatabase.Instance().pasteMessageNewsCreate(obj);
 }
 //===============================================

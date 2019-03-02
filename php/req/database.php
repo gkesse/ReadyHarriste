@@ -111,7 +111,20 @@
     }
 	//===============================================
 	else if($lReq == "COPY_MESSAGE") {
-        $lFile = "News/page/message.php";
+		$lData = $_REQUEST["data"];
+        $lFile = "/News/page/message.php";
+        
+		GFile::Instance()->saveData($lFile, $lData);
+        $lMessage = "Le message a été enregistré avec succès.";
+        
+        $lDataArr = array();
+        $lDataArr["data"] = $lMessage;
+		$lDataJson = json_encode($lDataArr);
+		print_r($lDataJson);
+    }
+	//===============================================
+	else if($lReq == "PASTE_MESSAGE") {
+        $lFile = "/News/page/message.php";
 		$lMessage = GFile::Instance()->getData($lFile);
         
         $lDataArr = array();

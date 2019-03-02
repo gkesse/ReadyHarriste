@@ -907,11 +907,23 @@ span {
 .Field9 {
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, 0.2);
+    height: 300px;
+    overflow: auto;
 }
 
 .Field10 {
     background-color: rgba(255, 255, 255, 0.2);
     margin-top: 5px;
+}
+
+.Field11 {
+    background-color: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 100px;
+    height: 30px;
+    padding: 5px 10px;
+    color: gray;
 }
 
 .Form {
@@ -1062,6 +1074,31 @@ span {
 }
 
 .Icon12:active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.Icon13 {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    top: 5px;
+    left: 190px;
+    color: white;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.Icon13:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+.Icon13:active {
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
 }

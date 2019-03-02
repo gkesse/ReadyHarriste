@@ -131,6 +131,7 @@
 	</div>
 </div>
 <!-- ============================================ -->
+<script src="/js/class/GDate.js"></script>
 <script src="/js/class/GDatabase.js"></script>
 <script src="/js/database.js"></script>
 <!-- ============================================ -->

@@ -68,6 +68,14 @@
             $lFileData .= "<span class='Field5'>".$lData["title"]."</span>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
+            $lFileData .= "<span class='Label4'>Création:</span> ";
+            $lFileData .= "<span class='Field11'>".$lData["create"]."</span>";
+            $lFileData .= "</div>";
+            $lFileData .= "<div class='Row9'>"; 
+            $lFileData .= "<span class='Label4'>Modification:</span> ";
+            $lFileData .= "<span class='Field11'>".$lData["update"]."</span>";
+            $lFileData .= "</div>";
+            $lFileData .= "<div class='Row9'>"; 
             $lFileData .= "<span class='Label4'>Date:</span> ";
             $lFileData .= "<span class='Field5'>".$lData["date"]."</span>";
             $lFileData .= "</div>";
@@ -89,7 +97,7 @@
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row9'>"; 
             $lFileData .= "<span class='Label4'>Message:</span> ";
-            $lFileData .= "<div class='Field10'><textarea class='message' rows='11' cols='100' readonly>".$lData["message"]."</textarea></div>";
+            $lFileData .= "<div class='Field9'><div>".$lData["message"]."</div></div>";
             $lFileData .= "</div>";
             $lFileData .= "<i class='Img7 fa fa-".$lData["icon"]."'></i>";
             
@@ -151,8 +159,9 @@
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row33'>"; 
             $lFileData .= "<label class='Label4' for='messageNewsUpdate'>Message:</label>";
-            $lFileData .= "<div class='Field9'><div id='messageNewsUpdate' contentEditable='true'>".$lData["message"]."</div></div>";
-            $lFileData .= "<i class='fa fa-clone Icon12' onclick='copyMessageNewsUpdate();'></i>";
+            $lFileData .= "<div class='Field9'><div id='messageNewsUpdate'>".$lData["message"]."</div></div>";
+            $lFileData .= "<i class='fa fa-copy Icon12' onclick='copyMessageNewsUpdate();' title='Copier vers la mémoire'></i>";
+            $lFileData .= "<i class='fa fa-paste Icon13' onclick='pasteMessageNewsUpdate();' title='Coller de la mémoire'></i>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row32'>";
             $lFileData .= "<button class='Button' type='submit' name='save'";
@@ -230,9 +239,11 @@
             $lFileData .= "<label class='Label4' for='iconNewsCreate'>Icône:</label>";
             $lFileData .= "<div class='Field8'><input type='text' name='iconNewsCreate' id='iconNewsCreate' value=\"".$lData["icon"]."\"/></div>";
             $lFileData .= "</div>";
-            $lFileData .= "<div class='Row9'>"; 
+            $lFileData .= "<div class='Row33'>"; 
             $lFileData .= "<label class='Label4' for='messageNewsCreate'>Message:</label>";
-            $lFileData .= "<div class='Field9'><textarea rows='11' cols='100' name='messageNewsCreate' id='messageNewsCreate' oninput='messageChangeNews();'>".$lData["message"]."</textarea></div>";
+            $lFileData .= "<div class='Field9'><div id='messageNewsCreate'>".$lData["message"]."</div></div>";
+            $lFileData .= "<i class='fa fa-copy Icon12' onclick='copyMessageNewsCreate();' title='Copier vers la mémoire'></i>";
+            $lFileData .= "<i class='fa fa-paste Icon13' onclick='pasteMessageNewsCreate();' title='Coller de la mémoire'></i>";
             $lFileData .= "</div>";
             $lFileData .= "<div class='Row32'>";
             $lFileData .= "<button class='Button' type='submit' name='save'";
@@ -267,13 +278,13 @@
 
             ob_start();?>
             <a href="#" style="
-            background-color: #051039;
+            background-color: #2d1c35;
             border: 1px solid gray;
             display: inline-block;
             text-align: left;
             overflow:hidden;
             padding: 10px;
-            min-width: 300px;
+            min-width: 350px;
             font-size: 16px;
             ">
 
@@ -297,10 +308,10 @@
             "><?php echo $lData["title"]; ?></div>
 
             <div style="
-            color: #555555;
+            color: gray;
             "><?php echo $lData["date"]; ?> à <?php echo $lData["time"]; ?></div>
             <div style="
-            color: #555555;
+            color: gray;
             "><?php echo $lData["place"]; ?></div>
             </a>
             <?php
@@ -332,14 +343,14 @@
 
             ob_start();?>
             <div style="
-            background-color: #051039;
+            background-color: #2d1c35;
             border: 1px solid gray;
-            max-width: 500px;
+            max-width: 600px;
             margin: auto;
             text-align: left;
             padding: 10px;
             overflow: hidden;
-            font-size: 18px;
+            font-size: 16px;
             ">
 
             <div style="
@@ -362,15 +373,15 @@
             "><?php echo $lData["title"]; ?></div>
 
             <div style="
-            color: #555555;
+            color: gray;
             "><?php echo $lData["date"]; ?> à <?php echo $lData["time"]; ?></div>
 
             <div style="
-            color: #555555;
+            color: gray;
             "><?php echo $lData["place"]; ?></div>
 
             <div style="
-            color: #555555;
+            color: gray;
             margin: 0px 0px 10px 0px;
             "><?php echo $lData["address"]; ?></div>
 
@@ -431,6 +442,7 @@
                 $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                 if($lFullName == $fileName) {
+                    $lDataNew = array_merge($lData, $lDataNew);
                     $lDatabaseMap["news"][$i] = $lDataNew;
                     break;
                 }
