@@ -99,4 +99,25 @@
 		print_r(json_encode($lDataMap));
 	}
 	//===============================================
+	else if($lReq == "DATABASE_1") {
+		$lFile = $_REQUEST["file"];
+		$lKey = $_REQUEST["key"];
+        
+        $lData = GDatabase::Instance()->loadDatabase($lFile, $lKey);
+        
+        $lDataMap = array();
+		$lDataMap["data"] = $lData;
+		print_r(json_encode($lDataMap));
+	}
+	//===============================================
+	else if($lReq == "FICHE_1") {
+		$lFile = $_SESSION["file"]; 
+        
+        $lData = GDatabase::Instance()->visualizeFile($lFile);
+        
+        $lDataMap = array();
+		$lDataMap["data"] = $lData;
+		print_r(json_encode($lDataMap));
+	}
+	//===============================================
 ?>

@@ -27,6 +27,8 @@
                 <option value="List2">Liste 2</option>
                 <option value="Member1">Membre 1</option>
                 <option value="Data1">Donnée 1</option>
+                <option value="Database1">Database 1</option>
+                <option value="Fiche1">Fiche 1</option>
                 <option value="LineBreak1">Saut Haut</option>
                 <option value="LineBreak2">Saut Bas</option>
                 <option value="LineBreak3">Saut Supprimer</option>

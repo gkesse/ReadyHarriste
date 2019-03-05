@@ -11,11 +11,11 @@
 		$lDataMenu = GDatabase::Instance()->getDataMenu($lPath);
 		$lDataFile = GDatabase::Instance()->getDataFile($lDirNameMap, $lPath, $lFile);
 
-        $lDataArr = array();
-        $lDataArr["file_map"] = $lDataFile;
-        $lDataArr["file_menu"] = $lDataMenu;
-        $lDataArr["file_path"] = $lFile;
-		$lDataJson = json_encode($lDataArr);
+        $lDataMap = array();
+        $lDataMap["file_map"] = $lDataFile;
+        $lDataMap["file_menu"] = $lDataMenu;
+        $lDataMap["file_path"] = $lFile;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
 	}
 	//===============================================
@@ -24,9 +24,9 @@
         
 		$lData = GDatabase::Instance()->readFile($lFile);
         
-        $lDataArr = array();
-        $lDataArr["data"] = $lData;
-		$lDataJson = json_encode($lDataArr);
+        $lDataMap = array();
+        $lDataMap["data"] = $lData;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
     }
 	//===============================================
@@ -35,9 +35,9 @@
         
 		$lData = GDatabase::Instance()->updateFile($lFile);
         
-        $lDataArr = array();
-        $lDataArr["data"] = $lData;
-		$lDataJson = json_encode($lDataArr);
+        $lDataMap = array();
+        $lDataMap["data"] = $lData;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
     }
 	//===============================================
@@ -47,9 +47,9 @@
         
 		$lData = GDatabase::Instance()->createFile($lPath, $lFile);
         
-        $lDataArr = array();
-        $lDataArr["data"] = $lData;
-		$lDataJson = json_encode($lDataArr);
+        $lDataMap = array();
+        $lDataMap["data"] = $lData;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
     }
 	//===============================================
@@ -58,9 +58,9 @@
         
 		$lData = GDatabase::Instance()->previewFile($lFile);
         
-        $lDataArr = array();
-        $lDataArr["data"] = $lData;
-		$lDataJson = json_encode($lDataArr);
+        $lDataMap = array();
+        $lDataMap["data"] = $lData;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
     }
 	//===============================================
@@ -69,9 +69,9 @@
         
 		$lData = GDatabase::Instance()->visualizeFile($lFile);
         
-        $lDataArr = array();
-        $lDataArr["data"] = $lData;
-		$lDataJson = json_encode($lDataArr);
+        $lDataMap = array();
+        $lDataMap["data"] = $lData;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
     }
 	//===============================================
@@ -80,9 +80,9 @@
         
 		$lData = GDatabase::Instance()->deleteFile($lFile);
         
-        $lDataArr = array();
-        $lDataArr["data"] = $lData;
-		$lDataJson = json_encode($lDataArr);
+        $lDataMap = array();
+        $lDataMap["data"] = $lData;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
     }
 	//===============================================
@@ -92,9 +92,9 @@
         
 		$lMessage = GDatabase::Instance()->updateDatabase($lFile, $lData);
         
-        $lDataArr = array();
-        $lDataArr["data"] = $lMessage;
-		$lDataJson = json_encode($lDataArr);
+        $lDataMap = array();
+        $lDataMap["data"] = $lMessage;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
     }
 	//===============================================
@@ -104,9 +104,9 @@
         
 		$lMessage = GDatabase::Instance()->createDatabase($lFile, $lData);
         
-        $lDataArr = array();
-        $lDataArr["data"] = $lMessage;
-		$lDataJson = json_encode($lDataArr);
+        $lDataMap = array();
+        $lDataMap["data"] = $lMessage;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
     }
 	//===============================================
@@ -117,9 +117,9 @@
 		GFile::Instance()->saveData($lFile, $lData);
         $lMessage = "Le message a été enregistré avec succès.";
         
-        $lDataArr = array();
-        $lDataArr["data"] = $lMessage;
-		$lDataJson = json_encode($lDataArr);
+        $lDataMap = array();
+        $lDataMap["data"] = $lMessage;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
     }
 	//===============================================
@@ -127,9 +127,9 @@
         $lFile = "/News/page/message.php";
 		$lMessage = GFile::Instance()->getData($lFile);
         
-        $lDataArr = array();
-        $lDataArr["data"] = $lMessage;
-		$lDataJson = json_encode($lDataArr);
+        $lDataMap = array();
+        $lDataMap["data"] = $lMessage;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
     }
 	//===============================================

@@ -53,11 +53,11 @@
 			}
 		}
         
-		$lDataArr = array();
-		$lDataArr["menu"] = $lDataMenu;
-		$lDataArr["file"] = $lDataFile;
-		$lDataArr["dir"] = $lDirPath;
-		$lDataJson = json_encode($lDataArr);
+		$lDataMap = array();
+		$lDataMap["menu"] = $lDataMenu;
+		$lDataMap["file"] = $lDataFile;
+		$lDataMap["dir"] = $lDirPath;
+		$lDataJson = json_encode($lDataMap);
 		print_r($lDataJson);
 	}
 	//===============================================
@@ -132,6 +132,46 @@
 		$lDataSum .= '</script>';
 		$lDataSum .= '</div>';
 		print_r($lDataSum);
+	}
+	//===============================================
+	else if($lReq == "DATABASE_1") {
+		$lFile = $_REQUEST["file"];
+		$lKey = $_REQUEST["key"];
+		$lID = $_REQUEST["id"];
+		$lDataSum = '';
+		$lDataSum .= '<div class="Content0 GDatabase1">';
+		$lDataSum .= '<div class="Body0" id="'.$lID.'">';
+		$lDataSum .= '<div class="Row26">';
+		$lDataSum .= 'Database 1 > '.$lFile.' > '.$lKey;
+		$lDataSum .= '</div>';
+		$lDataSum .= '</div>';
+		$lDataSum .= '<script>';
+		$lDataSum .= 'loadDatabase1("'.$lID.'","'.$lFile.'","'.$lKey.'");';
+		$lDataSum .= '</script>';
+		$lDataSum .= '</div>';
+		print_r($lDataSum);
+	}
+	//===============================================
+	else if($lReq == "FICHE_1") {
+		$lDB = $_REQUEST["db"];
+		$lID = $_REQUEST["id"];
+        
+		$lDataSum = '';
+		$lDataSum .= '<div class="Content0 GDatabase1">';
+		$lDataSum .= '<div class="Body0" id="'.$lID.'">';
+		$lDataSum .= '<div class="Row26">';
+		$lDataSum .= 'Fiche 1 > '.$lDB;
+		$lDataSum .= '</div>';
+		$lDataSum .= '</div>';
+		$lDataSum .= '<script>';
+		$lDataSum .= 'loadFiche1("'.$lID.'","'.$lDB.'");';
+		$lDataSum .= '</script>';
+		$lDataSum .= '</div>';
+        
+		$lDataMap = array();
+		$lDataMap["data"] = $lDataSum;
+		$lDataJson = json_encode($lDataMap);
+		print_r($lDataJson);
 	}
 	//===============================================
 ?>

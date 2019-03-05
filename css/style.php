@@ -1354,6 +1354,17 @@ span {
     padding: 10px;
 }
 
+.Link10 {
+    background-color: #2d1c35;
+    border: 1px solid gray;
+    display: inline-block;
+    text-align: left;
+    overflow:hidden;
+    padding: 10px;
+    min-width: 350px;
+    font-size: 16px;
+}
+
 .List {
     padding-right: 10px;
 }

@@ -23,3 +23,11 @@ function loadData1(id, file, key) {
 	GLoader.Instance().loadData1(id, file, key);
 }
 //===============================================
+function loadDatabase1(id, file, key) {
+	GLoader.Instance().loadDatabase1(id, file, key);
+}
+//===============================================
+function loadFiche1(id, db) {
+	GLoader.Instance().loadFiche1(id, db);
+}
+//===============================================

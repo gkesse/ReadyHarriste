@@ -146,6 +146,43 @@ var GLoader = (function() {
                 "&file=" + file +
                 "&key=" + key
                 );
+            },
+            //===============================================
+            loadDatabase1: function(id, file, key) {
+                var lObj = document.getElementById(id);
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        var lData = this.responseText;
+                        var lDataMap = JSON.parse(lData);
+                        lObj.innerHTML = lDataMap["data"];
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/loader.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+                "req=" + "DATABASE_1" +
+                "&file=" + file +
+                "&key=" + key
+                );
+            },
+            //===============================================
+            loadFiche1: function(id, db) {
+                var lObj = document.getElementById(id);
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        var lData = this.responseText;
+                        var lDataMap = JSON.parse(lData);
+                        lObj.innerHTML = lDataMap["data"];
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/loader.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+                "req=" + "FICHE_1" +
+                "&db=" + db
+                );
             }
             //===============================================
         };
