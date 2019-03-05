@@ -34,14 +34,14 @@
             $lDataMap = $dataMap["members"];
             $lData = array();
             
-            $fileName = mb_strtolower($fileName, "UTF-8");
+            $fileName = trim(mb_strtolower($fileName, "UTF-8"));
 
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
-                $lFullName .= $lData["lastname"]." ";
-                $lFullName .= $lData["usualname"];
-                $lFullName = mb_strtolower($lFullName, "UTF-8");
+                $lFullName .= trim($lData["lastname"])." ";
+                $lFullName .= trim($lData["usualname"]);
+                $lFullName = trim(mb_strtolower($lFullName, "UTF-8"));
 
                 if($lFullName == $fileName) break;
             }
@@ -131,13 +131,13 @@
             $lDataMap = $dataMap["members"];
             $lData = array();
             
-            $fileName = mb_strtolower($fileName, "UTF-8");
+            $fileName = trim(mb_strtolower($fileName, "UTF-8"));
 
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
-                $lFullName .= $lData["lastname"]." ";
-                $lFullName .= $lData["usualname"];
+                $lFullName .= trim($lData["lastname"])." ";
+                $lFullName .= trim($lData["usualname"]);
                 $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                 if($lFullName == $fileName) break;
@@ -279,13 +279,13 @@
             );
             
             if($fileName != "") {
-                $fileName = mb_strtolower($fileName, "UTF-8");
+                $fileName = trim(mb_strtolower($fileName, "UTF-8"));
 
                 for($i = 0; $i < count($lDataMap); $i++) {
                     $lData = $lDataMap[$i];
                     $lFullName = "";
-                    $lFullName .= $lData["lastname"]." ";
-                    $lFullName .= $lData["usualname"];
+                    $lFullName .= trim($lData["lastname"])." ";
+                    $lFullName .= trim($lData["usualname"]);
                     $lFullName = mb_strtolower($lFullName, "UTF-8");
 
                     if($lFullName == $fileName) break;
@@ -412,13 +412,13 @@
             $lDatabaseMap = GJson::Instance()->getData($filePath);
             $lDataMap = $lDatabaseMap["members"];
             
-            $fileName = mb_strtolower($fileName, "UTF-8");
+            $fileName = trim(mb_strtolower($fileName, "UTF-8"));
                         
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
-                $lFullName .= $lData["lastname"]." ";
-                $lFullName .= $lData["usualname"];
+                $lFullName .= trim($lData["lastname"])." ";
+                $lFullName .= trim($lData["usualname"]);
                 $lFullName = mb_strtolower($lFullName, "UTF-8");
                 
                 if($lFullName == $fileName) {
@@ -437,13 +437,13 @@
             $lDataNew = json_decode($data, true);
             $lDataMap = $lDatabaseMap["members"];
             
-            $fileName = mb_strtolower($fileName, "UTF-8");
+            $fileName = trim(mb_strtolower($fileName, "UTF-8"));
                         
             for($i = 0; $i < count($lDataMap); $i++) {
                 $lData = $lDataMap[$i];
                 $lFullName = "";
-                $lFullName .= $lData["lastname"]." ";
-                $lFullName .= $lData["usualname"];
+                $lFullName .= trim($lData["lastname"])." ";
+                $lFullName .= trim($lData["usualname"]);
                 $lFullName = mb_strtolower($lFullName, "UTF-8");
                 
                 if($lFullName == $fileName) {
@@ -482,15 +482,15 @@
             }
             else {
                 $lFileName = "";
-                $lFileName .= $lDataNew["lastname"]." ";
-                $lFileName .= $lDataNew["usualname"];
+                $lFileName .= trim($lDataNew["lastname"])." ";
+                $lFileName .= trim($lDataNew["usualname"]);
                 $lFileName = mb_strtolower($lFileName, "UTF-8");
                 
                 for($i = 0; $i < count($lDataMap); $i++) {
                     $lData = $lDataMap[$i];
                     $lFullName = "";
-                    $lFullName .= $lData["lastname"]." ";
-                    $lFullName .= $lData["usualname"];
+                    $lFullName .= trim($lData["lastname"])." ";
+                    $lFullName .= trim($lData["usualname"]);
                     $lFullName = mb_strtolower($lFullName, "UTF-8");
                     
                     if($lFullName == $lFileName) {
