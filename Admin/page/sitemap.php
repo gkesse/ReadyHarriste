@@ -54,9 +54,9 @@
                 </h2>
                 <div class="Body13 Center">
                     <button class="Button7" type="button" title="Démarrer l'énumération d'URLs" 
-                    onclick="enumerateUrl();"><i class="fa fa-list"></i> En</button>
+                    onclick="enumerateUrl();"><i class="fa fa-list"></i> Énumérer</button>
                     <button class="Button7" type="button" title="Supprimer l'énumération d'URLs" 
-                    onclick="enumerateClear();"><i class="fa fa-trash"></i> Sp</button>
+                    onclick="enumerateClear();"><i class="fa fa-trash"></i> Supprimer</button>
                 </div>
                 <div class="Body14">
                     <div class="Content9"> 
@@ -82,9 +82,9 @@
                 </h2>
                 <div class="Body13 Center">
                     <button class="Button7" type="button" title="Démarrer le listing d'URLs" 
-                    onclick="listUrl();"><i class="fa fa-list"></i> Ls</button>
+                    onclick="listUrl();"><i class="fa fa-list"></i> Lister</button>
                     <button class="Button7" type="button" title="Supprimer le listing d'URLs" 
-                    onclick="listClear();"><i class="fa fa-trash"></i> Sp</button>
+                    onclick="listClear();"><i class="fa fa-trash"></i> Supprimer</button>
                 </div>
                 <div class="Body15">
                     <div class="Row21">
@@ -99,9 +99,9 @@
                 </h2>
                 <div class="Body13 Center">
                     <button class="Button7" type="button" title="Démarrer la génération du sitemap" 
-                    onclick="generateUrl();"><i class="fa fa-list"></i> Gn</button>
+                    onclick="generateUrl();"><i class="fa fa-list"></i> Générer</button>
                     <button class="Button7" type="button" title="Supprimer la génération du sitemap" 
-                    onclick="generateClear();"><i class="fa fa-trash"></i> Sp</button>
+                    onclick="generateClear();"><i class="fa fa-trash"></i> Supprimer</button>
                 </div>
                 <div class="Body15">
                     <div class="Row21">
@@ -116,9 +116,9 @@
                 </h2>
                 <div class="Body7 Center">
                     <button class="Button7" type="button" title="Démarrer la visualisation du sitemap" 
-                    onclick="visualizeUrl();"><i class="fa fa-list"></i> Vs</button>
+                    onclick="visualizeUrl();"><i class="fa fa-list"></i> Visualiser</button>
                     <button class="Button7" type="button" title="Supprimer la visualisation du sitemap" 
-                    onclick="visualizeClear();"><i class="fa fa-trash"></i> Sp</button>
+                    onclick="visualizeClear();"><i class="fa fa-trash"></i> Supprimer</button>
                 </div>
                 <div class="Body0 Center">
                     <button class="Button8 SitemapFileTab" type="button" title="Afficher le fichier sitemaps.xml" 
@@ -145,5 +145,3 @@
 <script src="/js/class/GSitemap.js"></script>
 <script src="/js/sitemap.js"></script>
 <!-- ============================================ -->
-
-
