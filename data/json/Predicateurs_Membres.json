@@ -1,0 +1,18 @@
+{
+    "sitemap":"no",
+    "meta_data":
+    {
+        "meta_desc":
+        [
+            "Membres des Prédicateurs de l'Eglise Harriste de France.",
+            "Produit par Gérard KESSE."
+        ],
+        "meta_cano":"/Predicateurs/Membres/"
+    },
+    "links":
+    [
+        {"name":"Accueil","link":"/Accueil/","follow":"no"},
+        {"name":"Prédicateurs","link":"/Predicateurs/","follow":"no"},
+        {"name":"Membres","link":"","follow":"no"}
+    ]
+}

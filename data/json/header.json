@@ -6,6 +6,8 @@
     },  
     "menu":
     [
+        {"name":"Prédicateurs","link":"/Predicateurs/","follow":"yes"},
+        {"name":"Apôtres","link":"/Apotres/","follow":"yes"},
         {"name":"Chorale","link":"/Chorale/","follow":"yes"},
         {"name":"News","link":"/News/","follow":"yes"},
         {"name":"Admin","link":"/Admin/","follow":"no"}

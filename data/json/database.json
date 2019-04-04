@@ -1,0 +1,14 @@
+{
+    "database":
+    [
+        {"name":"Prédicateurs","file":"data/json/DB_Predicateurs.json"},
+        {"name":"Doyens","file":"data/json/DB_Doyens.json"},
+        {"name":"Apôtres","file":"data/json/DB_Apotres.json"},
+        {"name":"Chorale","file":"data/json/DB_Chorale.json"},
+        {"name":"Femmes d'Honneur","file":"data/json/DB_Femmes_Honneur.json"},
+        {"name":"Gardes","file":"data/json/DB_Gardes.json"},
+        {"name":"UFHAF","file":"data/json/DB_UFHAF.json"},
+        {"name":"Jeunesse","file":"data/json/DB_Jeunesse.json"},
+        {"name":"News","file":"data/json/DB_News.json"}
+    ]
+}

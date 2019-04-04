@@ -1,0 +1,22 @@
+{
+    "sitemap":"yes",
+    "meta_data":
+    {
+        "meta_desc":
+        [
+            "Restez en contact avec les Apôtres de l’Église Harriste de France.",
+            "Découvrez les Apôtres.",
+            "Produit par Gérard KESSE."
+        ],
+        "meta_cano":"/Apotres/"
+    },
+    "links":
+    [
+        {"name":"Accueil","link":"/Accueil/","follow":"no"},
+        {"name":"Apôtres","link":"","follow":"no"}
+    ],
+    "navs":
+    [
+        {"name":"nav","link":"/Apotres/Membres/","follow":"yes"}
+    ]
+}

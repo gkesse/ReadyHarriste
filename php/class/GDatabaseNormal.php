@@ -17,7 +17,7 @@
         }
         //===============================================
         public function openDatabase($file) {
-            $lJsonMap = GJson::Instance()->getData("data/json/Admin.json");
+            $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
 			$lDirNameMap = array();
             $this->getDatabaseName($file);
@@ -91,7 +91,7 @@
         //===============================================
         public function readFile($file) {
             if($file == "") return "";
-            $lJsonMap = GJson::Instance()->getData("data/json/Admin.json");
+            $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
             $this->getDatabaseName($file);
             
@@ -116,7 +116,7 @@
         //===============================================
         public function updateFile($file) {
             if($file == "") return "";
-            $lJsonMap = GJson::Instance()->getData("data/json/Admin.json");
+            $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
             $this->getDatabaseName($file);
             
@@ -141,7 +141,7 @@
         //===============================================
         public function createFile($path, $file) {
             if($path == "") return "";
-            $lJsonMap = GJson::Instance()->getData("data/json/Admin.json");
+            $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
             $this->getDatabaseName($path);
             
@@ -168,7 +168,7 @@
         //===============================================
         public function previewFile($file) {
             if($file == "") return "";
-            $lJsonMap = GJson::Instance()->getData("data/json/Admin.json");
+            $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
             $this->getDatabaseName($file);
             
@@ -193,7 +193,7 @@
         //===============================================
         public function visualizeFile($file) {
             if($file == "") return "";
-            $lJsonMap = GJson::Instance()->getData("data/json/Admin.json");
+            $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
             $this->getDatabaseName($file);
             
@@ -217,7 +217,7 @@
         }
         //===============================================
         public function deleteFile($file) {
-            $lJsonMap = GJson::Instance()->getData("data/json/Admin.json");
+            $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
             $this->getDatabaseName($file);
             
@@ -239,7 +239,7 @@
         }
         //===============================================
         public function updateDatabase($file, $data) {
-            $lJsonMap = GJson::Instance()->getData("data/json/Admin.json");
+            $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
             $this->getDatabaseName($file);
             
@@ -261,7 +261,7 @@
         }
         //===============================================
         public function createDatabase($file, $data) {
-            $lJsonMap = GJson::Instance()->getData("data/json/Admin.json");
+            $lJsonMap = GJson::Instance()->getData("data/json/database.json");
             $lJsonData = $lJsonMap["database"];
             $this->getDatabaseName($file);
             

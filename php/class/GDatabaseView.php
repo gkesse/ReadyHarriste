@@ -9,7 +9,14 @@
         //===============================================
         public static function Instance() {
             $lKey = GConfig::Instance()->getData("DATABASE");
+            if($lKey == "Prédicateurs") return GDatabaseViewPredicateurs::Instance();
+            if($lKey == "Doyens") return GDatabaseViewDoyens::Instance();
+            if($lKey == "Apôtres") return GDatabaseViewApotres::Instance();
             if($lKey == "Chorale") return GDatabaseViewChorale::Instance();
+            if($lKey == "Femmes d'Honneur") return GDatabaseViewFemmesHonneur::Instance();
+            if($lKey == "Gardes") return GDatabaseViewGardes::Instance();
+            if($lKey == "UFHAF") return GDatabaseViewUFHAF::Instance();
+            if($lKey == "Jeunesse") return GDatabaseViewJeunesse::Instance();
             if($lKey == "News") return GDatabaseViewNews::Instance();
             return GDatabaseViewChorale::Instance();
         }

@@ -20,11 +20,5 @@
         {"name":"Éditeur de Sitemap","link":"#Editeur_Sitemap"},
         {"name":"Éditeur de Page HTML","link":"#Editeur_Page_HTML"},
         {"name":"Éditeur de Base de Données","link":"#Editeur_Base_Donnees"}
-    ],
-    "database":
-    [
-        {"name":"Prédicateurs","file":"data/json/DB_Predicateurs.json"},
-        {"name":"Chorale","file":"data/json/DB_Chorale_Membres.json"},
-        {"name":"News","file":"data/json/DB_News.json"}
     ]
 }

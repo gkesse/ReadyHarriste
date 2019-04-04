@@ -1,0 +1,22 @@
+{
+    "sitemap":"yes",
+    "meta_data":
+    {
+        "meta_desc":
+        [
+            "Restez en contact avec les prédicateurs de l’Église Harriste de France.",
+            "Découvrez les prédicateurs.",
+            "Produit par Gérard KESSE."
+        ],
+        "meta_cano":"/Predicateurs/"
+    },
+    "links":
+    [
+        {"name":"Accueil","link":"/Accueil/","follow":"no"},
+        {"name":"Prédicateurs","link":"","follow":"no"}
+    ],
+    "navs":
+    [
+        {"name":"nav","link":"/Predicateurs/Membres/","follow":"yes"}
+    ]
+}
