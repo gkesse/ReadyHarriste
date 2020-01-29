@@ -62,6 +62,18 @@
                 <h2 class="Title4">
                     Base de Données
                 </h2>
+                <div style="
+                    border-bottom: 5px solid #051039;
+                    padding: 5px 0px;
+                ">
+                    <div onclick="createDatabaseV2(this);" style="
+                        background-color: rgba(255, 255, 255, 0.2);
+                        padding: 5px 10px;
+                        display: inline-block;
+                        cursor: pointer;
+
+                    ">Créer</div>
+                </div>
                 <div class="Body9 Left">
                     <div class="Row17"><i class="Icon8 fa fa-file-text-o"> :</i></div>
                     <div class="Row18"><div class="Field4" id="DatabaseFilePath"></div></div>

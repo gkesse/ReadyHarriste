@@ -94,12 +94,12 @@
         <meta property="og:site_name" content="<?php echo $lSiteName; ?>"/>
         <!-- ============================================ -->
         <!-- Stylesheet -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akronim"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allan"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo Narrow"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="/lib/google_fonts/1.0.0/Aclonica/css.css"/>
+        <link rel="stylesheet" href="/lib/google_fonts/1.0.0/Akronim/css.css"/>
+        <link rel="stylesheet" href="/lib/google_fonts/1.0.0/Allan/css.css"/>
+        <link rel="stylesheet" href="/lib/google_fonts/1.0.0/Archivo_Narrow/css.css"/>
+        <link rel="stylesheet" href="/lib/google_fonts/1.0.0/Anton/css.css"/>
+        <link rel="stylesheet" href="/lib/font_awesome/4.7.0/css/font-awesome.min.css"/>
         <!-- ============================================ -->
         <!-- Script -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

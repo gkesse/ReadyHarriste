@@ -229,6 +229,22 @@ var GDatabase = (function() {
 				);
             },
             //===============================================
+            createDatabaseV2: function(obj) {
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+						var lData = this.responseText;
+						alert(lData);
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/database.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "CREATE_DATABASE_V2" +
+				"&name=" + "lName"
+				);
+            },
+            //===============================================
             createDatabaseNews: function(obj) {
                var lRes = confirm("Êtes vous sûr de vouloir ajouter cette nouvelle donnée ?");
                 if(!lRes) return;

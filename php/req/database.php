@@ -110,6 +110,10 @@
 		print_r($lDataJson);
     }
 	//===============================================
+	else if($lReq == "CREATE_DATABASE_V2") {
+        GSQLite::Instance()->openDatabase();
+    }
+	//===============================================
 	else if($lReq == "COPY_MESSAGE") {
 		$lData = $_REQUEST["data"];
         $lFile = "/News/page/message.php";

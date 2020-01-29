@@ -14,11 +14,27 @@
             return self::$m_instance;
         }
         //===============================================
-        public function getData($file) {
+        public function exist($file) {
+            $lFile = $this->getPath($file);
+            $lExist = file_exists($lFile);
+            return $lExist;
+        }
+        //===============================================
+        public function remove($file) {
+            $lFile = $this->getPath($file);
+            unlink($lFile);
+        }
+        //===============================================
+        public function getPath($file) {
             $lFile = $_SERVER["DOCUMENT_ROOT"];
 			$lFile = realpath($lFile);
 			$lFile .= "/".$file;
 			$lFile = realpath($lFile);
+            return $lFile;
+        }
+        //===============================================
+        public function getData($file) {
+            $lFile = $this->getPath($file);
             $lData = file_get_contents($lFile);
             return $lData;
         }
@@ -40,9 +56,7 @@
         }
         //===============================================
         public function saveData($file, $data) {
-            $lFile = $_SERVER["DOCUMENT_ROOT"];
-			$lFile = realpath($lFile);
-            $lFile .= "/".$file;
+            $lFile = $this->getPath($file);
             file_put_contents($lFile, $data);
         }
         //===============================================
@@ -63,13 +77,6 @@
             $lDate = filemtime($lFile);
             $lDate = date ("Y-m-d", $lDate);
             return $lDate;
-        }
-        //===============================================
-        public function exists($file) {
-            $lFile = $_SERVER["DOCUMENT_ROOT"];
-			$lFile = realpath($lFile);
-            $lFile .= "/".$file;
-            return file_exists($lFile);
         }
         //===============================================
     }
