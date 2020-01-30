@@ -1,0 +1,1 @@
+<div class="Parallax GParallax1"><div class="Img"><div class="Caption"><a href="#"><div class="Text">Réunion de la chorale Jourdain<br></div></a></div></div><div class="Body2 Orange"><br>Réunion de la chorale Jourdain....<br><br></div></div>

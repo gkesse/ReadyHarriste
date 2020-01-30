@@ -28,7 +28,7 @@
 		for($i = 0; $i < count($lDirNameArr); $i++) {
 			$lDirName = $lDirNameArr[$i];
 			$lFilePath = $lDirPath."/".$lDirName[1];
-			if($lFilePath == $lFile) {$lDataFile .= "<div class='Row19 FileList'>";}
+			if($lFilePath == $lFile) {$lDataFile .= "<div class='Row20 FileList Active'>";}
 			else {$lDataFile .= "<div class='Row20 FileList'>";}
 			$lDataFile .= "<i class='fa fa-".$lDirName[2]."'></i> ";
 			$lDataFile .= "<div class='Text9'";

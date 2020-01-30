@@ -1308,13 +1308,13 @@ var GEditor = (function() {
 				var lEditorDir = GConfig.Instance().getData("EditorDir");
 				var lDirPath = lEditorDir + "/" + lDirName;
 				var lObjParent = obj.parentNode;
-				for(var i = 0; i < lFileList.length; i++) {
-					var lNode = lFileList[i];
-					lNode.className = lNode.className.replace(" Active", "");
-				}
 				if(!dir) {
 					var lRes = confirm("Êtes-vous sûr de vouloir sélectionner ce fichier ?");
 					if(!lRes) return;
+                    for(var i = 0; i < lFileList.length; i++) {
+                        var lNode = lFileList[i];
+                        lNode.className = lNode.className.replace(" Active", "");
+                    }
 					lObjParent.className += " Active";
 					var lEditorFile = lDirPath;
 					lEditorFile = lEditorFile.replace(/\\/gi, "/");

@@ -1787,8 +1787,8 @@ span {
 }
 
 .Title2{
-    background-color: #5f6681; /* L2 */
-    color: #f67b20;
+    background-color: #4f5979; /* L2  5f6681*/
+    color: #BF8E3A;
     padding: 20px 10px;
 }
 

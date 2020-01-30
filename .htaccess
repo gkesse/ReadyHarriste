@@ -7,7 +7,7 @@ RewriteEngine on
 #================================================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^News/File/(.*)$ News/Fiche/?file=/News/$1 [L,QSA]
+RewriteRule ^News/File/(.*)$ News/Fiche/?file=$1 [L,QSA]
 </IfModule>
 #================================================
 #php_value memory_limit 30M

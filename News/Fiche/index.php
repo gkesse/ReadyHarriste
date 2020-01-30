@@ -10,13 +10,16 @@
     
     require $_SERVER["DOCUMENT_ROOT"]."/php/header.php";
     
-    $_SESSION["file"] = "";
-    if(isset($_REQUEST["file"])) $_SESSION["file"] = $_REQUEST["file"];
+    $lNewsFile = "news_none.php";
+    if(isset($_REQUEST["file"])) {
+        $lNewsFile = $_REQUEST["file"];
+        $lNewsFile .= ".php";
+    }
 ?>
 <!-- ============================================ -->
 <div class="MainBody">
     <!-- ============================================ -->
-    <?php require "page/main.php"; ?>
+    <?php require "page/$lNewsFile"; ?>
     <!-- ============================================ -->
 </div>
 <!-- ============================================ -->
